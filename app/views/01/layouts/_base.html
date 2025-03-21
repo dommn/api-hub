@@ -61,6 +61,44 @@
 </div>
 {% endif %}
 
+{% if documentationPage == "true" %}
+
+<div class="govuk-service-navigation"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+        <span class="govuk-service-navigation__service-name">
+            <a href="index" class="govuk-service-navigation__link">
+              GOV.UK API Hub
+            </a>
+          </span>
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item {% if headerNavigationActiveItem == "get started" %} govuk-service-navigation__item--active {% endif %} ">
+            <a class="govuk-service-navigation__link" href="../get-started">
+              Get started
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item {% if headerNavigationActiveItem == "documentation" %} govuk-service-navigation__item--active {% endif %} ">
+            <a class="govuk-service-navigation__link" href="../documentation" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Documentation</strong>
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item {% if headerNavigationActiveItem == "support" %} govuk-service-navigation__item--active {% endif %}">
+            <a class="govuk-service-navigation__link" href="../support">
+              Support
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+{% endif %}
+
 {% endblock %}
 
 {% block beforeContent %}
