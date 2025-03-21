@@ -1,0 +1,97 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set questionPage = "false" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Design your API",
+        parent: true,
+        children: [
+        {
+          text: "API discovery",
+          href: "api-discovery"
+        },
+        {
+          text: "Check for existing APIs",
+          href: "check-for-existing-apis"
+        },
+        {
+          text: "Design your API first",
+          href: "design-your-api-first"
+        },
+        {
+          text: "Follow the Technology Code of Practice and other standards",
+          href: "code-of-practice"
+        }, 
+        {
+          text: "Use the REST API style",
+          href: "restful-api"
+        }, 
+        {
+          text: "Develop a specification before you start to code",
+          href: "develop-specification"
+        }, 
+        {
+          text: "Be secure by design",
+          current: true,
+          href: "be-secure-by-design"
+        }, 
+        {
+          text: "Test your assumptions with users",
+          href: "test-assumptions-with-users"
+        }, 
+        {
+          text: "Iterate the design based on feedback",
+          href: "iterate-based-on-feedback"
+        }]
+      }]
+    }) }}
+    
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">Design your API</span>
+      <h1 class="govuk-heading-l">Develop a specification before you start to code</h1>
+
+    <p>You must think about security from the very beginning of the design process for your API, and follow a secure by design approach.
+    </p>    
+    <p>API security involves:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>data level security – making sure users only have access to the data provided by the API that they are authorised to see</li>
+      <li>application level security – making sure only authorised users can access the API</li>
+      <li>network security – making sure only trusted clients can consume your API</li>
+      <li>auditing – making sure the usage of the API is monitored</li>
+    </ul>
+
+      <div class="x-govuk-related-navigation">
+        <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+          <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+            More information
+          </h2>
+          <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              The OWASP foundation has a list of <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://hmcts.github.io/restful-api-standards/#_hmcts_reform_programme_restful_api_standards">top 10 security risks for APIs</a>. Make sure you avoid these when designing your API.Recommended open standards for government
+              </li>
+             
+          </ul>
+        </nav>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

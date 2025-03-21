@@ -1,0 +1,82 @@
+{% extends "./layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set questionPage = "false" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">API guidance</h1>
+
+      <p>Find out more about API best practice.</p>
+
+      {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+      <h2 class="govuk-heading-m">Design your API</h2>
+
+{{ govukTaskList({
+  idPrefix: "company-details",
+  items: [
+  {
+    title: {
+      text: "API discovery"
+    },
+    href: "design/api-discovery"
+  },
+    {
+      title: {
+        text: "Check for existing APIs"
+      },
+      href: "design/check-for-existing-apis"
+    },
+    {
+      title: {
+        text: "Design your API first"
+      },
+      href: "#"
+    },
+    {
+      title: {
+        text: "Follow the Technology Code of Practice and other standards"
+      },
+      href: "#"
+    },
+    {
+      title: {
+        text: "Use the REST API style"
+      },
+      href: "#"
+    },
+    {
+      title: {
+        text: "Develop a specification before you start to code"
+      },
+      href: "#"
+    },
+    {
+      title: {
+        text: "Be secure by design"
+      },
+      href: "#"
+    },
+    {
+      title: {
+        text: "Test your assumptions with users"
+      },
+      href: "#"
+    },
+    {
+      title: {
+        text: "Iterate the design based on feedback"
+      },
+      href: "#"
+    }
+  ]
+}) }}
+
+  </div>
+</div>
+
+{% endblock %}

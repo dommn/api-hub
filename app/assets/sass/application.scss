@@ -1,0 +1,14 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+// 
+
+// Add extra styles here
+
+@import 'node_modules/dfe-frontend/packages/dfefrontend';
+
+@import "components/hero";
+@import "components/inverted-button";
+@import "components/page-header";
+@import "components/page-hero";
+@import "components/masthead";

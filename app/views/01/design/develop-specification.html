@@ -1,0 +1,111 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set questionPage = "false" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Design your API",
+        parent: true,
+        children: [
+        {
+          text: "API discovery",
+          href: "api-discovery"
+        },
+        {
+          text: "Check for existing APIs",
+          href: "check-for-existing-apis"
+        },
+        {
+          text: "Design your API first",
+          href: "design-your-api-first"
+        },
+        {
+          text: "Follow the Technology Code of Practice and other standards",
+          href: "code-of-practice"
+        }, 
+        {
+          text: "Use the REST API style",
+          href: "restful-api"
+        }, 
+        {
+          text: "Develop a specification before you start to code",
+          current: true,
+          href: "develop-specification"
+        }, 
+        {
+          text: "Be secure by design",
+          href: "be-secure-by-design"
+        }, 
+        {
+          text: "Test your assumptions with users",
+          href: "test-assumptions-with-users"
+        }, 
+        {
+          text: "Iterate the design based on feedback",
+          href: "iterate-based-on-feedback"
+        }]
+      }]
+    }) }}
+    
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">Design your API</span>
+      <h1 class="govuk-heading-l">Develop a specification before you start to code</h1>
+
+     <p>The <a href="https://swagger.io/specification/">OpenAPI Specification</a> is a standardised way of describing RESTful web APIs, and <a href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/describing-restful-apis-with-openapi-3">is recommended</a> by the government Open Standards Board.</p>
+
+    <p>It allows you to produce a file (the OpenAPI document) which is both machine and human readable, and which describes the format and responses of your API.
+    </p>
+
+    <p>A good principle is to produce an OpenAPI document as the first output of your design process, and then develop the document along with the API design.
+    </p>
+
+    <p>This will help to:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>show the API has been developed consistently with others from your organisation
+      </li>
+      <li>test the API against rules and for security issues <a href="https://owasp.org/www-project-devsecops-guideline/latest/01b-Linting-Code#:~:text=Linting%20is%20the%20automated%20checking,(otherwise%20known%20as%20linter).">using a software linter</a>
+      </li>
+      <li>generate reference documentation automatically – documentation generated in this way should be <a href="https://www.gov.uk/guidance/how-to-document-apis">supported by further resources</a>
+      </li>
+    </ul>
+
+    <p>For non-REST APIs like GraphQL, you should still look to produce a specification during the design process. For example, for GraphQL this would be a GraphQL schema specification defining the types available, queries, mutations and the relationships between them.
+    </p>
+
+      <div class="x-govuk-related-navigation">
+        <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+          <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+            More information
+          </h2>
+          <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://hmcts.github.io/restful-api-standards/#_hmcts_reform_programme_restful_api_standards">Recommended open standards for government</a>
+              </li>
+              <li class="x-govuk-related-navigation__link">
+                <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://www.gov.uk/government/collections/open-standards-for-government-data-and-technology">Open standards for government data and technology</a>
+                </li>
+          </ul>
+        </nav>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

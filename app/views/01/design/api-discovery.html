@@ -1,0 +1,115 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set questionPage = "false" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Design your API",
+        parent: true,
+        children: [
+        {
+          text: "API discovery",
+          current: true,
+          href: "api-discovery"
+        },
+        {
+          text: "Check for existing APIs",
+          href: "check-for-existing-apis"
+        },
+        {
+          text: "Design your API first",
+          href: "design-your-api-first"
+        },
+        {
+          text: "Follow the Technology Code of Practice and other standards",
+          href: "code-of-practice"
+        }, 
+        {
+          text: "Use the REST API style",
+          href: "restful-api"
+        }, 
+        {
+          text: "Develop a specification before you start to code",
+          href: "develop-specification"
+        }, 
+        {
+          text: "Be secure by design",
+          href: "be-secure-by-design"
+        }, 
+        {
+          text: "Test your assumptions with users",
+          href: "test-assumptions-with-users"
+        }, 
+        {
+          text: "Iterate the design based on feedback",
+          href: "iterate-based-on-feedback"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Design your API</span>
+      <h1 class="govuk-heading-l">API discovery</h1>
+
+      <p>Before you commit to designing a new API, you need to understand the problem that needs to be solved.</p>
+
+      <p>That means learning about:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>who are your users and what are their <a href="https://www.gov.uk/service-manual/user-research/start-by-learning-user-needs">user needs</a></li>
+        <li>what users need from your API to achieve their goal by doing <a href="https://www.gov.uk/service-manual/user-research/user-research-in-discovery">user research</a></li>
+      </ul>
+
+      <p>This part of your project is called the <a href="https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works">discovery phase</a>.</p>
+
+      <p>For an API, the user is usually a developer who wants to consume your API to deliver a service. The developer will have needs based on:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the service they are developing</li>
+        <li>how easy it is to write code to consume your API</li>
+      </ul>
+
+      <p>Making your API easy to understand means it’s more likely to be used.  The information you gather through the discovery phase will allow you to focus on the functionality that meet user needs. </p>
+      
+      <div class="x-govuk-related-navigation">
+        <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+          <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+            More information
+          </h2>
+          <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://www.gov.uk/guidance/managing-your-api-discovery">Managing your API discovery</a>
+            </li>
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://www.gov.uk/government/collections/api-design-guidance">API design guidance</a>
+            </li>
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://www.gov.uk/guidance/government-design-principles#start-with-user-needs">Government design principles</a>
+            </li>
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://technology.blog.gov.uk/">Technology in government</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

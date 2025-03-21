@@ -1,0 +1,80 @@
+{% extends "./layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "get started" %}
+{% set questionPage = "true" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="task-list" novalidate method="post">
+
+      <h1 class="govuk-heading-l">Check your answers</h1>
+
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Role"
+      },
+      value: {
+        text: data['whatIsYourRole']
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Subject"
+      },
+      value: {
+        text: data['whatDoYouWantToKnow']
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Another question"
+      },
+      value: {
+        text: data['anotherQuestion']
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+    
+  </form>
+  </div>
+</div>
+
+{% endblock %}

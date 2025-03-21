@@ -1,0 +1,98 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set questionPage = "false" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Design your API",
+        parent: true,
+        children: [
+        {
+          text: "API discovery",
+          href: "api-discovery"
+        },
+        {
+          text: "Check for existing APIs",
+          href: "check-for-existing-apis"
+        },
+        {
+          text: "Design your API first",
+          href: "design-your-api-first"
+        },
+        {
+          text: "Follow the Technology Code of Practice and other standards",
+          current: true,
+          href: "code-of-practice"
+        }, 
+        {
+          text: "Use the REST API style",
+          href: "restful-api"
+        }, 
+        {
+          text: "Develop a specification before you start to code",
+          href: "develop-specification"
+        }, 
+        {
+          text: "Be secure by design",
+          href: "be-secure-by-design"
+        }, 
+        {
+          text: "Test your assumptions with users",
+          href: "test-assumptions-with-users"
+        }, 
+        {
+          text: "Iterate the design based on feedback",
+          href: "iterate-based-on-feedback"
+        }]
+      }]
+    }) }}
+    
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">Design your API</span>
+      <h1 class="govuk-heading-l">Follow the Technology Code of Practice and other standards</h1>
+
+      <p>You should follow the <a href="https://www.gov.uk/guidance/the-technology-code-of-practice">Technology Code of Practice</a> when designing any technology in government, including APIs. <a href="https://www.gov.uk/guidance/make-better-use-of-data">Point 10 – Make better use of data</a> may be particularly relevant when you’re working with APIs.</p>
+      <p>You also need to design your API to follow all appropriate government data standards in the <a href="https://alphagov.github.io/data-standards-authority/standards/">Data Standards Catalogue</a>.</p>
+      <p>The following standards are especially useful:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard">ISO 8601 standard</a> – this represents the date and time in your API’s responses, preventing issues with ambiguous date formats</li>
+        <li><a href="http://geojson.org/">GeoJSON</a> – use this format for encoding and exchanging location information</li>
+      </ul>
+      <p>The <a href="https://www.gov.uk/government/publications/uk-geospatial-data-standards-register/national-geospatial-data-standards-register#coordinate-reference-systems">UK Geospatial Data Standards Register</a> has details of coordinate reference systems that you should use when exchanging location information through your API.</p>
+
+
+      <div class="x-govuk-related-navigation">
+        <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+          <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+            More information
+          </h2>
+          <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/">UK General Data Protection Regulation (GDPR)</a>
+              </li>
+              <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/guide-to-accountability-and-governance/accountability-and-governance/data-protection-by-design-and-default/">Privacy and data protection by design</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

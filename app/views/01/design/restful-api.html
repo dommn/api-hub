@@ -1,0 +1,101 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set questionPage = "false" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Design your API",
+        parent: true,
+        children: [
+        {
+          text: "API discovery",
+          href: "api-discovery"
+        },
+        {
+          text: "Check for existing APIs",
+          href: "check-for-existing-apis"
+        },
+        {
+          text: "Design your API first",
+          href: "design-your-api-first"
+        },
+        {
+          text: "Follow the Technology Code of Practice and other standards",
+          href: "code-of-practice"
+        }, 
+        {
+          text: "Use the REST API style",
+          current: true,
+          href: "restful-api"
+        }, 
+        {
+          text: "Develop a specification before you start to code",
+          href: "develop-specification"
+        }, 
+        {
+          text: "Be secure by design",
+          href: "be-secure-by-design"
+        }, 
+        {
+          text: "Test your assumptions with users",
+          href: "test-assumptions-with-users"
+        }, 
+        {
+          text: "Iterate the design based on feedback",
+          href: "iterate-based-on-feedback"
+        }]
+      }]
+    }) }}
+    
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">Design your API</span>
+      <h1 class="govuk-heading-l">Use the REST API style</h1>
+
+      <p>Representational state transfer (REST) means an API follows the <a href="https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">REST architectural style</a>, and works with REST (sometimes called RESTful) web services. This can make the API easier to use and faster to integrate with.</p>
+
+      <p>REST principles are widely adopted, which means developers will understand your API more quickly. It also means you can use industry-standard ways of documenting your API, and off-the-shelf testing software.</p>
+
+      <p>When you’re using the REST API style, you should follow the REST design principles:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>uniform interface – all API requests for the same resource should have the same uniform resource identifier (URI)</li>
+       <li>client and server – these must be independent of each other</li>
+       <li>statelessness – this means that all requests and responses are self-contained and include all necessary information, and that no server-side sessions are required because all session state is kept on the client side</li>
+       <li>cacheable – resources should be cached on the client side and server side, to improve performance and scalability</li>
+       <li>layered system – allows for components such as proxies, gateways and firewalls to be placed between the client and the server, to make the service more reliable and secure</li>
+      </ul>
+
+      <p>Using REST is a good way to design an API, but other approaches such as <a href="https://www.gov.uk/guidance/using-graphql-for-your-api">GraphQL</a> or <a href="https://grpc.io/">gRPC</a> may still be a better choice for specific projects. For example, GraphQL is useful for prototyping services, when you’re not sure what views of the data other developers will need.</p>
+     
+      <div class="x-govuk-related-navigation">
+        <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+          <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+            More information
+          </h2>
+          <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://hmcts.github.io/restful-api-standards/#_hmcts_reform_programme_restful_api_standards">HMCTS Reform Programme RESTful API Standards</a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}
