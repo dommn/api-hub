@@ -1,0 +1,131 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Build your API",
+        parent: true,
+        children: [
+        {
+          text: "Use the UTF-8 standard to encode your API",
+          href: "utf-8"
+        },
+        {
+          text: "Use JSON for response formats",
+          href: "json-response-formats"
+        },
+        {
+          text: "Use consistent names for resources",
+          href: "consistent-names"
+        },
+        {
+          text: "Make your resources persistent",
+          href: "resources-persistent"
+        }, 
+        {
+          text: "Use standard HTTP responses",
+          href: "standard-http-responses"
+        }, 
+        {
+          text: "Host your API",
+          href: "host-api"
+        }, 
+        {
+          text: "Control access to your API",
+          href: "control-access"
+        }, 
+        {
+          text: "Secure your API",
+          href: "secure-api"
+        }, 
+        {
+          text: "Consider performance and scalability",
+          href: "performance"
+        }, 
+        {
+          text: "Provide an API test service",
+          current: true,
+          href: "test-service"
+        }, 
+        {
+          text: "Test your API’s compliance",
+          href: "compliance"
+        }, 
+        {
+          text: "Document your APIs",
+          href: "document"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Build your API</span>
+      <h1 class="govuk-heading-l">Provide an API test service</h1>
+
+<p>You should try to offer a testing service (also known as a sandbox) for your users. They may find an API harder to integrate without a test service, so providing one is a good use of your project’s time and budget.
+</p>
+
+<p>Sandboxes can also be generated much more easily with an OpenAPI document. There are tools available that will convert these documents into test endpoints.
+</p>
+
+<p>API test services should still be secure and require all users to be authenticated before granting access. Many API management solutions include developer portals that allow developers to create development accounts which they can use to access test services.  
+</p>
+
+<p>Test services should never contain real personal or transactional data, but could use real reference data – for example, lists of local authorities.
+</p>
+
+<p>Having a test service available also means your developers can:
+</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>start to get comfortable with an API in a sandbox environment very early in its development
+  </li>
+  <li>work while other parts of the project are being completed – for example, they can work with test data in the test service while a data sharing agreement is still being drawn up to access the real data for the finished API</li>
+</ul>
+
+<p>However, providing a sandbox of good quality can be complicated so  consider your options carefully if you’re going to do it. For example, if you plan to create synthetic data, you may need to use a paid service.
+</p>
+
+<p>A good sandbox should include:</p>
+
+<div class="govuk-list govuk-list--bullet">
+  <li>useful test data that reflects the real API</li>
+  <li>implementation and dependencies behaviour that is properly simulated</li>
+  <li>the ability to save, protect and restore data</li>
+</div>
+
+<div class="x-govuk-related-navigation">
+  <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+    <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+      More information
+    </h2>
+    <ul class="x-govuk-related-navigation__link-list">
+      <li class="x-govuk-related-navigation__link">
+        <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://www.gov.uk/guidance/managing-your-api-alpha">Managing your API alpha</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+  </div>
+</div>
+
+{% endblock %}

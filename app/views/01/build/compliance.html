@@ -1,0 +1,90 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Build your API",
+        parent: true,
+        children: [
+        {
+          text: "Use the UTF-8 standard to encode your API",
+          href: "utf-8"
+        },
+        {
+          text: "Use JSON for response formats",
+          href: "json-response-formats"
+        },
+        {
+          text: "Use consistent names for resources",
+          href: "consistent-names"
+        },
+        {
+          text: "Make your resources persistent",
+          href: "resources-persistent"
+        }, 
+        {
+          text: "Use standard HTTP responses",
+          href: "standard-http-responses"
+        }, 
+        {
+          text: "Host your API",
+          href: "host-api"
+        }, 
+        {
+          text: "Control access to your API",
+          href: "control-access"
+        }, 
+        {
+          text: "Secure your API",
+          href: "secure-api"
+        }, 
+        {
+          text: "Consider performance and scalability",
+          href: "performance"
+        }, 
+        {
+          text: "Provide an API test service",
+          href: "test-service"
+        }, 
+        {
+          text: "Test your API’s compliance",
+          current: true,
+          href: "compliance"
+        }, 
+        {
+          text: "Document your APIs",
+          href: "document"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Build your API</span>
+      <h1 class="govuk-heading-l">Test your API’s compliance</h1>
+
+<p>You must make sure your API meets the legal requirements of your organisation. </p>
+
+<p>After you’ve tested your API’s compliance, you should <a href="https://www.gov.uk/guidance/defining-an-api-management-strategy#making-your-apis-easy-to-find">make it easy to find</a> by adding it to your organisation’s API catalogue and the<a href="https://www.api.gov.uk/#uk-public-sector-apis"></a> cross-government API Catalogue</a>, so that others can use it. </p>
+
+
+  </div>
+</div>
+
+{% endblock %}

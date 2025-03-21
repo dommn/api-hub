@@ -1,0 +1,114 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Build your API",
+        parent: true,
+        children: [
+        {
+          text: "Use the UTF-8 standard to encode your API",
+          href: "utf-8"
+        },
+        {
+          text: "Use JSON for response formats",
+          current: true,
+          href: "json-response-formats"
+        },
+        {
+          text: "Use consistent names for resources",
+          href: "consistent-names"
+        },
+        {
+          text: "Make your resources persistent",
+          href: "resources-persistent"
+        }, 
+        {
+          text: "Use standard HTTP responses",
+          href: "standard-http-responses"
+        }, 
+        {
+          text: "Host your API",
+          href: "host-api"
+        }, 
+        {
+          text: "Control access to your API",
+          href: "control-access"
+        }, 
+        {
+          text: "Secure your API",
+          href: "secure-api"
+        }, 
+        {
+          text: "Consider performance and scalability",
+          href: "performance"
+        }, 
+        {
+          text: "Provide an API test service",
+          href: "test-service"
+        }, 
+        {
+          text: "Test your API’s compliance",
+          href: "compliance"
+        }, 
+        {
+          text: "Document your APIs",
+          href: "document"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Build your API</span>
+      <h1 class="govuk-heading-l">Use JSON for response formats</h1>
+
+      <p>Where possible, you should use the <a href="https://datatracker.ietf.org/doc/html/rfc8259">JSON Data Interchange Standard</a> when structuring your REST API’s response formats.
+      </p>
+
+      <p>There are several JSON formats in use today. If your organisation has not already specified one, we recommend <a href="https://jsonapi.org/">JSON:API</a>. This is specifically designed for API responses and has the benefits of making some design choices for you by specifying conventions.</p>
+
+      <p>If you are working with a legacy API that does not provide JSON responses – for example, a SOAP API that uses XML, it may be better for your users if you keep the same format. You should make sure this is well documented because XML is increasingly uncommon.
+      </p>
+
+      <p>Choosing a broadly adopted standard whenever possible gives you the advantages of:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>saving time by avoiding debate about what format to use</li>
+        <li>allowing you to follow industry best practices</li>
+        <li>making it easier for external developers to integrate with your API</li>
+      </ul>
+      
+      <div class="x-govuk-related-navigation">
+        <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+          <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+            More information
+          </h2>
+          <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://github.com/json-api/json-api">JSON:API on GitHub</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

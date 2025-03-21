@@ -1,0 +1,97 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Build your API",
+        parent: true,
+        children: [
+        {
+          text: "Use the UTF-8 standard to encode your API",
+          href: "utf-8"
+        },
+        {
+          text: "Use JSON for response formats",
+          href: "json-response-formats"
+        },
+        {
+          text: "Use consistent names for resources",
+          href: "consistent-names"
+        },
+        {
+          text: "Make your resources persistent",
+          href: "resources-persistent"
+        }, 
+        {
+          text: "Use standard HTTP responses",
+          href: "standard-http-responses"
+        }, 
+        {
+          text: "Host your API",
+          href: "host-api"
+        }, 
+        {
+          text: "Control access to your API",
+          href: "control-access"
+        }, 
+        {
+          text: "Secure your API",
+          href: "secure-api"
+        }, 
+        {
+          text: "Consider performance and scalability",
+          current: true,
+          href: "performance"
+        }, 
+        {
+          text: "Provide an API test service",
+          href: "test-service"
+        }, 
+        {
+          text: "Test your API’s compliance",
+          href: "compliance"
+        }, 
+        {
+          text: "Document your APIs",
+          href: "document"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Build your API</span>
+      <h1 class="govuk-heading-l">Consider performance and scalability</h1>
+
+    <p>You can measure your API’s performance by how fast it can deal with a single request and make a response. Its scalability is the amount of requests it can deal with at the same time while maintaining an acceptable performance level.
+    </p>
+
+    <p>You can improve the performance and scalability of your API response by making it cacheable. This means the API response can store copies of frequently accessed data along its request and response path. This reduces bandwidth, latency and server load, as well as making network failures less of a problem for your users.
+    </p>
+
+    <p>A cacheable API response has other advantages, for example letting you use a Content Delivery Network (CDN). A CDN can make your API faster and more reliable by caching data for responses in locations that are closer to the user.
+    </p>
+
+    <p>You should also implement rate limiting or throttling policies – making sure that users don’t overuse your resources
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

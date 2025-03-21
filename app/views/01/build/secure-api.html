@@ -1,0 +1,115 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Build your API",
+        parent: true,
+        children: [
+        {
+          text: "Use the UTF-8 standard to encode your API",
+          href: "utf-8"
+        },
+        {
+          text: "Use JSON for response formats",
+          href: "json-response-formats"
+        },
+        {
+          text: "Use consistent names for resources",
+          href: "consistent-names"
+        },
+        {
+          text: "Make your resources persistent",
+          href: "resources-persistent"
+        }, 
+        {
+          text: "Use standard HTTP responses",
+          href: "standard-http-responses"
+        }, 
+        {
+          text: "Host your API",
+          href: "host-api"
+        }, 
+        {
+          text: "Control access to your API",
+          href: "control-access"
+        }, 
+        {
+          text: "Secure your API",
+          current: true,
+          href: "secure-api"
+        }, 
+        {
+          text: "Consider performance and scalability",
+          href: "performance"
+        }, 
+        {
+          text: "Provide an API test service",
+          href: "test-service"
+        }, 
+        {
+          text: "Test your API’s compliance",
+          href: "compliance"
+        }, 
+        {
+          text: "Document your APIs",
+          href: "document"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Build your API</span>
+      <h1 class="govuk-heading-l">Secure your API</h1>
+
+   <p>Follow the GOV.UK Service Manual guidance on <a href="https://www.gov.uk/service-manual/technology/using-https">using HTTPS</a> when serving your API over the web, to make it as secure as possible.</p>
+
+   <p>You must use TLS 1.2 or above to secure your API. The National Cyber Security Centre has guidance on <a href="https://www.ncsc.gov.uk/guidance/using-tls-to-protect-data"> using TLS to securely deliver web services</a>.</p>
+
+   <p><a href="https://www.ncsc.gov.uk/collection/cyber-security-design-principles/making-compromise-difficult">Validate all inputs</a> to your API. Endpoints that de-serialise data should enforce schema validation and reject unknown attributes. All parameters (URL and query string) should be validated and type checked before being processed. Otherwise attackers could exploit lax input validation to craft requests that result in unexpected effects.</p>
+
+   <p>Configure your API using appropriate <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) headers</a>. This will minimise the risk of cross-origin attacks.</p>
+
+   <p>Turn off unnecessary HTTP verbs (GET, PUT, POST, etc), and only allow the verbs your API actually supports on each resource. For example, if users can never be deleted, do not accept DELETE on the users resource.
+  </p>
+
+  <p>Remove any endpoints you do not need – for example, test endpoints or stubs for future development – and only expose the endpoints users will actually use.
+  </p>
+
+  <p>You can also enforce your content type. For example, if your API only accepts JSON then enforce this through content type headers and reject other types of request.</p>
+
+      <div class="x-govuk-related-navigation">
+        <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+          <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+            More information
+          </h2>
+          <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              For a complete list of common security issues to fix in your API, refer to the <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://owasp.org/www-project-api-security/">OWASP API Security Project.</a>
+            </li>
+            
+          </ul>
+        </nav>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}
