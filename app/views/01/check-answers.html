@@ -8,7 +8,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="task-list" novalidate method="post">
+    <form action="get-started-results" novalidate method="post">
 
       <h1 class="govuk-heading-l">Check your answers</h1>
 
@@ -38,23 +38,6 @@
       },
       value: {
         text: data['whatDoYouWantToKnow']
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "name"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Another question"
-      },
-      value: {
-        text: data['anotherQuestion']
       },
       actions: {
         items: [
