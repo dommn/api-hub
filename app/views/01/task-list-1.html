@@ -162,6 +162,42 @@
   ]
 }) }}
 
+<h2 class="govuk-heading-m">Operate your API</h2>
+
+{{ govukTaskList({
+  idPrefix: "company-details",
+  items: [
+  {
+    title: {
+      text: "Version your API and support older versions
+      "
+    },
+    href: "operate/version"
+  },
+    {
+      title: {
+        text: "Use an API management system or gateway
+        "
+      },
+      href: "operate/management-system"
+    },
+    {
+      title: {
+        text: "Log your API’s use
+        "
+      },
+      href: "operate/log-use"
+    },
+    {
+      title: {
+        text: "Monitor APIs for unusual activity
+        "
+      },
+      href: "operate/monitor"
+    }
+  ]
+}) }}
+
   </div>
 </div>
 

@@ -1,0 +1,86 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Operate your API",
+        parent: true,
+        children: [
+        {
+          text: "Version your API and support older versions",
+          current: true,
+          href: "version"
+        },
+        {
+          text: "Use an API management system or gateway",
+          href: "management-system"
+        },
+        {
+          text: "Log your API’s use",
+          href: "log-use"
+        },
+        {
+          text: "Monitor APIs for unusual activity",
+          href: "monitor"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Operate your API</span>
+      <h1 class="govuk-heading-l">Version your API and support older versions</h1>
+
+      <p>When you make new versions of your API, try not to make changes that will stop older versions of your API working properly. If you cannot keep older versions working you should expose a new version of your API by adding the version number into the URI, for example, https://myapi.service.gov.uk/v1. </p>
+
+      <p>URI versioning is the simplest and most commonly used way to version an API.</p>
+
+      <p>Other ways to version an API include using a custom header or defining a custom media type. Avoid these approaches because they can lead to your API being blocked by proxies or firewalls.</p>
+
+      <p>You should try to keep the number of active versions of your API to a minimum, and encourage users to move to the latest version, to reduce the overhead of maintaining multiple versions.
+      </p>
+
+      <p>You can think about <a href="https://www.gov.uk/guidance/defining-an-api-management-strategy#taking-your-api-out-of-service">retiring older versions of an API</a> if you can tell from the logs that only a few people are using them anymore. When you retire an old version, you must tell users it is no longer supported and give them time to move on to the new version.</p>
+
+      <div class="x-govuk-related-navigation">
+        <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+          <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+            More information
+          </h2>
+          <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://www.gov.uk/guidance/managing-your-live-api">Managing your live API</a>
+            </li>
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://www.postman.com/api-platform/api-versioning/">What is API versioning</a>
+            </li>
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://docs.github.com/en/rest/about-the-rest-api/api-versions?apiVersion=2022-11-28">API Versions - GitHub</a>
+            </li>
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://technology.blog.gov.uk/">Technology in government</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

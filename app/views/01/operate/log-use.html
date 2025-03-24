@@ -1,0 +1,79 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Operate your API",
+        parent: true,
+        children: [
+        {
+          text: "Version your API and support older versions",
+          href: "version"
+        },
+        {
+          text: "Use an API management system or gateway",
+          href: "management-system"
+        },
+        {
+          text: "Log your API’s use",
+          current: true,
+          href: "log-use"
+        },
+        {
+          text: "Monitor APIs for unusual activity",
+          href: "monitor"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Operate your API</span>
+      <h1 class="govuk-heading-l">Log your API’s use</h1>
+
+      <p>If your API provides personal or sensitive data, you must log when the data is
+        provided and who you provide it to.</p>
+
+      <p>This will help you:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>follow <a href="https://www.gov.uk/guidance/defining-an-api-management-strategy#taking-your-api-out-of-service">UK GDPR</a></li>
+        <li>respond to data subject access requests</li>
+        <li>detect fraud or misuse</li>
+      </ul>
+
+      <p>An API management tool can help with logging and auditing usage of your API.</p>
+
+      <div class="x-govuk-related-navigation">
+        <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+          <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+            More information
+          </h2>
+          <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://www.moesif.com/blog/api-analytics/api-strategy/API-Logs/#:~:text=API%20logs%20are%20more%20than,maintaining%20data%20integrity%20and%20compliance.">API logs – Everything you need to know a Moesif blog</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

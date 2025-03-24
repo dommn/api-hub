@@ -1,0 +1,57 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Operate your API",
+        parent: true,
+        children: [
+        {
+          text: "Version your API and support older versions",
+          href: "version"
+        },
+        {
+          text: "Use an API management system or gateway",
+          current: true,
+          href: "management-system"
+        },
+        {
+          text: "Log your API’s use",
+          href: "log-use"
+        },
+        {
+          text: "Monitor APIs for unusual activity",
+          href: "monitor"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Operate your API</span>
+      <h1 class="govuk-heading-l">Use an API management system or gateway</h1>
+
+      <p>An API management platform provides services for your API that it rarely makes sense for you to build yourself. For example, access control and authorisation, audit and logging, and network management.</p>
+
+      <p>In production all of these services are important, and can be more reliably and easily provided by an <a href="https://www.gov.uk/guidance/defining-an-api-management-strategy#managing-operations-with-an-api-gateway">API management tool or gateway</a> – of which there are several open source options.</p>
+
+  </div>
+</div>
+
+{% endblock %}

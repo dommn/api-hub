@@ -1,0 +1,68 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Operate your API",
+        parent: true,
+        children: [
+        {
+          text: "Version your API and support older versions",
+          href: "version"
+        },
+        {
+          text: "Use an API management system or gateway",
+          href: "management-system"
+        },
+        {
+          text: "Log your API’s use",
+          href: "log-use"
+        },
+        {
+          text: "Monitor APIs for unusual activity",
+          current: true,
+          href: "monitor"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Operate your API</span>
+      <h1 class="govuk-heading-l">Monitor APIs for unusual activity</h1>
+
+      <p>You must make sure all technology in your team or organisation is secure. APIs are no exception. The Technology Code of Practice explains how to make things secure. Using the logging and audit tools from your API gateway will help you recognise when use of the API changes over time.</p>
+
+      <div class="x-govuk-related-navigation">
+        <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+          <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+            More information
+          </h2>
+          <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://owasp.org/www-project-api-security/">OWASP API Security Project</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}
