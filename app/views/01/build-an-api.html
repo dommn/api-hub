@@ -1,0 +1,122 @@
+{% extends "./layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set questionPage = "false" %}
+
+{% block beforeContent %}
+
+<a href="documentation" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Design your API",
+        href: "design-an-api"
+      }, {
+        text: "Build your API",
+        current: true,
+        href: "build-an-api"
+      },
+     {
+        text: "Operate your API",
+        href: "operate-an-api"
+      }]
+    }) }}
+    </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+
+<h1 class="govuk-heading-l">Build your API</h1>
+
+{{ govukTaskList({
+  idPrefix: "company-details",
+  items: [
+  {
+    title: {
+      text: "Use the UTF-8 standard to encode your API"
+    },
+    href: "build/utf-8"
+  },
+    {
+      title: {
+        text: "Use JSON for response formats"
+      },
+      href: "build/json-response-formats"
+    },
+    {
+      title: {
+        text: "Use consistent names for resources"
+      },
+      href: "build/consistent-names"
+    },
+    {
+      title: {
+        text: "Make your resources persistent"
+      },
+      href: "build/resources-persistent"
+    },
+    {
+      title: {
+        text: "Use standard HTTP responses"
+      },
+      href: "build/standard-http-responses"
+    },
+    {
+      title: {
+        text: "Host your API"
+      },
+      href: "build/host-api"
+    },
+    {
+      title: {
+        text: "Control access to your API"
+      },
+      href: "build/control-access"
+    },
+    {
+      title: {
+        text: "Secure your API"
+      },
+      href: "build/secure-api"
+    },
+    {
+      title: {
+        text: "Consider performance and scalability"
+      },
+      href: "build/performance"
+    },
+    {
+      title: {
+        text: "Provide an API test service"
+      },
+      href: "build/test-service"
+    },
+    {
+      title: {
+        text: "Test your API’s compliance"
+      },
+      href: "build/compliance"
+    },
+    {
+      title: {
+        text: "Document your APIs"
+      },
+      href: "build/document"
+    }
+  ]
+}) }}
+
+  </div>
+</div>
+
+{% endblock %}

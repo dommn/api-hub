@@ -1,0 +1,67 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to Reference architecture</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Reference architecture",
+        parent: true,
+        children: [
+        {
+          text: "Develop your data and APIs using a reference architecture",
+          href: "develop-data"
+        },
+        {
+          text: "Plan your architecture using a maturity model",
+          href: "plan"
+        },
+        {
+          text: "Build an architecture that promotes data exchange across government",
+          href: "build"
+        },
+        {
+          text: "Reuse applications and common data",
+          current: true,
+          href: "reuse"
+        }, 
+        {
+          text: "Follow a services and systems model based on data",
+          href: "follow"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Reference architecture</span>
+      <h1 class="govuk-heading-l">Reuse applications and common data</h1>
+
+      <p>When building your architecture, you should <a href="https://www.gov.uk/guidance/share-and-reuse-technology">look for existing software and services</a> which fit your needs, and reuse them. This includes those developed by other organisations.</p>
+      <p>Your organisation should decide whether to <a href="https://www.gov.uk/guidance/define-your-purchasing-strategy">buy or build</a>, but you must follow the <a href="https://www.gov.uk/guidance/digital-and-technology-spend-controls-version-5"> GDS spend controls</a> process. You should make as much of your data as interoperable as possible by <a href="https://www.gov.uk/guidance/integrate-and-adapt-technology"> following point 9 of the Technology Code of Practice</a>.</p>
+      <p>Where possible, you should use existing government platforms that carry out specific services. For example, instead of building a new payment system, you should use <a href="https://www.payments.service.gov.uk/"> GOV.UK Pay</a>.</p>
+      <p>If a cross-government solution does not yet exist, you should consult with other teams to see if they have solved a similar issue and work together on developing a common solution.</p>
+      <p>You should design and develop technology with the expectation that it could become part of Government as a Platform in the future. This means following <a href="https://www.gov.uk/service-manual/service-standard/point-14-operate-a-reliable-service"> GDS Service Manual guidelines</a> on operating a reliable and scalable platform.</p>
+      <p>Technology development should <a href="https://www.gov.uk/government/publications/open-source-guidance">happen in the open</a>. Where appropriate, all your code should be open source, and licenced for other people to reuse. You should understand the intellectual property (IP) rights if you’re using technology developed by a third party.</p>
+      <p>You should reuse existing datasets whenever possible. You should be careful not to rebuild datasets that already exist.</p>
+      <p>All data should use approved open data standards and <a href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/using-metadata-to-describe-csv-data">include metadata to allow other people to reuse it</a>.</p>
+
+
+      </div>
+      </div>
+
+{% endblock %}

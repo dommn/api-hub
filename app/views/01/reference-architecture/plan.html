@@ -1,0 +1,136 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to Reference architecture</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Reference architecture",
+        parent: true,
+        children: [
+        {
+          text: "Develop your data and APIs using a reference architecture",
+          href: "develop-data"
+        },
+        {
+          text: "Plan your architecture using a maturity model",
+          current: true,
+          href: "plan"
+        },
+        {
+          text: "Build an architecture that promotes data exchange across government",
+          href: "build"
+        },
+        {
+          text: "Reuse applications and common data",
+          href: "reuse"
+        }, 
+        {
+          text: "Follow a services and systems model based on data",
+          href: "follow"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Reference architecture</span>
+      <h1 class="govuk-heading-l">Plan your architecture using a maturity model</h1>
+
+      <p>You will need to assess the maturity of your reference architecture. At a minimum, the architecture you build should:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>offer a service which can scale with demand using <a href="https://www.gov.uk/guidance/government-cloud-first-policy">cloud technology</a></li>
+        <li>provide access <a href="https://docs.publishing.service.gov.uk/manual/add-authentication-to-an-application.html">through a common authentication standard</a>, such as <a href="https://oauth.net/2/">OAuth</a></li>
+        <li>produce data using the <a href="https://www.gov.uk/government/publications/open-standards-principles"> Open Standards Principles</a></li>
+        <li>give users access to data using a documented API</li>
+        <li>use <a href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/describing-restful-apis-with-openapi-3">OpenAPI 3</a> to document REST APIs</li>
+        <li>let external users access the system where appropriate</li>
+      </ul>
+      <p>This model is one way of assessing and developing the maturity of your architecture:</p>
+
+
+      <table class="govuk-table govuk-table--small-text-until-tablet">
+        <caption class="govuk-table__caption govuk-table__caption--m">Maturity level 1</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Documenting existing systems</th>
+            <th scope="col" class="govuk-table__header">API</th>
+            <th scope="col" class="govuk-table__header">OAuth</th>
+            <th scope="col" class="govuk-table__header">Open standards</th>
+            <th scope="col" class="govuk-table__header">Data</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Your systems are not all documented</th>
+            <td class="govuk-table__cell">Most of your systems do not support APIs</td>
+            <td class="govuk-table__cell">The OAuth security protocol is available for users in your organisation</td>
+            <td class="govuk-table__cell">Some of your systems use open standards</td>
+            <td class="govuk-table__cell">Your organisation data is mostly entered manually</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="govuk-table govuk-table--small-text-until-tablet">
+        <caption class="govuk-table__caption govuk-table__caption--m">Maturity level 2</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Documenting existing systems</th>
+            <th scope="col" class="govuk-table__header">API</th>
+            <th scope="col" class="govuk-table__header">OAuth</th>
+            <th scope="col" class="govuk-table__header">Open standards</th>
+            <th scope="col" class="govuk-table__header">Data</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Your systems are all documented</th>
+            <td class="govuk-table__cell">The majority of your systems support APIs</td>
+            <td class="govuk-table__cell">OAuth is available for cross-government users </td>
+            <td class="govuk-table__cell">All of your systems use open standards</td>
+            <td class="govuk-table__cell">Data is only entered manually to collect information that cannot be collected any other way</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="govuk-table govuk-table--small-text-until-tablet">
+        <caption class="govuk-table__caption govuk-table__caption--m">Maturity level 3</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Documenting existing systems</th>
+            <th scope="col" class="govuk-table__header">API</th>
+            <th scope="col" class="govuk-table__header">OAuth</th>
+            <th scope="col" class="govuk-table__header">Open standards</th>
+            <th scope="col" class="govuk-table__header">Data</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Your documentation is automated and self-updating</th>
+            <td class="govuk-table__cell">Your APIs are published to <a href="https://www.api.gov.uk/">API catalogue</a>. You have OpenAPI documentation</td>
+            <td class="govuk-table__cell">OAuth is available for users outside government, as well as all users inside government</td>
+            <td class="govuk-table__cell">You work with standards development organisations to define standards</td>
+            <td class="govuk-table__cell">Your organisation produces high quality reference data for other systems</td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+</div>
+
+{% endblock %}

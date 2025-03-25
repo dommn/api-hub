@@ -78,46 +78,6 @@
 
       {% endif %}
 
-      {% if "Monitoring API health" in data['whatDoYouWantToKnow'] or "Testing API performance" in data['whatDoYouWantToKnow'] or "Troubleshooting API issues" in data['whatDoYouWantToKnow'] %}
-
-      <h2 class="govuk-heading-m">Operate your API</h2>
-
-      {{ govukTaskList({
-        idPrefix: "company-details",
-        items: [
-        {
-          title: {
-            text: "Version your API and support older versions
-            "
-          },
-          href: "operate/version"
-        },
-          {
-            title: {
-              text: "Use an API management system or gateway
-              "
-            },
-            href: "operate/management-system"
-          },
-          {
-            title: {
-              text: "Log your API’s use
-              "
-            },
-            href: "operate/log-use"
-          },
-          {
-            title: {
-              text: "Monitor APIs for unusual activity
-              "
-            },
-            href: "operate/monitor"
-          }
-        ]
-      }) }}
-
-      {% endif %}
-
       {% if "Implementing OAuth security" in data['whatDoYouWantToKnow'] or "Building an API" in data['whatDoYouWantToKnow'] %}
 
       <h2 class="govuk-heading-m">Build your API</h2>
@@ -196,6 +156,46 @@
               text: "Document your APIs"
             },
             href: "build/document"
+          }
+        ]
+      }) }}
+
+      {% endif %}
+
+      {% if "Monitoring API health" in data['whatDoYouWantToKnow'] or "Testing API performance" in data['whatDoYouWantToKnow'] or "Troubleshooting API issues" in data['whatDoYouWantToKnow'] %}
+
+      <h2 class="govuk-heading-m">Operate your API</h2>
+
+      {{ govukTaskList({
+        idPrefix: "company-details",
+        items: [
+        {
+          title: {
+            text: "Version your API and support older versions
+            "
+          },
+          href: "operate/version"
+        },
+          {
+            title: {
+              text: "Use an API management system or gateway
+              "
+            },
+            href: "operate/management-system"
+          },
+          {
+            title: {
+              text: "Log your API’s use
+              "
+            },
+            href: "operate/log-use"
+          },
+          {
+            title: {
+              text: "Monitor APIs for unusual activity
+              "
+            },
+            href: "operate/monitor"
           }
         ]
       }) }}

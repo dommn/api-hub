@@ -1,0 +1,79 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to Reference architecture</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Reference architecture",
+        parent: true,
+        children: [
+        {
+          text: "Develop your data and APIs using a reference architecture",
+          href: "develop-data"
+        },
+        {
+          text: "Plan your architecture using a maturity model",
+          href: "plan"
+        },
+        {
+          text: "Build an architecture that promotes data exchange across government",
+          current: true,
+          href: "build"
+        },
+        {
+          text: "Reuse applications and common data",
+          href: "reuse"
+        }, 
+        {
+          text: "Follow a services and systems model based on data",
+          href: "follow"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Reference architecture</span>
+      <h1 class="govuk-heading-l">Build an architecture that promotes data exchange across government</h1>
+
+      <p>Government organisations use different systems for different needs, for example HR, communications or statistical systems. Sometimes these can be unique to an organisation.</p>
+    
+      <p>You should aim to build an architecture that makes it easier to exchange data with other government organisations. You can do this by making sure your:</p>
+      
+    <ul class="govuk-list govuk-list--bullet">
+      <li>system can exchange data with other systems by being as interoperable as possible</li>
+      <li>system produces data in an <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles">open standard format</a></li>
+      <li>system has an API</li>
+      <li>API is documented according to the <a href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/describing-restful-apis-with-openapi-3">OpenAPI specification</a></li>
+      <li>API uses a <a href="https://www.gov.uk/guidance/gds-api-technical-and-data-standards#to-provide-application-level-authorisation">common authentication protocol</a></li>
+      <li>systems documentation is up to date and clearly shows how they connect to other systems</li>
+    </ul>
+
+    <p>You should also make sure:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>users outside of government are able to access your data, where appropriate, using an <a href="https://www.gov.uk/guidance/gds-api-technical-and-data-standards#when-to-authenticate-your-api">appropriately authenticated API</a></li>
+      <li>external organisations can reuse software you create</li>
+      <li>data you use is gathered from core data sets and does not <a href="https://www.gov.uk/guidance/manage-your-data-for-access-and-reuse">replicate core data</a></li>
+    </ul>
+
+      </div>
+      </div>
+
+{% endblock %}
