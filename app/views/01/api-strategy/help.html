@@ -1,0 +1,79 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../documentation.html" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Defining an API management structure",
+        parent: true,
+        children: [
+        {
+          text: "Principles for your API strategy",
+          href: "principles"
+        },
+        {
+          text: "What API management strategy can help with",
+          current: true,
+          href: "help"
+        },
+        {
+          text: "Designing APIs",
+          href: "designing"
+        },
+        {
+          text: "Putting APIs into production",
+          href: "production"
+        }, 
+        {
+          text: "Managing operations with an API gateway",
+          href: "operations"
+        }, 
+        {
+          text: "Making your APIs easy to find",
+          href: "easy-to-find"
+        }, 
+        {
+          text: "Taking your API out of service",
+          href: "out-of-service"
+        }]
+      }]
+    }) }}
+  
+
+
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Defining an API management structure</span>
+      <h1 class="govuk-heading-l"> What API management strategy can help with</h1>
+
+      <p>An API management strategy can:</p>
+      <ul class="govuk-list govuk-list--bullet">
+     <li> provide visibility of all your APIs, which helps people discover them and promotes reusing existing technology </li>
+     <li>allow you to standardise common design patterns </li>
+     <li>help you automate administrative and operational tasks</li>
+     <li>provide a central place for your users to access API documentation and support</li>
+     <li>provide data and metrics to help you understand your API’s performance and usage</li>
+     <li>help you implement and maintain good security and data protection practices</li>
+    </ul>
+
+      <p>Your API management strategy should cover the full life cycle of APIs, from design to retirement. </p>
+      
+
+  </div>
+</div>
+
+{% endblock %}

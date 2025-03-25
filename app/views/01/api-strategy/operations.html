@@ -1,0 +1,86 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../documentation.html" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Defining an API management structure",
+        parent: true,
+        children: [
+        {
+          text: "Principles for your API strategy",
+          href: "principles"
+        },
+        {
+          text: "What API management strategy can help with",
+          href: "help"
+        },
+        {
+          text: "Designing APIs",
+          href: "designing"
+        },
+        {
+          text: "Putting APIs into production",
+          href: "production"
+        }, 
+        {
+          text: "Managing operations with an API gateway",
+          current: true,
+          href: "operations"
+        }, 
+        {
+          text: "Making your APIs easy to find",
+          href: "easy-to-find"
+        }, 
+        {
+          text: "Taking your API out of service",
+          href: "out-of-service"
+        }]
+      }]
+    }) }}
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Defining an API management structure</span>
+      <h1 class="govuk-heading-l">Managing operations with an API gateway</h1>
+
+      <p>The everyday operations of API service management are usually handled by an API gateway. Generally, an API gateway service acts as a proxy for APIs, and allows central services like access control and security to be provided for all the APIs using the service.</p>
+
+      <p>At a minimum, an API gateway should provide:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>user and application authentication</li>
+        <li>rate limiting and throttling inbound requests</li>
+        <li>logging and reporting</li>
+      </ul>
+
+      <p>Many organisations do not put an API gateway into production until they have several APIs in use. However, you should consider implementing one at the very beginning of an API programme because this will allow you to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>standardise how APIs use central services such as network access, security and authentication, throttling and rate limiting, logging and monitoring</li>
+        <li>lower developer costs and reduce time to deployment, since you will not need to rebuild these services for each new API</li>
+        <li>require minimum standards of security, access control and monitoring, while providing an easy way for developers to meet them</li>
+      </ul>
+
+      <p>Adding an API gateway means you will need to deploy and manage another service, but it reduces complexity in managing your APIs and introduces a consistent front end for services.</p>
+
+      <p>There are many different API gateway products available, both open source and proprietary. They will often include elements for a developer portal or a catalogue.</p>
+
+
+  </div>
+</div>
+
+{% endblock %}

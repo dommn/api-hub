@@ -1,0 +1,105 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../documentation.html" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Defining an API management structure",
+        parent: true,
+        children: [
+        {
+          text: "Principles for your API strategy",
+          current: true,
+          href: "principles"
+        },
+        {
+          text: "What API management strategy can help with",
+          href: "help"
+        },
+        {
+          text: "Designing APIs",
+          href: "designing"
+        },
+        {
+          text: "Putting APIs into production",
+          href: "production"
+        }, 
+        {
+          text: "Managing operations with an API gateway",
+          href: "operations"
+        }, 
+        {
+          text: "Making your APIs easy to find",
+          href: "easy-to-find"
+        }, 
+        {
+          text: "Taking your API out of service",
+          href: "out-of-service"
+        }]
+      }]
+    }) }}
+  
+
+
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Defining an API management structure</span>
+      <h1 class="govuk-heading-l"> Principles for your API strategy</h1>
+
+      <h2 class="govuk-heading-m">Build foundations early</h2>
+
+      <p>If you have APIs, you should use an API gateway. Even a single API will benefit from the standardised tools an API gateway provides, by not having to develop and deploy those elements of functionality. If you build more APIs later, having an API gateway already in place will mean you will not have to build those tools again, reducing duplication of effort for future teams.</p>
+      <p>It might be difficult to apply this model if: </p>
+      <ul class="govuk-list govuk-list--bullet">
+<li>you already have APIs in production which have their own security or monitoring</li>
+<li>your APIs have each been developed using different methods and technologies</li>
+</ul>
+<p>Consider how you can put in place standardised patterns, processes and governance your teams will use to build and deploy APIs. You should focus on principles and frameworks rather than specific technologies, and consider how detailed and rigid these should be. For example, you might apply strict rules for security, while allowing more flexibility in other areas.</p>
+<p>You can read more about using an API gateway in the section of this guidance called ‘Managing operations with an API gateway’.</p>
+
+<h2 class="govuk-heading-m">Keep the future in mind</h2>
+
+<p>When putting together your API strategy, it’s important to consider what your organisation’s future needs are likely to be, not just think about the first few APIs.</p>
+  <p>Maintain a high level view of your APIs. You should have a way to judge the maturity of your APIs and determine how much resource you need to invest in them. Since APIs at different stages of their life cycle require different levels of investment, having a coherent strategy allows you to identify and meet these needs.
+  </p>
+
+<h2 class="govuk-heading-m">Design your strategy to meet user needs</h2>
+
+<p>When making decisions about API management, you must meet user needs as well as organisational goals. Make sure you understand how development teams in your organisation work so your policies and processes are not counter-productive. For example, overly strict criteria for assuring or publishing APIs might make teams reluctant to try new solutions that do not fit the pattern, which could discourage innovation.</p>
+
+<p>User research will help you gain insight into how teams are producing and consuming APIs, or what technologies they are using or considering using.</p>
+
+<p>A robust API management process will help build credibility and trust with users of your APIs. It’s important to demonstrate your APIs are well designed and well supported. For example, being clear about how you retire APIs will reassure external developers they will not suddenly lose access to an API without notice.</p>
+
+<h2 class="govuk-heading-m">Define roles for API management</h2>
+
+<p>Depending on the size and structure of your organisation, you might have several teams involved in building and maintaining APIs. Your API management strategy can help set out things like:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>who owns different parts of the API life cycle</li>
+  <li>what skills or roles API teams should include</li>
+  <li>how ownership changes as an API goes into service</li>
+</ul>
+
+<p>For example, it’s common for a central team to run the API gateway, and therefore have control over service levels and capacity. You should then consider how that responsibility might interact with the design and delivery responsibilities of an API owner, like versioning.</p>
+
+<p>Having a clear structure for escalating issues will save a lot of time and energy in the future. Support from senior management or stakeholders can help formalise organisational structures and policies.</p>
+      
+  </div>
+</div>
+
+{% endblock %}
