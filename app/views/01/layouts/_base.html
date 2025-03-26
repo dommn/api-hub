@@ -26,7 +26,13 @@
             <ul class="moj-header__navigation-list">
     
               <li class="moj-header__navigation-item">
+                {% if nestedPage == "false" %}
                 <a class="moj-header__navigation-link" href="sign-in">Sign in</a>
+                {% endif %}
+                {% if notNested == "true" %}
+                <a class="moj-header__navigation-link" href="../sign-in">Sign in</a>
+                {% endif %}
+                
               </li>
             </ul>
     
