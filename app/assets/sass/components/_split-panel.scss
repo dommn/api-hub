@@ -1,0 +1,34 @@
+/* Split Panel */
+.split-panel {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.split-panel.split-panel--bg-white {
+    background-color: #ffffff;
+}
+
+.split-panel .govuk-grid-column-one-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.split-panel .text-column{
+    padding: 40px;
+}
+
+.split-panel .image-column{
+    padding: 0px;
+}
+
+
+.split-panel .image-container {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+}
