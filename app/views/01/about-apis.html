@@ -1,0 +1,75 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "about" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">What is an API?</h1>
+
+    <p>An API (Application Programming Interface) is a set of rules and protocols that
+      allows different software applications to communicate and interact with each other,
+      enabling them to share data.</p>
+
+      <p>APIs act as intermediaries, defining how software components can request and
+      receive data or services from each other. </p>
+
+      <p>When one application needs to access a feature or data from another, it uses the
+      API to make a request. The API then handles the communication, ensuring the data
+      is formatted correctly and exchanged securely.</p>
+
+      <p>It’s useful to think of using a map app to find directions. The app uses an API to
+      communicate with a map service to get the route data. Or, imagine a shopping app
+      that uses an API to access payment processing services to complete a transaction. 
+      APIs are essential for building interconnected and efficient software systems. They
+      allow developers to reuse existing functionality, reduce development time, and create
+      more complex applications.</p>
+
+      <p>APIs are the &quot;language&quot; that different software applications use to communicate and
+      collaborate, enabling a wide range of functionalities and integrations.</p>
+
+      <h2 class="govuk-heading-m">API standards ensure consistency and reliability across all API
+        services</h2>
+
+      <p>Consistency in government APIs is crucial for fostering interoperability, streamlining
+        development, promoting reusability, and improving citizen engagement by ensuring
+        services are easily accessible and understandable.</p>
+
+        <p>Consistent APIs:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>allow different government departments and agencies to easily share and
+            exchange data, leading to better coordination and collaboration. </li>
+            <li>mean developers can reuse code and components across different projects,
+            saving time and resources. </li>
+            <li>ensure that citizens can interact with government services in a predictable
+            and user-friendly way, regardless of which agency they are interacting with. </li>
+            <li>are easier to understand, develop, and maintain, leading to faster
+            development cycles and reduced costs. </li>
+            <li> make it easier to test and debug code, leading to fewer errors and a more
+            reliable system. </li>
+            
+            <li>are easier to maintain and update, ensuring that government services remain
+            up-to-date and relevant. </li>
+            <li>encourage a modular design approach, allowing developers to build reusable
+            components that can be used across different projects.</li>
+            <li>promote reusability, consistent APIs help to reduce redundancy and
+            duplication of effort.</li>
+            <li>allow developers to focus on building new services rather than reinventing the
+            wheel. </li>
+            <li>can help to ensure that all government services are built with the same
+            security standards, reducing the risk of vulnerabilities. </li>
+            <li>can help to ensure that government services comply with relevant regulations
+            and standards.</li>
+            <li>can help to reduce the risk of errors and inconsistencies in data and
+            processes.</li>
+        </ul>
+  
+  </div>
+</div>
+
+{% endblock %}
