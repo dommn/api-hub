@@ -1,0 +1,110 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "about" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">API Maturity</h1>
+
+    <h2 class="govuk-heading-m">Plan your architecture using a maturity model</h2>
+
+    <p>You will need to assess the maturity of your reference architecture. At a minimum, the architecture you build should:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>offer a service which can scale with demand using <a href="https://www.gov.uk/guidance/government-cloud-first-policy">cloud technology</a></li>
+      <li>provide access <a href="https://docs.publishing.service.gov.uk/manual/add-authentication-to-an-application.html">through a common authentication standard</a>, such as <a href="https://oauth.net/2/">OAuth</a></li>
+      <li>produce data using the <a href="https://www.gov.uk/government/publications/open-standards-principles"> Open Standards Principles</a></li>
+      <li>give users access to data using a documented API</li>
+      <li>use <a href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/describing-restful-apis-with-openapi-3">OpenAPI 3</a> to document REST APIs</li>
+      <li>let external users access the system where appropriate</li>
+    </ul>
+    <p>This model is one way of assessing and developing the maturity of your architecture:</p>
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--m">Maturity level 1</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Documenting existing systems</th>
+          <th scope="col" class="govuk-table__header">API</th>
+          <th scope="col" class="govuk-table__header">OAuth</th>
+          <th scope="col" class="govuk-table__header">Open standards</th>
+          <th scope="col" class="govuk-table__header">Data</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Your systems are not all documented</th>
+          <td class="govuk-table__cell">Most of your systems do not support APIs</td>
+          <td class="govuk-table__cell">The OAuth security protocol is available for users in your organisation</td>
+          <td class="govuk-table__cell">Some of your systems use open standards</td>
+          <td class="govuk-table__cell">Your organisation data is mostly entered manually</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--m">Maturity level 2</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Documenting existing systems</th>
+          <th scope="col" class="govuk-table__header">API</th>
+          <th scope="col" class="govuk-table__header">OAuth</th>
+          <th scope="col" class="govuk-table__header">Open standards</th>
+          <th scope="col" class="govuk-table__header">Data</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Your systems are all documented</th>
+          <td class="govuk-table__cell">The majority of your systems support APIs</td>
+          <td class="govuk-table__cell">OAuth is available for cross-government users </td>
+          <td class="govuk-table__cell">All of your systems use open standards</td>
+          <td class="govuk-table__cell">Data is only entered manually to collect information that cannot be collected any other way</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--m">Maturity level 3</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Documenting existing systems</th>
+          <th scope="col" class="govuk-table__header">API</th>
+          <th scope="col" class="govuk-table__header">OAuth</th>
+          <th scope="col" class="govuk-table__header">Open standards</th>
+          <th scope="col" class="govuk-table__header">Data</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Your documentation is automated and self-updating</th>
+          <td class="govuk-table__cell">Your APIs are published to <a href="https://www.api.gov.uk/">API catalogue</a>. You have OpenAPI documentation</td>
+          <td class="govuk-table__cell">OAuth is available for users outside government, as well as all users inside government</td>
+          <td class="govuk-table__cell">You work with standards development organisations to define standards</td>
+          <td class="govuk-table__cell">Your organisation produces high quality reference data for other systems</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="x-govuk-related-navigation">
+      <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+        <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+          More information
+        </h2>
+        <ul class="x-govuk-related-navigation__link-list">
+          <li class="x-govuk-related-navigation__link">
+            <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="reference-architecture/develop-data">Develop your data and APIs using a reference architecture</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  
+  </div>
+</div>
+
+{% endblock %}

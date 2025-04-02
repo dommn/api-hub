@@ -1,0 +1,63 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "about" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+    
+      {{ xGovukSubNavigation({
+        items: [{
+          text: "Government Digital Service (GDS) API hub",
+          parent: true,
+          children: [
+          {
+            text: "About this service",
+            current: true,
+            href: "about-the-hub"
+          },
+          {
+            text: "Benefits",
+            href: "benefits"
+          },
+          {
+            text: "Who the service is for",
+            href: "who"
+          }]
+        }]
+      }) }}
+      
+      
+    </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">About this service</h1>
+
+    <p>The API hub is specifically designed to support the development and integration of
+      Apps, empowering users to build and access API data services safely and efficiently.</p>
+
+      <p>With robust tools, comprehensive tutorials, and streamlined self-service capabilities,
+      the hub simplifies the API development process while ensuring compliance with
+      government information governance standards and policies. Acting as a secure
+      gateway to government systems through the one login system, it facilitates seamless
+      integration and reliable performance for developers.</p>
+
+      <p>For API developer teams, the platform provides a high-quality API development
+      ecosystem that drives innovation, reduces development costs, and accelerates time-
+      to-market. It also aligns with GOV.UK <a href="">Open API policies</a> to deliver secure, consistent
+      and high-quality API experiences for producers and consumers.</p>
+
+
+    
+  
+  </div>
+</div>
+
+{% endblock %}

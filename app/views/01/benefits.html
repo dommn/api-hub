@@ -1,0 +1,80 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "about" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+    
+      {{ xGovukSubNavigation({
+        items: [{
+          text: "Government Digital Service (GDS) API hub",
+          parent: true,
+          children: [
+          {
+            text: "About this service",
+            href: "about-the-hub"
+          },
+          {
+            text: "Benefits",
+            current: true,
+            href: "benefits"
+          },
+          {
+            text: "Who the service is for",
+            href: "who"
+          }]
+        }]
+      }) }}
+      
+      
+    </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Benefits</h1>
+
+    <p>The GDS API hub provides benefits for both API consumers and API producers.</p>
+
+     <h2 class="govuk-heading-m">Benefits for API consumers</h2>
+     
+      <p>For API consumers, the API platform provides: </p>
+      <ul class="govuk-list govuk-list--bullet">
+     <li> a consistent, modern experience using open standards such as REST, FHIR and OAuth 2.0 </li>
+     <li>self-service and immediate access to test environments</li>
+     <li>quicker and easier access to production using our digital onboarding service </li>
+     <li>documentation that is clear, consistent and comprehensive, using the documentation template tool for API specifications</li>
+     <li>a single point of contact for help and support</li>
+    </ul>
+
+    <h2 class="govuk-heading-m"> Benefits for API producers</h2>
+
+  <p>For API producers, the GDS API hub provides: </p>
+  <ul class="govuk-list govuk-list--bullet">
+     <li> quick and easy API documentation using the documentation template tool </li>
+     <li> comprehensive self-service technical and non-technical guidance in our API producer zone (account required)</li>
+     <li>dedicated technical and non-technical support</li>
+    </ul>
+
+     <h2 class="govuk-heading-m">Benefits to the wider government and outside parties</h2>
+     <p>By making integration easier, we provide several benefits.</p>
+     <ul class="govuk-list govuk-list--bullet">
+     <li> API producers and consumers can get useful integrated software deployed quicker and cheaper, meaning there's more time to add and improve features</li>
+     <li>the lower barrier to entry allows more software providers into the marketplace, creating an environment for digital innovation to thrive whilst pushing down software costs to government departments</li>
+     <li>data consumers have a wider variety of well-integrated software to choose from, meaning they are more likely to have the information they need, when and where they need it</li>
+    </ul>
+            
+
+
+    
+  
+  </div>
+</div>
+
+{% endblock %}
