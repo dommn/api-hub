@@ -4,6 +4,12 @@
 {% set nestedPage = "false" %}
 {% set headerNavigationActiveItem = "documentation" %}
 
+{% block beforeContent %}
+
+<a href="documentation" class="govuk-back-link">Back to Documentation</a>
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
