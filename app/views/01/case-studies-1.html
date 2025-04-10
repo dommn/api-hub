@@ -1,0 +1,148 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "about" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Case studies",
+        parent: true,
+        children: [
+        {
+          text: "How Hackney Council built an API Platform",
+          current: true,
+          href: "case-studies-1"
+        },
+        {
+          text: "How NHS Digital used API Management to support APIs at scale",
+          href: "case-studies-2"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Case studies</span>
+      <h1 class="govuk-heading-l">How Hackney Council built an API Platform</h1>
+
+        <p>Hackney Council built an API platform for developers to use to create APIs. The platform includes a set of API service standards and template code.</p>
+        
+        <h2 class="govuk-heading-m">Summary</h2>
+        
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Timeframe: October 2017 to present</li>
+          <li>Team members: For HMRC, the Head of Products (EU Exit, Integration Framework, SDES) at Enterprise Integration Services. For Hackney Council, the Corporate Information and Communications Technology (ICT) team and Development Manager</li>
+          <li>Tools: CircleCI, Amazon Web Services (AWS), .NET Core</li>
+          <li><a rel="external" href="https://playbook.hackney.gov.uk/API-Playbook/" class="govuk-link">API playbook</a></li>
+        </ul>
+        
+        <h2 class="govuk-heading-m">Project objective</h2>
+        
+        <p>Hackney Council wanted to build a public API platform using modern software development processes. This platform would be for developers and contain all the Hackney Council APIs, supported by a robust set of API standards. Widespread use of this platform would result in reduced development costs, better return on investment, and would enable services to develop a loosely coupled microservices architecture. That is, changes to one service would not affect other services.</p>
+        
+        <h2 class="govuk-heading-m">The department</h2>
+        
+        <p>Hackney Council provides services such as council tax and rent payment, repair reporting and bulk waste collection to residents of the London Borough of Hackney. The Corporate Information and Communications Technology (ICT) team works with the service users and residents to identify their user needs and build effective solutions to those needs.</p>
+        
+        <h2 class="govuk-heading-m">Researching the API platform</h2>
+        
+        <p>Although Hackney Council’s Corporate ICT team had full management support for this project, they recognised that they did not yet have the skills and knowledge to start building the platform. To start with, they spoke to HMRC about how to successfully implement a large-scale API platform in government. HMRC shared their knowledge on:</p>
+        
+        <ul class="govuk-list govuk-list--bullet">
+          <li>how HMRC implemented and maintained their API platform and their overall technical architecture</li>
+          <li>how HMRC developed their API service standards</li>
+          <li>the API-first approach to designing endpoints with user needs in mind</li>
+          <li>what skills and capabilities Hackney Council needed to do the same</li>
+        </ul>
+        
+        <p>The council team also collaborated with various digital agency partners to research those partners’ API-first strategies and standards. From this, the council team realised that they needed to understand how to build APIs from both a user needs and data needs perspective. The team also researched the <a href="https://www.gov.uk/guidance/the-technology-code-of-practice" class="govuk-link">technology code of practice</a> to learn about applicable best practice. Once this research was complete, the team was ready to start choosing technology before building the platform.</p>
+        
+        <h2 class="govuk-heading-m">Choosing technology to build the API platform</h2>
+        
+        <p>From the start, Hackney Council’s Corporate ICT team took an iterative approach to choosing the technology to build the API platform depending on the user and data needs. They looked at each solution’s benefits and drawbacks and changed their approach as necessary.</p>
+        
+        <p>For example, after evaluating both Google Cloud and AWS cloud platforms, the team chose AWS. Hackney Council felt AWS suited their needs more, as it is very developer-friendly due to the variety of services provided. Additionally, the pre-existing relationship with HMRC helped, as the HMRC delivery manager was able to set up meetings between the council team and AWS to answer questions. For example, the council team spoke with the AWS Solution Architecture team to make sure the council team were following the <a rel="external" href="https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/" class="govuk-link">5 pillars of the AWS Well-Architected Framework</a>.</p>
+        
+        <p>The team also made technology choices based upon their existing skills. The team of developers already had knowledge of .NET Core programming language skills, so they decided to build the platform using that language.</p>
+        
+        <p>At the same time, the team learned from their digital agency partners about:</p>
+        
+        <ul>
+          <li>AWS practices around API development</li>
+          <li>how different types of API (platform and service) would be appropriate for different use cases, depending on data and reusability needs</li>
+        </ul>
+        
+        <p>The team was then ready to start building the platform.</p>
+        
+        <h2 class="govuk-heading-m">Building the API platform</h2>
+        
+        <p>Hackney Council’s corporate ICT team started building the API platform. This work included the public API platform and an API implementation guide with a set of API service standards. There were several challenges. The platform had to support:</p>
+        
+        <ul class="govuk-list govuk-list--bullet">
+          <li>both modern APIs and the council’s legacy applications, which were not built on database or data quality principles</li>
+          <li>highly available, scalable and secure APIs in a loosely coupled microservices architecture, meaning that changes to one service would not affect other services</li>
+        </ul>
+        
+        <p>Additionally, the Corporate ICT team needed to:</p>
+        
+        <ul class="govuk-list govuk-list--bullet">
+          <li>understand the different user and data needs and make sure the platform served both of those types of needs</li>
+          <li>agree on the <a rel="external" href="https://playbook.hackney.gov.uk/API-Playbook/platform_api_vs_service_api" class="govuk-link">API standards for both reusable and service-specific APIs</a> and the standards’ criteria</li>
+          <li>upskill themselves quickly to build the platform to the required standard by working closely with their digital agency partner</li>
+          <li>educate their users on the difference between reusable platform APIs and non-reusable service APIs and how reusable APIs would work, because historically, most API development happened in silos and there was no API reuse</li>
+        </ul>
+        
+        <h3 id="solving-challenges-when-building-the-api-platform">Solving challenges when building the API platform</h3>
+        
+        <p>The team used an <a rel="external" href="https://aws.amazon.com/rds/postgresql/" class="govuk-link">AWS PostgreSQL database architecture</a> to make the APIs highly available, scalable, secure, and loosely coupled. To increase security, the team used token authentication through Google Groups instead of API keys. Additionally, the team built a developer hub to collect all the APIs together to make onboarding of external developers easier.</p>
+        
+        <p>The <a rel="external" href="https://playbook.hackney.gov.uk/API-Playbook/" class="govuk-link">API playbook</a> that the team delivered was central to overcoming the challenge of educating users. This playbook:</p>
+        
+        <ul class="govuk-list govuk-list--bullet">
+          <li>defines platform and service APIs and states the advantages of platform APIs</li>
+          <li>defines API service standards for APIs to meet so those APIs can go live</li>
+          <li>provides a template for developers to use when creating APIs, including pre-existing base code to get an API up and running quickly</li>
+        </ul>
+        
+        <p>This playbook was a valuable resource for getting developer buy-in to the API-first strategy as a platform. Developers could see the playbook was a single source of all the information needed to develop and maintain platform APIs. This buy-in was important to embedding the API-first strategy in the service development process.</p>
+        
+        <p>Throughout the build process, the team led architecture and data meetups, where they asked external digital agencies and internal developers for feedback. This open and collaborative process made sure the:</p>
+        
+        <ul class="govuk-list govuk-list--bullet">
+          <li>platform and API playbook met both user and data needs</li>
+          <li>API standards were fit for purpose</li>
+        </ul>
+        
+        <p>The team also used these meetups to emphasise to stakeholders that reusing APIs would save on development costs and provide a return of investment on the API platform.</p>
+        
+        <h2 class="govuk-heading-m">Result of Hackney Council’s API platform</h2>
+        
+        <p>Hackney Council’s API platform went live in January 2019. The council team won an iNetwork award for API services, and the team were finalists at the AWS awards for City on Cloud. This platform brought both tangible and intangible benefits.</p>
+        
+        <p>By working in the open and collaborating with multiple digital agencies, the team embedded an API-first strategy within service development, which saved time and money in the development process.</p>
+        
+        <p>Since the platform went live, developers have been able to create APIs much more quickly and consistently by:</p>
+        
+        <ul class="govuk-list govuk-list--bullet">
+          <li>using the API playbook</li>
+          <li>reusing existing APIs such as the Person or Contact Details APIs</li>
+        </ul>
+        
+        <p>Additionally, the wider developer community (including both Hackney Council and external developers) now recognises the value of working in the open, of collaboration, and of having defined API standards.</p>
+        
+        <p>The developer community also has regular data and architecture meetups to build the community of practice for robust and secure platforms. Hackney Council iterates their API playbook once a year, and they released a new version in May 2021. In future, the API playbook will have a distribution list to alert users when the team publishes a new playbook.</p>
+        </div>
+
+  </div>
+</div>
+
+{% endblock %}
