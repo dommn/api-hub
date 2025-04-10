@@ -1,0 +1,63 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block beforeContent %}
+
+<a href="documentation" class="govuk-back-link">Back to Documentation</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Guidance for API platform case studies</h1>
+
+   <p>We want our APIs to be used as much as possible, by as many organisations as possible. The more integration, the better the chance that consumers have the information they need, whenever and wherever they need it. </p>
+    <p>To encourage more organisations to integrate with our APIs, we want to build up a portfolio of real-world examples of what it’s like to integrate with our APIs. </p>
+    <p>The idea is to showcase these case studies from our developer and integration hub, so that organisations looking at the hub can find them and read them. It might also potentially give your product a little extra publicity. </p>
+    <p>So, if you have integrated with one of our APIs recently and would be interested in co-authoring a case study with us, read on. </p>
+    
+   <h2 class="govuk-heading-m">How to write a case study</h2>
+<p>From our perspective, the purpose of the case studies is a sales pitch for integration and APIs. </p>
+<p>From your perspective, it’s also an opportunity to talk about your software. But we have a responsibility to be fair and unbiased, so we cannot include your case study if it is an overt sales pitch for your software. You need to keep it factual and objective. </p>
+
+<p>Here’s a suggested structure: </p>
+<ul class="govuk-list govuk-list--bullet">
+<li>a brief summary of your organisation </li>
+<li>a brief summary of your product </li>
+<li>details of which of our APIs you have integrated with, and what you use them for </li>
+<li>details of your integration experience, possibly including: </li>
+<li>how easy it was to understand the API documentation </li>
+<li>how easy the technical integration was </li>
+<li>how easy testing was </li>
+<li>how easy onboarding for production access was </li>
+<li>how easy it was to get help and support when you needed it</li>
+</ul>
+<p>For some examples, see <a href="case-studies-1">Case studies</a>.</p>
+
+<h2 class="govuk-heading-m">How to publish your case study</h2>
+
+<p>You can: </p>
+<ul class="govuk-list govuk-list--bullet">
+<li>publish it on your own website, in which case we will link to it </li>
+<li>ask us to publish it on our website </li>
+</ul>
+<p>Either way, we'll review your content to make sure we’re happy with it before publishing or linking to it. </p>
+<p>If it’s on your website: </p>
+<ul class="govuk-list govuk-list--bullet">
+<li>you cannot use the GOV.UK logo </li>
+<li>you cannot say or imply that your product is endorsed or approved by GOV.UK, unless you are part of a programme or framework that includes specific endorsements or approvals </li>
+</ul>
+<p>When you’re ready to publish, or to discuss your ideas with us, <a href="">contact us</a>. </p>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
