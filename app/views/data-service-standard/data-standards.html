@@ -1,0 +1,198 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Data service standard",
+        parent: true,
+        children: [
+        {
+          text: "Data service standards",
+          current: true,
+          href: "data-standards"
+        },
+        {
+          text: "Assessment Framework – Data Lens",
+          href: "assessment"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Data Service Standards</h1>
+
+<p>A data version of the GDS Service Standards and assessment would adapt the core 
+  principles and structure of the UK Government Digital Service (GDS) framework to focus on 
+  data products, pipelines, and services, rather than purely digital user-facing services.</p>
+
+  <p>The goal is to ensure that data products and services are user-focused, trustworthy, 
+    interoperable, secure, and valuable.</p>
+
+  <ul class="govuk-list">
+    <li class="app-service-standard-point" id="criterion-1">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-3 app-service-standard-point__title">
+        <span class="app-service-standard-point__number">1.</span>
+        Understand users and their needs
+      </h2>
+      <div class="app-service-standard-point__details">
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Identify primary data users: analysts, policymakers, external researchers, operational 
+            teams</li>
+            <li>Conduct user research on what data they need, how they use it, and what problems they
+              face</li>
+            <li>Consider varying levels of data literacy and tool preferences</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="app-service-standard-point" id="criterion-1">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-3 app-service-standard-point__title">
+        <span class="app-service-standard-point__number">2.</span>
+        Solve a whole problem for users
+      </h2>
+      <div class="app-service-standard-point__details">
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Don't just provide raw datasets – deliver useful outputs: dashboards, APIs, summary 
+            statistics, documentation</li>
+            <li>Build end-to-end pipelines that deliver value (e.g. from ingestion to insight)</li>
+            <li>Ensure metadata, lineage, and contextual info are available</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="app-service-standard-point" id="criterion-1">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-3 app-service-standard-point__title">
+        <span class="app-service-standard-point__number">3.</span>
+        Make data usable and accessible
+      </h2>
+      <div class="app-service-standard-point__details">
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Provide clean, well-structured, well-described datasets.</li>
+          <li>Follow open data principles (if appropriate).</li>
+          <li>Use accessible formats (CSV, JSON, APIs) and platforms that support broad access.</li>
+          <li>Publish clear documentation and schemas.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="app-service-standard-point" id="criterion-1">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-3 app-service-standard-point__title">
+        <span class="app-service-standard-point__number">4.</span>
+        Make the data secure and respect privacy
+      </h2>
+      <div class="app-service-standard-point__details">
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Follow data protection laws (e.g. GDPR).</li>
+          <li>Apply data minimisation, anonymisation, or pseudonymisation.</li>
+          <li>Use robust access controls and audit logging.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="app-service-standard-point" id="criterion-1">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-3 app-service-standard-point__title">
+        <span class="app-service-standard-point__number">5.</span>
+        Choose the right tools and technology
+      </h2>
+      <div class="app-service-standard-point__details">
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Use scalable, maintainable data stack components.</li>
+          <li>Prefer open standards and widely used tools where possible.</li>
+          <li>Avoid vendor lock-in.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="app-service-standard-point" id="criterion-1">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-3 app-service-standard-point__title">
+        <span class="app-service-standard-point__number">6.</span>
+        Iterate and improve frequently
+      </h2>
+      <div class="app-service-standard-point__details">
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Monitor how data is used and what value it creates.</li>
+          <li>Regularly engage with users to gather feedback.</li>
+          <li>Release data updates on a reliable schedule.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="app-service-standard-point" id="criterion-1">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-3 app-service-standard-point__title">
+        <span class="app-service-standard-point__number">7.</span>
+        Use open standards and encourage reuse
+      </h2>
+      <div class="app-service-standard-point__details">
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Use common identifiers, taxonomies, and open standards (e.g. DCAT, W3C standards).</li>
+          <li>Enable integration and linking of datasets (e.g. geospatial references, date/time 
+            standards).</li>
+            <li>Encourage version control and reproducibility.</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="app-service-standard-point" id="criterion-1">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-3 app-service-standard-point__title">
+        <span class="app-service-standard-point__number">8.</span>
+        Be transparent
+      </h2>
+      <div class="app-service-standard-point__details">
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Publish data quality metrics, known limitations, and methodology.</li>
+          <li>Document assumptions, transformations, and business rules.</li>
+          <li>Use open methods where feasible (e.g. code on GitHub, versioned pipelines).</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="app-service-standard-point" id="criterion-1">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-3 app-service-standard-point__title">
+        <span class="app-service-standard-point__number">9.</span>
+        Measure performance
+      </h2>
+      <div class="app-service-standard-point__details">
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Track metrics like data access volume, time to insight, user satisfaction, data freshness, 
+            error rates.</li>
+            <li>Define clear KPIs for your data service: availability, quality, relevance, speed.</li>
+        </ul>
+      </div>
+    </li>
+
+  </ul>
+
+  </div>
+</div>
+
+{% endblock %}

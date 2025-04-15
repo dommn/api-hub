@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Data service standard",
+        parent: true,
+        children: [
+        {
+          text: "Data service standards",
+          href: "data-standards"
+        },
+        {
+          text: "Assessment Framework – Data Lens",
+          current: true,
+          href: "assessment"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Assessment Framework – Data Lens</h1>
+
+<p>A data-oriented GDS-style assessment might look like:</p>
+
+<h3 class="govuk-heading-m">Discovery Assessment</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Have you identified clear user needs for data?</li>
+  <li>Is the problem statement well-defined?</li>
+  <li>Are there ethical/privacy concerns with the data you're planning to collect/use?</li>
+  <li>Have you defined success criteria?</li>
+</ul>
+<h3 class="govuk-heading-m">Alpha Assessment</h3>
+<ul class="govuk-list govuk-list--bullet">
+<li>Have you prototyped data flows or pipelines?</li>
+<li>Have you tested with real users or data?</li>
+<li>Are your data governance principles clear and enforced?</li>
+<li>Do you have a plan for metadata, documentation, and versioning?</li>
+</ul>
+<h3 class="govuk-heading-m">Beta Assessment</h3>
+<ul class="govuk-list govuk-list--bullet">
+<li>Can users find, understand, and use your data?</li>
+<li>Have you tested the data service with a wide range of users?</li>
+<li>Are data privacy and security handled appropriately?</li>
+<li>Is the pipeline reliable and maintainable?</li>
+</ul>
+<h3 class="govuk-heading-m">Live Assessment</h3>
+<ul class="govuk-list govuk-list--bullet">
+<li>Are you actively maintaining data quality and freshness?</li>
+<li>Is user feedback being used to improve data outputs?</li>
+<li>Are there processes for incident handling, lineage tracking, and auditing?</li>
+<li>Are metrics being collected and reported?</li>
+</ul>
+  </div>
+</div>
+
+{% endblock %}

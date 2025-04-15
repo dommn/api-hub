@@ -15,3 +15,26 @@
 @import "components/header-items";
 @import "components/action-list";
 @import "components/split-panel";
+
+.app-service-standard-point {
+    border-top: 1px solid #b1b4b6;
+    margin-top: 25px;
+    padding-top: 25px;
+  }
+  
+  .app-service-standard-point__title {
+    margin-left: 50px;
+  }
+  
+  .app-service-standard-point__number {
+    margin-left: -50px;
+  }
+  
+  .app-service-standard-point__details {
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+  
+  .app-service-standard-point:first-child {
+    margin-top: 0;
+  }
