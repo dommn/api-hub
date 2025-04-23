@@ -70,7 +70,6 @@
           href: "post-wishlist"
         }, {
           text: "GET /user/login",
-          current: true,
           href: "get-login"
         }, {
           text: "GET /user/logout",
@@ -86,52 +85,28 @@
           href: "delete-username"
         }
         ]
-      } ,
+      },
       {
         text: "Security",
+        current: true,
         href: "security"
-      }]
+      }
+      ]
     }) }}
     
     
   </div>
   <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l"> GET /user/login - Logs user into the system</h1>
+      <h1 class="govuk-heading-l"> Security</h1>
 
-      <p><strong>Operation ID:</strong> loginUser</p>
-      <p><strong>Description:</strong> Log into the system.</p>
-    <h4 class="govuk-heading-s">Parameters</h4>
-    <ul class="govuk-list govuk-list--bullet">
-    <li><strong>username</strong> in query: The user name for login (Required: false)</li>
-    <li><strong>password</strong> in query: The password for login in clear text (Required: false)</li>
-    </ul>
-    <h4 class="govuk-heading-s">Responses</h4>
-    <div class="response">
-      <h5 class="govuk-heading-s">Response 200</h5>
-      <p>successful operation</p>
-    <h6 class="govuk-heading-s">Headers</h6>
-    <ul class="govuk-list govuk-list--bullet">
-    <li><strong>X-Rate-Limit</strong>: calls per hour allowed by the user</li>
-    <li><strong>X-Expires-After</strong>: date in UTC when token expires</li>
-    </ul>
-    <h6 class="govuk-heading-s">Content</h6>
-    <ul class="govuk-list govuk-list--bullet">
-    <li><strong>Media Type:</strong> application/xml<br>Schema: Type: string</li>
-    <li><strong>Media Type:</strong> application/json<br>Schema: Type: string</li>
-    </ul>
-    </div>
-    <div class="response">
-      <h5 class="govuk-heading-s">Response 400</h5>
-      <p>Invalid username/password supplied</p>
-    </div>
-    <div class="response">
-      <h5 class="govuk-heading-s">Response default</h5>
-      <p>Unexpected error</p>
-    <h6 class="govuk-heading-s">Content</h6>
-    <ul class="govuk-list govuk-list--bullet">
-    <li><strong>Media Type:</strong> application/json<br>Schema: Reference: #/components/schemas/Error</li>
-    </ul>
+      <div class="security-schemes">
+        <h2 class="govuk-heading-m">Security Schemes</h2>
+        <p><strong>petstore_auth</strong> (oauth2)<br>
+        </p>
+        <p><strong>api_key</strong> (apiKey)<br>
+        API Key: Use header <code>api_key</code></p>
+        </div>
   </div>
 </div>
 
