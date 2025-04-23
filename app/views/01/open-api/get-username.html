@@ -1,0 +1,132 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../documentation.html" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "API information",
+        href: "/about"
+      }, 
+      {
+        text: "Endpoints",
+        href: "/contact",
+        parent: true,
+        children: [{
+          text: "PUT /pet",
+          href: "put-pet"
+        }, {
+          text: "POST /pet",
+          href: "post-pet"
+        }, {
+          text: "GET /pet/findByStatus",
+          href: "get-status"
+        }, {
+          text: "GET /pet/findByTags",
+          href: "get-find-tags"
+        }, {
+          text: "GET /pet/{petId}",
+          href: "get-id"
+        }, {
+          text: "POST /pet/{petId}",
+          href: "post-id"
+        }, {
+          text: "DELETE /pet/{petId}",
+          href: "delete-id"
+        }, {
+          text: "POST /pet/{petId}/uploadImage",
+          href: "post-image"
+        }, {
+          text: "GET /store/inventory
+          ",
+          href: "get-inventory"
+        }, {
+          text: "POST /store/order",
+          href: "post-order"
+        }, {
+          text: "GET /store/order/{orderId}
+          ",
+          href: "get-order"
+        }, {
+          text: "DELETE /store/order/{orderId}",
+          href: "delete-order"
+        }, {
+          text: "POST /user",
+          href: "post-user"
+        }, {
+          text: "POST /user/createWithList",
+          href: "post-wishlist"
+        }, {
+          text: "GET /user/login",
+          href: "get-login"
+        }, {
+          text: "GET /user/logout",
+          href: "get-logout"
+        }, {
+          text: "GET /user/{username}",
+          current: true,
+          href: "get-username"
+        }, {
+          text: "PUT /user/{username}",
+          href: "put-username"
+        }, {
+          text: "DELETE /user/{username}",
+          href: "delete-username"
+        }
+        ]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l"> GET /user/{username} - Get user by user name</h1>
+
+      <p><strong>Operation ID:</strong> getUserByName</p>
+  <p><strong>Description:</strong> Get user detail based on username.</p>
+<h4 class="govuk-heading-s">Parameters</h4>
+<ul class="govuk-list govuk-list--bullet">
+<li><strong>username</strong> in path: The name that needs to be fetched. Use user1 for testing (Required: true)</li>
+</ul>
+<h4 class="govuk-heading-s">Responses</h4>
+<div class="response">
+  <h5 class="govuk-heading-s">Response 200</h5>
+  <p>successful operation</p>
+<h6 class="govuk-heading-s">Content</h6>
+<ul class="govuk-list govuk-list--bullet">
+<li><strong>Media Type:</strong> application/json<br>Schema: Reference: #/components/schemas/User</li>
+<li><strong>Media Type:</strong> application/xml<br>Schema: Reference: #/components/schemas/User</li>
+</ul>
+</div>
+<div class="response">
+  <h5 class="govuk-heading-s">Response 400</h5>
+  <p>Invalid username supplied</p>
+</div>
+<div class="response">
+  <h5 class="govuk-heading-s">Response 404</h5>
+  <p>User not found</p>
+</div>
+<div class="response">
+  <h5 class="govuk-heading-s">Response default</h5>
+  <p>Unexpected error</p>
+<h6 class="govuk-heading-s">Content</h6>
+<ul class="govuk-list govuk-list--bullet">
+<li><strong>Media Type:</strong> application/json<br>Schema: Reference: #/components/schemas/Error</li>
+</ul>
+  </div>
+</div>
+
+{% endblock %}
