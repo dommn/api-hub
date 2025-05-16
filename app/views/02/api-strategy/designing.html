@@ -1,0 +1,119 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+{% block beforeContent %}
+
+<a href="../documentation.html" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Defining an API management structure",
+        parent: true,
+        children: [
+        {
+          text: "Principles for your API strategy",
+          href: "principles"
+        },
+        {
+          text: "What API management strategy can help with",
+          href: "help"
+        },
+        {
+          text: "Designing APIs",
+          current: true,
+          href: "designing"
+        },
+        {
+          text: "Putting APIs into production",
+          href: "production"
+        }, 
+        {
+          text: "Managing operations with an API gateway",
+          href: "operations"
+        }, 
+        {
+          text: "Making your APIs easy to find",
+          href: "easy-to-find"
+        }, 
+        {
+          text: "Taking your API out of service",
+          href: "out-of-service"
+        }]
+      }]
+    }) }}
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Defining an API management structure</span>
+      <h1 class="govuk-heading-l"> Designing APIs</h1>
+
+     <p>You should establish design guidance to help maintain consistency across your APIs. It’s difficult to manage APIs that are not consistent, so the more your APIs follow the same design principles and practices, the easier it will be to manage them at scale.
+    </p>
+
+    <p>The level of guidance you provide will depend on the size and structure of your organisation. For example, guidance might be different for an environment where API design follows strict standards, and an organisation using many different technologies and approaches</p>
+     
+    <h2 class="govuk-heading-m">Review and challenge assumptions</h2>
+
+    <p>Organisations often develop their API strategy based on the first few APIs they built, where choices teams made in response to specific problems are then applied across very different areas. If you have an existing API strategy in place, consider what assumptions you might be relying on and make a plan to review your approach regularly.</p>
+
+    <p>User research can help you test these assumptions and define needs. You might design your research to help you understand:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>what technologies are in use, or might be in the future/li>
+      <li>the different levels of maturity of development teams in the organisation</li>
+      <li>whether the APIs produced are primarily internal or external facing, or a mixture</li>
+      <li>what service level agreements (SLAs) APIs should meet and whether different SLAs are appropriate for different use cases</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Bring developers into the design process</h2>
+
+    <p>API design guidance reduces the time and effort developers need to spend making decisions, by providing a framework for them to work from.</p>
+
+    <p>You should also explain design choices. Being open with the reasoning behind the guidance increases developer trust and helps get them on board with the process.</p>
+
+    <h2 class="govuk-heading-m">Use standards</h2>
+
+    <p>Technology standards like <a href="https://www.openapis.org/">OpenAPI</a> can help increase confidence in software decisions. Standards can also give credibility to your strategy as they reflect widely accepted ways of doing things.</p>
+
+    <p>It’s helpful to specify use cases for different API standards. As an example, you might require using REST for microservices and <a href="https://www.gov.uk/guidance/using-graphql-for-your-api">GraphQL</a> for more data intensive processes.</p>
+
+    <p>You should also consider what guidelines make sense for specific technical details. For example, using a consistent data format, or requiring that all APIs follow the same approach to versioning.</p>
+
+    <h2 class="govuk-heading-m">Make the design process clear and easy to use</h2>
+
+    <p>Setting out decisions in a central place helps development teams get started on projects more quickly and with less effort. You should keep these guidelines in a document store or repository that is easy for people to find and access.</p>
+
+    <p>Various tools are available to store and share API specifications. Many tools have an open source version which allows you to try them out with little to no cost or commitment. These tools often form part of an API management suite that also includes a developer hub and an API gateway but can also be used as standalone design or governance modules.</p>
+
+    <h2 class="govuk-heading-m">Put your API through assurance and assessment</h2>
+
+    <p>Assurance is a governance process to make sure APIs meet various organisational standards. For example, assurance will help teams make sure they are building APIs to follow the design guidelines of your organisation.</p>
+
+    <p>Your assurance assessment programme should be appropriate for the teams who need to go through it. Make it clear what the benefits of going through assurance are so that teams see it as a worthwhile exercise to help them improve their APIs. If your assurance process is too rigid, or requires too much effort for not enough benefit, teams might try to avoid it. This will weaken your organisation’s governance and can impact the overall quality of your organisation’s APIs.</p>
+
+    <h2 class="govuk-heading-m">Test and validate your APIs</h2>
+
+    <p>Testing is the process of making sure the APIs function properly, and is usually an automatic process which validates the code. Testing should be an ongoing process, and regular validation of the API should be part of a monitoring scheme.</p>
+
+    <p>Usually, testing is done by an automated tool against the specification, sometimes known as the contract. Contract testing should include checking the:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>specification against internal policies to make sure that APIs submitted to the developer portal are compliant with internal standards</li>
+      <li>API to make sure its responses match the specification and that deployed APIs are behaving correctly in production</li>
+    </ul>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "explore" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <strong>Overview</strong>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="landing-page">Best practice government APIs</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="../open-api/api-information">Exemplar API</a>
+      </li>
+    </ul>
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <strong>API user cases</strong>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="verify">Verify or prove something</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="status">Get the status of something</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="submit">Submit information to government</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="retrieve">Retrieve information</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="access">Manage access and permissions</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="payments">Handle payments and financial interactions</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+
+<h1 class="govuk-heading-l">Submit information to government</h1>
+
+<p>These are APIs that let you:</p>
+<ul class="govuk-list govuk-list--bullet">
+
+  <li>  send an application or form</li>
+
+  <li>  report a change in circumstances</li>
+
+    <li>upload documents or evidence</li>
+
+  </ul>
+
+<h3 class="govuk-heading-s">Corporation Tax Online</h3>
+<p>This API allows companies to submit or amend corporation tax returns.</p>
+<p><a href="">View this API</a></p>
+
+<h3 class="govuk-heading-s">Charities Online</h3>
+<p>This API enables charities to submit Gift Aid claims.</p>
+<p><a href="">View this API</a></p>
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "explore" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+  
+      <ul class="govuk-list">
+        <li style="padding-bottom: 5px;">
+          <strong>Overview</strong>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="landing-page">Best practice government APIs</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="../open-api/api-information">Exemplar API</a>
+        </li>
+      </ul>
+      <ul class="govuk-list">
+        <li style="padding-bottom: 5px;">
+          <strong>API user cases</strong>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="verify">Verify or prove something</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="status">Get the status of something</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="submit">Submit information to government</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="retrieve">Retrieve information</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="access">Manage access and permissions</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="payments">Handle payments and financial interactions</a>
+        </li>
+      </ul>
+    </div>
+  
+  <div class="govuk-grid-column-two-thirds">
+  
+ <h1 class="govuk-heading-l">Best practice government APIs</h1>
+
+<p>These APIs meet government best practice for design, security, documentation and accessibility.</p>
+
+<p> They have been reviewed against the API standards and guidance set out in the GOV.UK API hub.
+  
+<p>  You can use them as examples of good implementation — or explore them to see how different departments are building APIs that are:</p>
+  
+<ul class="govuk-list govuk-list--bullet">
+      <li>reliable</li>
+      <li>consistent</li>
+      <li>easy to understand</li>
+      <li>secure by default</li>
+</ul>
+  
+<h2 class="govuk-heading-m">Find more APIs</h2>
+
+<p>If you are looking for other APIs, or want to search by department or function, then the <a href="">GOV.UK API catalogue</a> allows you to explore APIs across government.</p>
+
+  </div>
+</div>
+
+{% endblock %}

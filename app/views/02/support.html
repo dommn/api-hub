@@ -1,0 +1,56 @@
+{% extends "./layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "support" %}
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Support</h1>
+
+    <p>Complete this short form to ask a question, for example, about:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>using the service</li>
+      <li>testing</li>
+      <li>using our APIs</li>
+    </ul>
+
+    <p>and our Software Developers Support Team (SDST) will get back to you within 2 working days.</p>
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="event-name">
+        Name
+      </label>
+      <input class="govuk-input" id="event-name" name="eventName" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="event-name">
+        Email address
+      </label>
+      <input class="govuk-input" id="event-name" name="eventName" type="text">
+    </div>
+
+    <p>We only use your email to respond to you.</p>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="more-detail">
+        What do you need help with?
+      </label>
+      <div id="more-detail-hint" class="govuk-hint">
+        Do not include personal or financial information, like your National Insurance number or credit card details
+      </div>
+      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+    </div>
+
+    {{ govukButton({
+      text: "Submit"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

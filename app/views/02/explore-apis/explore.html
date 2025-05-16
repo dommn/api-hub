@@ -1,0 +1,117 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "explore" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <strong>Overview</strong>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="landing-page">Best practice government APIs</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="../open-api/api-information">Exemplar API</a>
+      </li>
+    </ul>
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <strong>API user cases</strong>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="verify">Verify or prove something</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="status">Get the status of something</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="submit">Submit information to government</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="retrieve">Retrieve information</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="access">Manage access and permissions</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="payments">Handle payments and financial interactions</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+  
+ <h1 class="govuk-heading-l">Find an API</h1>
+
+<p>You can find APIs that meet API in government best practices to help you start to build or improve an existing API.</p>
+
+<h2 class="govuk-heading-m">Verify or prove something</h2>
+
+<h3 class="govuk-heading-s">Check a UK VAT number</h3>
+<p>This API validates UK VAT numbers and provides company details.</p>
+<p><a href="">View this API</a></p>
+
+<h3 class="govuk-heading-s">Check an EORI number</h3>
+<p>This API verifies the validity of UK Economic Operator Registration Identification numbers.</p>
+<p><a href="">View this API</a></p>
+
+
+<h2 class="govuk-heading-m">Submit information to government</h2>
+
+<h3 class="govuk-heading-s">Corporation Tax Online</h3>
+<p>This API allows companies to submit or amend corporation tax returns.</p>
+<p><a href="">View this API</a></p>
+
+<h3 class="govuk-heading-s">Charities Online</h3>
+<p>This API enables charities to submit Gift Aid claims.</p>
+<p><a href="">View this API</a></p>
+
+
+<h2 class="govuk-heading-m">Retrieve information</h2>
+
+<h3 class="govuk-heading-s">Police API</h3>
+<p>This API provides access to UK police data.</p>
+<p><a href="">View this API</a></p>
+
+<h3 class="govuk-heading-s">Statistics API </h3>
+<p>This API offers programmatic access to datasets from the Office for National Statistics.</p>
+<p><a href="">View this API</a></p>
+
+<h2 class="govuk-heading-m">Manage access and permissions</h2>
+
+<h3 class="govuk-heading-s">Create Test User</h3>
+<p>This API generates test user accounts for sandbox environments.</p>
+<p><a href="">View this API</a></p>
+
+<h3 class="govuk-heading-s">OS OAuth 2 API</h3>
+<p>This API handles authentication for Ordnance Survey APIs.</p>
+<p><a href="">View this API</a></p>
+
+
+<h2 class="govuk-heading-m">Handle payments and financial interactions</h2>
+
+<h3 class="govuk-heading-s">Goods Vehicle Movements</h3>
+<p>This API manages goods movement records for customs processes.</p>
+<p><a href="">View this API</a></p>
+
+<h3 class="govuk-heading-s">Individual Tax</h3>
+<p>This API retrieves information about an individual's tax affairs.</p>
+<p><a href="">View this API</a></p>
+
+
+  </div>
+</div>
+
+{% endblock %}

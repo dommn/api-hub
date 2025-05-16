@@ -1,0 +1,79 @@
+{% extends "./layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+
+{% block beforeContent %}
+
+<a href="documentation" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Design your API",
+        href: "design-an-api"
+      }, {
+        text: "Build your API",
+        href: "build-an-api"
+      },
+     {
+        text: "Operate your API",
+        current: true,
+        href: "operate-an-api"
+      }]
+    }) }}
+    </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+
+      <h1 class="govuk-heading-l">Operate your API</h1>
+
+      {{ govukTaskList({
+        idPrefix: "company-details",
+        items: [
+        {
+          title: {
+            text: "Version your API and support older versions
+            "
+          },
+          href: "operate/version"
+        },
+          {
+            title: {
+              text: "Use an API management system or gateway
+              "
+            },
+            href: "operate/management-system"
+          },
+          {
+            title: {
+              text: "Log your API’s use
+              "
+            },
+            href: "operate/log-use"
+          },
+          {
+            title: {
+              text: "Monitor APIs for unusual activity
+              "
+            },
+            href: "operate/monitor"
+          }
+        ]
+      }) }}
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Design your API",
+        parent: true,
+        children: [
+        {
+          text: "API discovery",
+          href: "api-discovery"
+        },
+        {
+          text: "Check for existing APIs",
+          href: "check-for-existing-apis"
+        },
+        {
+          text: "Design your API first",
+          href: "design-your-api-first"
+        },
+        {
+          text: "Follow the Technology Code of Practice and other standards",
+          href: "code-of-practice"
+        }, 
+        {
+          text: "Use the REST API style",
+          href: "restful-api"
+        }, 
+        {
+          text: "Develop a specification before you start to code",
+          href: "develop-specification"
+        }, 
+        {
+          text: "Be secure by design",
+          href: "be-secure-by-design"
+        }, 
+        {
+          text: "Test your assumptions with users",
+          href: "test-assumptions-with-users"
+        }, 
+        {
+          text: "Iterate the design based on feedback",
+          current: true,
+          href: "iterate-based-on-feedback"
+        }]
+      }]
+    }) }}
+    
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">Design your API</span>
+      <h1 class="govuk-heading-l">Iterate the design based on feedback</h1>
+
+   <p><a href="https://www.gov.uk/service-manual/agile-delivery">Follow an agile process</a> when designing your API. You do this by incrementally building out your design and continuously testing it and getting feedback from the people who will be consuming it.
+  </p>
+
+  <p>At the design stage it’s easy to make changes to your API. You can entirely remove endpoints and redefine their response formats without worrying about breaking changes.
+  </p>
+
+  <p>Once your API is built and people start using it, it becomes much harder to make big changes because you need to consider backward compatibility between versions of your API.
+  </p>
+
+  <div class="x-govuk-related-navigation">
+    <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+      <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+        More information
+      </h2>
+      <ul class="x-govuk-related-navigation__link-list">
+        <li class="x-govuk-related-navigation__link">
+          <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://www.gov.uk/guidance/government-design-principles#iterate-then-iterate-again">Iterate. Then iterate again</a>
+          </li>
+      </ul>
+    </nav>
+  </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

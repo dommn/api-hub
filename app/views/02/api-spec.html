@@ -1,0 +1,337 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block beforeContent %}
+
+<a href="documentation" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">OpenAPI specification template</h1>
+
+    <p>This API specification is published by the Central Digital and Data Office (CDDO) as a reference standard for API First development. It demonstrates recommended practices for the full API lifecycle including design, versioning, authentication/authorization, error handling, caching, and rate limiting.</p>
+
+   <h2 class="govuk-heading-m">
+    API Information
+   </h2>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Version
+      </dt>
+      <dd class="govuk-summary-list__value">
+        1.0.0
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        API ID
+      </dt>
+      <dd class="govuk-summary-list__value">
+        cddo-hello-world-1.0.0
+      </ul>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Audience
+      </dt>
+      <dd class="govuk-summary-list__value">
+      company-internal
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Contact
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <a href="api.team@cddo.gov.uk">CDDO API Team</a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Website
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <a href="https://www.cddo.gov.uk/">www.cddo.gov.uk</a>
+      </dd>
+    </div>
+  </dl>
+
+  <h2 class="govuk-heading-m">
+    Servers
+   </h2>
+
+   <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Production
+      </dt>
+      <dd class="govuk-summary-list__value">
+        https://api.cddo.gov.uk/v1
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Sandbox
+      </dt>
+      <dd class="govuk-summary-list__value">
+        https://sandbox.api.cddo.gov.uk/v1
+      </ul>
+      </dd>
+    </div>
+  </dl>
+
+   <h2 class="govuk-heading-m">
+    Endpoints
+   </h2>
+
+  <p><strong class="govuk-tag govuk-tag--blue">
+    GET
+  </strong> /hello</p>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Summary
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Hello World Endpoint
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Description
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p>Returns a greeting message from the Central Digital and Data Office. Demonstrates:</p>
+        <ul class="govuk-list govuk-list--bullet">
+       <li> API lifecycle management and versioning</li>
+        <li>Standard error handling using RFC 7807 Problem Details</li>
+          <li>OAuth2 (or API Key) based authentication/authorization</li>
+            <li>Response headers for caching, rate limiting, and request correlation</li>
+              <li>Content negotiation (via the Accept header)</li>
+      </ul>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Parameters
+      </dt>
+      <dd class="govuk-summary-list__value">
+      <strong>lang</strong> (query): Optional. Supported values: "en" (default) or "cy".
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Responses
+      </dt>
+      <dd class="govuk-summary-list__value">
+     <p> <strong>200 OK:</strong> Returns greeting message.</p>
+      <p>Example (English): {"message": "Hello from the Central Digital and Data Office!"}</p>
+      <p>Example (Welsh): {"message": "Helo o'r Swyddfa Digidol a Data Ganol!"}</p>
+
+      <p> <strong>400 Bad Request:</strong> Invalid or missing parameters.</p>
+
+      <p> <strong>401 Unauthorized:</strong> Authentication is required.</p>
+      
+      <p> <strong>500 Internal Server Error:</strong> An unexpected error occurred.
+      </p>
+      </dd>
+    </div>
+  </dl>
+
+  <p><strong class="govuk-tag govuk-tag--blue">
+    GET
+  </strong> /status</p>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Summary
+      </dt>
+      <dd class="govuk-summary-list__value">
+        API Status and Version
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Description
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Provides real-time status, current API version, uptime, and deprecation status.
+      </ul>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Responses
+      </dt>
+      <dd class="govuk-summary-list__value">
+     <p> <strong>200 OK:</strong> Returns status, version, uptime, and deprecation flag.</p>
+      <p>Example: <code>{"status": "OK", "version": "1.0.0", "uptime": "PT72H", "deprecated": false} </code></p>
+
+      <p> <strong>Default error</strong> Standard error response (RFC 7807 Problem Details).</p>
+
+      <p> <strong>Deprecated endpoint</strong> <code>GET /hello/old</code> – This endpoint is deprecated. Please use <code>/hello</code> instead </p>
+      </dd>
+    </div>
+  </dl>
+
+  <h2 class="govuk-heading-m">
+    Components
+  </h2>
+
+  <h3 class="govuk-heading-s">
+    Schemas
+  </h3>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        HelloResponse
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Object with a message field containing the greeting.
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Problem
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Standard error response (RFC 7807) with <code>type, title, status, and detail</code>.
+      </dd>
+    </div>
+  </dl>
+
+  <h3 class="govuk-heading-s">
+    Headers
+  </h3>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        X-Request-ID
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Unique identifier for the request
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Cache-Control
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Directives for caching
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        ETag
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Entity tag for versioning
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        X-RateLimit-Limit
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Maximum number of requests allowed
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        X-RateLimit-Remaining
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Requests remaining in the current window
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        X-RateLimit-Reset
+      </dt>
+      <dd class="govuk-summary-list__value">
+        When the rate limit resets
+      </dd>
+    </div>
+  </dl>
+
+  <h2 class="govuk-heading-m">
+    Security
+  </h2>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        OAuth2 (Client Credentials)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p>Token URL: <code>https://auth.cddo.gov.uk/oauth2/token</code></p> 
+        <p>Scopes: <code> hello.read</code> for <code>/hello, status.read</code> for /status</p>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        API Key
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Alternatively, use the <code>X-API-Key</code> header
+      </dd>
+    </div>
+  </dl>
+
+  <h2 class="govuk-heading-m">
+    External documentation
+  </h2>
+
+  <p>For more guidelines and best practices, see the <a href="">CDDO API Design Guidelines</a>.</p>
+
+  <h2 class="govuk-heading-m">
+    Test API
+  </h2>
+
+  <p>Please include your API key (X‑API‑Key) in the header as per the standard.</p> 
+  <p>If you have questions, contact our support team at <a href="">api.team@cddo.gov.uk</a>.</p>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="width-20">
+      Name
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="width-20">
+      Language (en/cy)
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="width-20">
+      X-API Key
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+  </div>
+
+  {{ govukButton({
+    text: "Test Hello API"
+  }) }}
+
+  </div>
+</div>
+
+
+{% endblock %}

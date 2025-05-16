@@ -1,0 +1,62 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "about" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+    
+      {{ xGovukSubNavigation({
+        items: [{
+          text: "Government Digital Service (GDS) API hub",
+          parent: true,
+          children: [
+          {
+            text: "About this service",
+            href: "about-the-hub"
+          },
+          {
+            text: "Benefits",
+            href: "benefits"
+          },
+          {
+            text: "Who the service is for",
+            current: true,
+            href: "who"
+          }]
+        }]
+      }) }}
+      
+      
+    </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Who the service is for</h1>
+
+    <p>The API platform is for API consumers and API producers in England. </p>
+
+    <h2 class="govuk-heading-m">API consumers</h2>
+
+    <p>To get started as an API consumer, see the <a href="">API consumer zone</a> (account required)</p>
+
+    <h2 class="govuk-heading-m">API producers</h2>
+
+    <p>To get started as an API producer, see the <a href="">API consumer zone</a> (account required)</p>
+    
+    <p> The code for all our API is mostly coded in the open and is hosted in our GitHub repositories. We also encourage joining our Discourse for our developer community forum.</p>
+    <p>We welcome contributions from the developer community - but we're not always watching out for them, so if you do raise a pull request, you might want to contact us to let us know. </p>
+
+
+    
+  
+  </div>
+</div>
+
+{% endblock %}

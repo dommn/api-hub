@@ -1,0 +1,68 @@
+{% extends "./layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+
+{% block beforeContent %}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Parent heading",
+        href: "/contact",
+        current: true,
+        parent: true,
+        children: [
+        {
+          text: "Example heading 1",
+          href: "/contact/email"
+        },
+        {
+          text: "Example heading 2",
+          href: "/contact/email"
+        },
+        {
+          text: "Example heading 3",
+          href: "/contact/email"
+        },
+        {
+          text: "Example heading 4",
+          href: "/contact/email"
+        }, 
+        {
+          text: "Example heading 5",
+          href: "/contact/telephone"
+        }]
+      }]
+    }) }}
+    
+  
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Parent heading</h1>
+
+      <p>This is where content about the thing can go and provide relevant information based on what users have told us. This is where content about the thing can go and provide relevant information based on what users have told us.</p>
+
+      <p>This is where content about the thing can go and provide relevant information based on what users have told us. This is where content about the thing can go and provide relevant information based on what users have told us.</p>
+
+      <p>This is where content about the thing can go and provide relevant information based on what users have told us. This is where content about the thing can go and provide relevant information based on what users have told us.</p>
+
+      <p>This is where content about the thing can go and provide relevant information based on what users have told us. This is where content about the thing can go and provide relevant information based on what users have told us.</p>
+
+      <p><a href="">Go to the next page</a></p>     
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,145 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Build your API",
+        parent: true,
+        children: [
+        {
+          text: "Use the UTF-8 standard to encode your API",
+          href: "utf-8"
+        },
+        {
+          text: "Use JSON for response formats",
+          href: "json-response-formats"
+        },
+        {
+          text: "Use consistent names for resources",
+          href: "consistent-names"
+        },
+        {
+          text: "Make your resources persistent",
+          href: "resources-persistent"
+        }, 
+        {
+          text: "Use standard HTTP responses",
+          href: "standard-http-responses"
+        }, 
+        {
+          text: "Host your API",
+          href: "host-api"
+        }, 
+        {
+          text: "Control access to your API",
+          current: true,
+          href: "control-access"
+        }, 
+        {
+          text: "Secure your API",
+          href: "secure-api"
+        }, 
+        {
+          text: "Consider performance and scalability",
+          href: "performance"
+        }, 
+        {
+          text: "Provide an API test service",
+          href: "test-service"
+        }, 
+        {
+          text: "Test your API’s compliance",
+          href: "compliance"
+        }, 
+        {
+          text: "Document your APIs",
+          href: "document"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Build your API</span>
+      <h1 class="govuk-heading-l">Control access to your API</h1>
+
+    <p>When you build your API, you need to decide the best way to give users access. In general, you should make all users of your API authenticate their identities. This is essential if your API deals with personal or sensitive data.</p>
+
+    <p>Avoid endpoints that allow anonymous users, as these can:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>increase the <a href="https://www.security.gov.uk/guidance/secure-by-design/principles/#7-minimise-the-attack-surface">attack surface available to hackers</a></li>
+      <li>make it harder to monitor users that are consuming excessive resources</li>
+    </ul>
+
+    <p>If you require anonymous endpoints, their responses should be limited to open data. For example, the <a href="https://content-api.publishing.service.gov.uk/">GOV.UK Content API</a> does not require authentication, but only returns metadata and the HTML content of pages published on GOV.UK. Anonymous endpoints should also be rate limited to prevent excessive or malicious use.</p>
+
+    <p>Use the industry standard <a href="https://datatracker.ietf.org/doc/html/rfc6749"> OAuth 2.0 Authorization Framework</a> to manage access to your API. This will make it easier for users to consume your API while giving you better control over the level of access they have. </p>
+
+    <p>Never use basic authentication because usernames and passwords are sent encoded, but unencrypted, in the HTTP header. This makes it easy for an attacker to steal them.</p>
+
+    <p>You should also avoid using API keys. An API key is a unique identifier that is issued to API users. It needs to be sent with every request – either in the URL, as a request header or as a cookie – and it can easily be intercepted by an attacker and reused. If you do use API keys you should time limit their use and regularly change the keys to keep them secure.</p>
+
+    <p>Neither basic nor API key authentication is secure unless used in conjunction with HTTPS.</p>
+
+    <p>OAuth 2.0 typically uses digitally signed security tokens in JWT (JSON Web Token) format that are passed in the Authenticate header of a request, making them harder to tamper with.</p>
+
+    <p>OAuth 2.0 defines ways to authenticate different types of API clients:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>use <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4">client credentials</a> when another service or application is consuming your API, outside of the context of a user</li>
+      <li>use <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.1"> authorization code</a>, with the <a href="https://datatracker.ietf.org/doc/html/rfc7636">PKCE</a> extension, when a user accesses your API – for example, through a web application</li>
+    </ul>
+
+    <p>As well as authenticating your users, you should define resource-level access controls for your API, and check the authorisation for every request. </p>
+
+    <p>When using OAuth 2.0 this means:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>a user must first request the scope of access they need to your API – for example, an order-read or order-write scope</li>
+      <li>on each call to your API you should check that the user has the required scope before granting them access
+      </li>
+    </ul>
+
+    <p><a href="https://datatracker.ietf.org/doc/html/rfc6749#section-3.3">Defining scopes</a> in this way allows for fine-grained access control to the endpoints of your API, and means you can include the <a href="https://spec.openapis.org/oas/latest.html#oauth-flow-object">authorisation information in your OAS specification</a>. This makes it easier for consumers to use your API securely.</p>
+
+    <p>Authentication and authorisation are features that can be defined and controlled through an API management system. Find out more about how to <a href="https://www.gov.uk/guidance/defining-an-api-management-strategy#managing-operations-with-an-api-gateway"> manage operations with an API gateway</a>.</p>
+
+      <div class="x-govuk-related-navigation">
+        <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
+          <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
+            More information
+          </h2>
+          <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://technology.blog.gov.uk/2016/11/14/our-approach-to-authentication/">Our approach to API authentication</a>
+            </li>
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://github.com/co-cddo/open-standards">GitHub CDDO open standards</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

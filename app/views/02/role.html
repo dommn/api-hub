@@ -1,0 +1,79 @@
+{% extends "./layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "get started" %}
+{% set questionPage = "false" %}
+{% set back = "true" %}
+{% set nestedPage = "false" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="what-do-you-want-to-know" novalidate method="post">
+
+    {% set roleOther %}
+    {{ govukInput({
+      id: "other-role",
+      name: "otherRole",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Role name"
+      }
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      name: "whatIsYourRole",
+      fieldset: {
+        legend: {
+          text: "What is your role?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "Developer",
+          text: "Developer"
+        },
+        {
+          value: "Operations",
+          text: "Operations"
+        },
+        {
+          value: "Product manager",
+          text: "Product manager"
+        },
+        {
+          value: "Security specialist",
+          text: "Security specialist"
+        },
+        {
+          value: "Technical architect",
+          text: "Technical architect"
+        },
+        {
+          value: "Tester",
+          text: "Tester"
+        },
+        {
+          value: "Other",
+          text: "Other",
+          conditional: {
+            html: roleOther
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+    
+  </form>
+  </div>
+</div>
+
+{% endblock %}

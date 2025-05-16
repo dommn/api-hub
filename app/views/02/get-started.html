@@ -1,0 +1,28 @@
+{% extends "./layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "get started" %}
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Get started with GOV.UK API Hub</h1>
+
+    <p>We're going to ask you some questions, which will help us understand what information you need.</p>
+
+    <p>Your answers will help us direct you to the information that will be most relevant to your experience with APIs.</p>
+
+    <p>You can also view all of the <a href="documentation">technical documentation</a>.</p>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "role"
+    }) }}
+  
+  </div>
+</div>
+
+{% endblock %}

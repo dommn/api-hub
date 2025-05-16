@@ -1,0 +1,102 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+{% block beforeContent %}
+
+<a href="../task-list-1.html" class="govuk-back-link">Back to API guidance</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Design your API",
+        parent: true,
+        children: [
+        {
+          text: "API discovery",
+          href: "api-discovery"
+        },
+        {
+          text: "Check for existing APIs",
+          href: "check-for-existing-apis"
+        },
+        {
+          text: "Design your API first",
+          href: "design-your-api-first"
+        },
+        {
+          text: "Follow the Technology Code of Practice and other standards",
+          href: "code-of-practice"
+        }, 
+        {
+          text: "Use the REST API style",
+          href: "restful-api"
+        }, 
+        {
+          text: "Develop a specification before you start to code",
+          href: "develop-specification"
+        }, 
+        {
+          text: "Be secure by design",
+          href: "be-secure-by-design"
+        }, 
+        {
+          text: "Test your assumptions with users",
+          current: true,
+          href: "test-assumptions-with-users"
+        }, 
+        {
+          text: "Iterate the design based on feedback",
+          href: "iterate-based-on-feedback"
+        }]
+      }]
+    }) }}
+    
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">Design your API</span>
+      <h1 class="govuk-heading-l">Test your assumptions with users</h1>
+
+   <p>By creating your OpenAPI specification first, before building your API, you can use tools that automatically generate test stubs of your API.
+  </p>
+  <p>Test stubs allow you to:
+  </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>test your design choices with the potential consumers of your API
+      </li>
+      <li>build out a suite of functional tests for your API
+      </li>      
+    </ul>
+    <p>This can shorten the feedback loop and allow you to refine your API in the design stage without spending time and effort building out the real API. It will also help you follow a test-driven development (TDD) approach to building your real API.
+    </p>
+    <p>There are many different tools that can help when designing and testing your API. Some popular tools are:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>SwaggerHub</li>
+      <li>Swagger.io</li>
+      <li>Postman</li>
+      <li>Bruno</li>
+      <li>ReadyAPI</li>
+    </ul>
+
+    <p>All have a free tier, but charge for more enterprise features.</p>
+
+    <p>There are also many open source tools that are free to use – for example, the <a href="https://github.com/apisyouwonthate/openapi.tools">openapi.tools GitHub repository</a> maintains lists of open source API tooling. </p>
+
+    <p>When using any cloud-based API tool, be sure to check how the tool will keep your API credentials secure before sharing them.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

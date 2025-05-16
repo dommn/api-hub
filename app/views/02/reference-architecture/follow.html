@@ -1,0 +1,67 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../documentation.html" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Reference architecture",
+        parent: true,
+        children: [
+        {
+          text: "Develop your data and APIs using a reference architecture",
+          href: "develop-data"
+        },
+        {
+          text: "Build an architecture that promotes data exchange across government",
+          href: "build"
+        },
+        {
+          text: "Reuse applications and common data",
+          href: "reuse"
+        }, 
+        {
+          text: "Follow a services and systems model based on data",
+          current: true,
+          href: "follow"
+        }]
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Reference architecture</span>
+      <h1 class="govuk-heading-l">Build an architecture that promotes data exchange across government</h1>
+
+      <p>You should aim for an approach to services and systems in your organisation based around data, and move towards an approach <a href="https://www.gov.uk/government/publications/uk-national-data-strategy/national-data-strategy">based on standardised data</a>.</p>
+
+    <p>A “service” is the method by which users interact with the government, for example <a href="https://www.gov.uk/renew-driving-licence">Renew your driving licence</a>. It is a group of multiple, interoperable systems that ingests, stores, manipulates, and produces data.</p>
+
+    <p>A “system” is one of the components which makes up a service. For example, the database storing the information, the sign in system, or an analytics platform.</p>
+
+    <p>Your organisation should follow a model which transforms unstructured data into structured data as soon as possible when the data arrives.</p>
+
+    <p>This model should create a record of all events and transactions relating to that data, then store both the data and its record in a database. This allows for more consistent data that is easy to manipulate and retrieve. It also helps to <a href="https://www.gov.uk/guidance/manage-your-data-for-access-and-reuse"> make sure that data is accessible and reusable</a>.</p>
+
+    <p>When your data is requested by other people, it must be provided as structured data through an API. <a href="https://www.gov.uk/government/collections/api-design-guidance">Read guidance about designing, building and running APIs</a> to best suit your organisation’s needs.</p>
+
+    <p>Your data-based model can transform this into unstructured data, for example customer data being turned into a postable paper document.</p>
+
+    <p><a href="https://www.gov.uk/guidance/choose-tools-and-infrastructure-to-make-better-use-of-your-data">Read guidance on choosing tools and infrastructure</a> to make better use of data to help you choose software and standards to suit your organisation.</p>
+      </div>
+      </div>
+
+{% endblock %}

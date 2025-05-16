@@ -1,0 +1,97 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+{% block beforeContent %}
+
+<a href="../documentation.html" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Defining an API management structure",
+        parent: true,
+        children: [
+        {
+          text: "Principles for your API strategy",
+          href: "principles"
+        },
+        {
+          text: "What API management strategy can help with",
+          href: "help"
+        },
+        {
+          text: "Designing APIs",
+          href: "designing"
+        },
+        {
+          text: "Putting APIs into production",
+          current: true,
+          href: "production"
+        }, 
+        {
+          text: "Managing operations with an API gateway",
+          href: "operations"
+        }, 
+        {
+          text: "Making your APIs easy to find",
+          href: "easy-to-find"
+        }, 
+        {
+          text: "Taking your API out of service",
+          href: "out-of-service"
+        }]
+      }]
+    }) }}
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Defining an API management structure</span>
+      <h1 class="govuk-heading-l">Putting APIs into production</h1>
+
+     <p>Deploying your API involves more than just pushing code to production. There are a number of things you should put in place to support the publishing process and to provide a good developer experience.</p>
+
+     <h2 class="govuk-heading-m">Document your APIs</h2>
+
+     <p>Your API documentation is the starting point for development teams looking to use your API.</p>
+
+     <p>You should work with a <a href="https://www.gov.uk/guidance/technical-writer">technical writer</a> from the start of your project. If you do not have technical writing resources in your organisation, you can contact the cross-government <a href="https://www.gov.uk/service-manual/communities/technical-writing-community">technical writing community</a> for help.</p>
+
+     <p>When documenting APIs, you should include:</p>
+
+     <ul class="govuk-list govuk-list--bullet">
+      <li>conceptual information to introduce the API</li>
+      <li>practical information such as a ‘getting started’ guide</li>
+      <li>detailed <a href="https://www.gov.uk/guidance/writing-api-reference-documentation">reference documentation</a></li>
+     </ul>
+     
+     <p>You can use an API specification to generate and auto update reference documentation for your API as you build and iterate it.</p>
+
+     <h2 class="govuk-heading-m">Developer portal</h2>
+
+     <p>A developer portal, also sometimes called a developer hub, is where external developers can access everything they need to set up and manage their integration with your API. This usually includes:</p>
+
+     <ul class="govuk-list govuk-list--bullet">
+      <li>documentation for your API</li>
+      <li>developer registration and authorisation</li>
+      <li>self service tools for things like renewing API keys and changing their password</li>
+      <li>a test environment - for example a mock API, a ‘sandbox’ and test users</li>
+      <li>issue reporting and ticket support</li>
+     </ul>
+
+     <p>You can also use your developer portal to gather internal metrics about your API programme. For example, you might want to measure how quickly developers are able to set up a test version of an API. This is sometimes known as “time to live” or “time to 200” and is a useful metric to measure how easy your API is to integrate. It can also help you identify where there might be pain points for users.</p>
+
+
+  </div>
+</div>
+
+{% endblock %}

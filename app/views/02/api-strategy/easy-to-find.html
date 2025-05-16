@@ -1,0 +1,104 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+{% block beforeContent %}
+
+<a href="../documentation.html" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Defining an API management structure",
+        parent: true,
+        children: [
+        {
+          text: "Principles for your API strategy",
+          href: "principles"
+        },
+        {
+          text: "What API management strategy can help with",
+          href: "help"
+        },
+        {
+          text: "Designing APIs",
+          href: "designing"
+        },
+        {
+          text: "Putting APIs into production",
+          href: "production"
+        }, 
+        {
+          text: "Managing operations with an API gateway",
+          href: "operations"
+        }, 
+        {
+          text: "Making your APIs easy to find",
+          current: true,
+          href: "easy-to-find"
+        }, 
+        {
+          text: "Taking your API out of service",
+          href: "out-of-service"
+        }]
+      }]
+    }) }}
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Defining an API management structure</span>
+      <h1 class="govuk-heading-l">Making your APIs easy to find</h1>
+
+     <p>APIs should be visible and discoverable in a central and up-to-date place. You can use an API catalogue to help users discover your APIs, find out what they do and how to use them. An API catalogue also helps your organisation keep an inventory of what APIs it manages.</p>
+
+     <h2 class="govuk-heading-m">Keep API discovery separate from your developer portal</h2>
+
+     <p>Most API management tooling includes features for implementing an API gateway, the developer portal and an API catalogue, making it a convenient way to use one tool for all of these things. However, you should not rely solely on a developer portal to make your APIs discoverable.</p>
+
+     <p>There are cases where an API might not be appropriate to sit on the gateway or the developer portal, but should still be discoverable in a catalogue. This might be because the API is still in experimental stages, does not meet standards, or because the team is not ready to hand over management of the API.</p>
+
+     <p>Keeping the catalogue separate from the other parts of your API management tool helps people discover all your APIs without restricting them to those that meet certain criteria.</p>
+
+     <p>This helps:</p>
+
+     <ul class="govuk-list govuk-list--bullet">
+      <li>promote an environment where innovation can happen in the open</li>
+      <li>avoid teams developing in silos to get around rules</li>
+      <li>improve transparency and reduce duplication of effort</li>
+     </ul>
+
+     <h2 class="govuk-heading-m">Consider who will be looking for APIs in your organisation</h2>
+
+     <p>Most organisations have 3 levels of access for their APIs:</p>
+
+     <ul class="govuk-list govuk-list--bullet">
+      <li>private - internal and kept entirely within the organisation</li>
+      <li>partner - shared externally with a limited set of trusted users and partners</li>
+      <li>public - open to external users either directly or through a self-service sign up platform</li>
+     </ul>
+
+     <p>Consider how best to help each group of users find your APIs. You could do this with separate catalogues, but you should consider the cost and effort it would require to maintain these. You can also use access control to restrict visibility of APIs, or details of the APIs, to registered users at different levels of authentication.</p>
+
+     <p>You should aim to expose as much detail as possible to all users. Even for sensitive data sets, you should expose basic details of an API with information about how to get access. This helps developers understand the value of the API and start interacting with it while they wait for access approval.</p>
+
+     <p>Check with your internal security teams about what level of exposure is acceptable for each API. You might also find it helpful to review the <a href="https://github.com/alphagov/api-catalogue/blob/main/data/catalogue.csv-metadata.json"> metadata model for the government API catalogue</a>. This provides a basic discovery framework that does not increase the vulnerability of published resources.</p>
+
+     <h2 class="govuk-heading-m">Link your catalogue to the government API catalogue</h2>
+
+     <p>Your internal catalogue should update the <a href="https://api.gov.uk/">government API catalogue</a>, either programmatically or with manual submissions. This catalogue is a centralised directory of government APIs, and any external APIs (whether inter-departmental, restricted or public) should be listed on there.</p>
+
+     <p>Contact the API Catalogue team at <a href="api-catalogue@digital.cabinet-office.gov.uk">api-catalogue@digital.cabinet-office.gov.uk</a> for more information and help with adding your APIs or connecting your internal catalogue.</p>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends "./layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set questionPage = "false" %}
+{% set nestedPage = "true" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Documentation</h1>
+
+    <p>Choose an area of documentation.</p>
+
+    {% from 'node_modules/dfe-frontend/packages/components/card/macro.njk' import card %}
+  {{ card({
+      cards: [
+          {
+              "imageCard": false,
+              "imagePath": "/images/sample-image.jpg",
+              "altText": "API guidance",
+              "headingLevel": "3",
+              "linkCard": true,
+              "link": "task-list-1",
+              "openInNewTab": false,
+              "heading": "API guidance",
+              "description": "An overview of designing, building and operating APIs.",
+              "meta": ""
+          },
+          {
+            "imageCard": false,
+            "imagePath": "/images/sample-image.jpg",
+            "altText": "Sample Image",
+            "headingLevel": "3",
+            "linkCard": true,
+            "link": "reference-architecture/develop-data",
+            "openInNewTab": false,
+            "heading": "Reference architecture",
+            "description": "Use a reference architecture to develop a public sector organisation’s technology and how it shares data across government.",
+            "meta": ""
+        },
+        {
+          "imageCard": false,
+          "imagePath": "/images/sample-image.jpg",
+          "altText": "Defining an API management strategy",
+          "headingLevel": "3",
+          "linkCard": true,
+          "link": "api-strategy/principles",
+          "openInNewTab": false,
+          "heading": "Defining an API management strategy",
+          "description": "Reduce development overhead and time to deployment by standardising how teams design, launch and manage APIs in your organisation.",
+          "meta": ""
+      },
+      {
+        "imageCard": false,
+        "imagePath": "/images/sample-image.jpg",
+        "altText": "Overview of API information",
+        "headingLevel": "3",
+        "linkCard": true,
+        "link": "open-api/api-information",
+        "openInNewTab": false,
+        "heading": "OpenAPI specification template",
+        "description": "This API specification is published by the Central Digital and Data Office (CDDO) as a reference standard for API First development.",
+        "meta": ""
+    },
+      {
+        "imageCard": false,
+        "imagePath": "/images/sample-image.jpg",
+        "altText": "Overview of API information",
+        "headingLevel": "3",
+        "linkCard": true,
+        "link": "",
+        "openInNewTab": false,
+        "heading": "GOV UK API Catalogue",
+        "description": "Check for existing APIs by using the cross-government API catalogue.",
+        "meta": ""
+    },
+  {
+    "imageCard": false,
+    "imagePath": "/images/sample-image.jpg",
+    "altText": "API maturity",
+    "headingLevel": "3",
+    "linkCard": true,
+    "link": "api-maturity",
+    "openInNewTab": false,
+    "heading": "API Maturity",
+    "description": "APIs allow applications to communicate with each other to share data across
+    government and beyond. To ensure fast, secure, and scalable you will need to
+    understand API maturity levels.",
+    "meta": ""
+},
+    {
+      "imageCard": false,
+      "imagePath": "/images/sample-image.jpg",
+      "altText": "Overview of API information",
+      "headingLevel": "3",
+      "linkCard": true,
+      "link": "api-maturity-tool",
+      "openInNewTab": false,
+      "heading": "API Maturity self-assessment",
+      "description": "Use this tool to measure your organisations API maturity level and receive recommendations to improve your score.",
+      "meta": ""
+  },
+  {
+    "imageCard": false,
+    "imagePath": "/images/sample-image.jpg",
+    "altText": "Overview of API information",
+    "headingLevel": "3",
+    "linkCard": true,
+    "link": "case-study-guidance",
+    "openInNewTab": false,
+    "heading": "Guidance for API platform case studies",
+    "description": "We always encourage new case studies to showcase our APIs and the applications that use it. ",
+    "meta": ""
+}
+   
+      ]
+  }) }}
+
+  </div>
+</div>
+
+{% endblock %}

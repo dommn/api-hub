@@ -1,0 +1,81 @@
+{% extends "./layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Your results</h1>
+
+      <p>Based on the information you've given us, this is the information you need to review.</p>
+
+      <h2 class="govuk-heading-m">Design your API</h2>
+
+      {{ govukTaskList({
+        idPrefix: "company-details",
+        items: [
+        {
+          title: {
+            text: "API discovery"
+          },
+          href: "design/api-discovery"
+        },
+          {
+            title: {
+              text: "Check for existing APIs"
+            },
+            href: "design/check-for-existing-apis"
+          },
+          {
+            title: {
+              text: "Design your API first"
+            },
+            href: "design/design-your-api-first"
+          },
+          {
+            title: {
+              text: "Follow the Technology Code of Practice and other standards"
+            },
+            href: "design/code-of-practice"
+          },
+          {
+            title: {
+              text: "Use the REST API style"
+            },
+            href: "design/restful-api"
+          },
+          {
+            title: {
+              text: "Develop a specification before you start to code"
+            },
+            href: "design/develop-specification"
+          },
+          {
+            title: {
+              text: "Be secure by design"
+            },
+            href: "design/be-secure-by-design"
+          },
+          {
+            title: {
+              text: "Test your assumptions with users"
+            },
+            href: "design/test-assumptions-with-users"
+          },
+          {
+            title: {
+              text: "Iterate the design based on feedback"
+            },
+            href: "design/iterate-based-on-feedback"
+          }
+        ]
+      }) }}
+
+  </div>
+</div>
+
+{% endblock %}

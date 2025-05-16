@@ -1,0 +1,125 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+
+{% block beforeContent %}
+
+<a href="../documentation.html" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "API information",
+        current: true,
+        href: "api-information"
+      }, 
+      {
+        text: "Endpoints",
+        href: "/contact",
+        parent: true,
+        children: [{
+          text: "PUT /pet",
+          href: "put-pet"
+        }, {
+          text: "POST /pet",
+          href: "post-pet"
+        }, {
+          text: "GET /pet/findByStatus",
+          href: "get-status"
+        }, {
+          text: "GET /pet/findByTags",
+          href: "get-find-tags"
+        }, {
+          text: "GET /pet/{petId}",
+          href: "get-id"
+        }, {
+          text: "POST /pet/{petId}",
+          href: "post-id"
+        }, {
+          text: "DELETE /pet/{petId}",
+          href: "delete-id"
+        }, {
+          text: "POST /pet/{petId}/uploadImage",
+          href: "post-image"
+        }, {
+          text: "GET /store/inventory
+          ",
+          href: "get-inventory"
+        }, {
+          text: "POST /store/order",
+          href: "post-order"
+        }, {
+          text: "GET /store/order/{orderId}
+          ",
+          href: "get-order"
+        }, {
+          text: "DELETE /store/order/{orderId}",
+          href: "delete-order"
+        }, {
+          text: "POST /user",
+          href: "post-user"
+        }, {
+          text: "POST /user/createWithList",
+          href: "post-wishlist"
+        }, {
+          text: "GET /user/login",
+          href: "get-login"
+        }, {
+          text: "GET /user/logout",
+          href: "get-logout"
+        }, {
+          text: "GET /user/{username}",
+          href: "get-username"
+        }, {
+          text: "PUT /user/{username}",
+          href: "put-username"
+        }, {
+          text: "DELETE /user/{username}",
+          href: "delete-username"
+        }
+        ]
+      }
+      ,
+      {
+        text: "Security",
+        href: "security"
+      }]
+    }) }}
+    
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l"> API information</h1>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><strong>Title:</strong> Swagger Petstore - OpenAPI 3.0</li>
+        <li><strong>Description:</strong> This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about
+    Swagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!
+    You can now help us improve the API whether it's by making changes to the definition itself or to the code.
+    That way, with time, we can improve the API in general, and expose some of the new features in OAS3.
+    
+    Some useful links:
+    - [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)
+    - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)</li>
+        <li><strong>Version:</strong> 1.0.12</li>
+        <li><strong>API ID:</strong> N/A</li>
+        <li><strong>Audience:</strong> N/A</li>
+      </ul>
+      <p>Contact: N/A (<a href="mailto:apiteam@swagger.io">apiteam@swagger.io</a>) </p>
+      <h4 class="govuk-heading-s">Servers</h4><ul class="govuk-list govuk-list--bullet"><li><strong>N/A:</strong> <code>https://petstore3.swagger.io/api/v3</code></li></ul>
+      <h4 class="govuk-heading-s">Tags</h4><ul class="govuk-list govuk-list--bullet"><li><strong>pet</strong>: Everything about your Pets</li><li><strong>store</strong>: Access to Petstore orders</li><li><strong>user</strong>: Operations about user</li></ul>
+      <p><strong>External Documentation:</strong> Find out more about Swagger (<a href="https://swagger.io" target="_blank">Link</a>)</p>
+    
+  </div>
+</div>
+
+{% endblock %}

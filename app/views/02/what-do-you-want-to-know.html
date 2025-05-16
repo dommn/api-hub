@@ -1,0 +1,71 @@
+{% extends "./layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "get started" %}
+{% set questionPage = "false" %}
+{% set back = "true" %}
+{% set nestedPage = "false" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="check-answers" novalidate method="post">
+
+
+{{ govukCheckboxes({
+  name: "whatDoYouWantToKnow",
+  fieldset: {
+    legend: {
+      text: "What do you want help with?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select all that apply"
+  },
+  items: [
+        {
+          value: "Building an API",
+          text: "Building an API"
+        },
+        {
+          value: "Designing a scalable API",
+          text: "Designing a scalable API"
+        },
+        {
+          value: "Defining an API strategy",
+          text: "Defining an API strategy"
+        },
+        {
+          value: "Implementing OAuth security",
+          text: "Implementing OAuth security"
+        },
+        {
+          value: "Monitoring API health",
+          text: "Monitoring API health"
+        },
+        {
+          value: "Testing API performance",
+          text: "Testing API performance"
+        },
+        {
+          value: "Troubleshooting API issues",
+          text: "Troubleshooting API issues"
+        }
+  ]
+}) }}
+
+  
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+  </form>
+  
+  </div>
+</div>
+
+{% endblock %}

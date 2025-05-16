@@ -1,0 +1,71 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "explore" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <strong>Overview</strong>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="landing-page">Best practice government APIs</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="../open-api/api-information">Exemplar API</a>
+      </li>
+    </ul>
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <strong>API user cases</strong>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="verify">Verify or prove something</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="status">Get the status of something</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="submit">Submit information to government</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="retrieve">Retrieve information</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="access">Manage access and permissions</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="payments">Handle payments and financial interactions</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Manage access and permissions</h1>
+
+<p>APIs in this category help you control who can use your service and what they can do.</p>
+
+<h3 class="govuk-heading-s">Create Test User</h3>
+<p>This API generates test user accounts for sandbox environments.</p>
+<p><a href="">View this API</a></p>
+
+<h3 class="govuk-heading-s">OS OAuth 2 API</h3>
+<p>This API handles authentication for Ordnance Survey APIs.</p>
+<p><a href="">View this API</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

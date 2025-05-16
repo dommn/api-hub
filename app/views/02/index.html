@@ -1,0 +1,127 @@
+{% extends "./layouts/homepage.html" %}
+{% set nestedPage = "false" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h2 class="govuk-heading-l">Get started</h2>
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <ul class="govuk-list dfe-action-list">
+                    <li>
+                        <a href="about-apis" class="govuk-link govuk-link--no-visited-state">
+                            I want to understand APIs
+                            <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path
+                                    d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="task-list-1" class="govuk-link govuk-link--no-visited-state">
+                            I'm building a new API
+                            <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path
+                                    d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <ul class="govuk-list dfe-action-list">
+                <li>
+                    <a href="reference-architecture/develop-data" class="govuk-link govuk-link--no-visited-state">
+                        I want to make my API better
+                        <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path
+                                d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="reference-architecture/develop-data" class="govuk-link govuk-link--no-visited-state">
+                        I need to integrate with a government API
+                        <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path
+                                d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-8">
+        <h2 class="govuk-heading-l govuk-!-font-weight-bold">Find an API</h2>
+        <p class="govuk-body">Browse and view APIs from different government departments and public bodies.</p>
+        <p class="govuk-body govuk-!-margin-bottom-0"><a href="/styles/"
+                class="govuk-link govuk-!-font-weight-bold">Browse APIs</a></p>
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-8">
+        <h2 class="govuk-heading-l govuk-!-font-weight-bold">API guidance</h2>
+        <p class="govuk-body">Get best practice on how to design, build, manage and document your API.</p>
+        <p class="govuk-body govuk-!-margin-bottom-0"><a href="/styles/"
+                class="govuk-link govuk-!-font-weight-bold">View the guidance</a></p>
+    </div>
+
+    <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-8">
+        <h2 class="govuk-heading-l govuk-!-font-weight-bold">Publish your API</h2>
+        <p class="govuk-body">Learn how to meet GOV.UK standards and publish your API in the catalogue..</p>
+        <p class="govuk-body govuk-!-margin-bottom-0"><a href="/styles/"
+                class="govuk-link govuk-!-font-weight-bold">Find out more</a></p>
+    </div>
+</div>
+
+<!--
+<section style="background-color:#ffffff;" class="govuk-!-padding-top-7">
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class="govuk-!-margin-top-3 govuk-!-margin-bottom-5">
+                    <div class="govuk-grid-row split-panel" style="background: #f3f2f1;">
+                        <div class="govuk-grid-column-one-half text-column">
+                            <h2 class="govuk-heading-l govuk-!-margin-top-3">API maturity self assessment tool</h2>
+                            <p class="govuk-body">You can use this tool to measure, understand improve your API maturity level.</p>
+                                
+                                <p class="govuk-body">APIs allow applications to communicate with each other to share data across
+                                    government and beyond. To ensure fast, secure, and scalable you will need to
+                                    understand your API maturity level.</p>
+                            <p class="govuk-!-margin-bottom-0">
+                                <a href="api-maturity-tool" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">View
+                                    the tool</a>
+                            </p>
+                        </div>
+                        <div class="govuk-grid-column-one-half image-column">
+                            <div class="image-container" style="background-image: url('/public/images/api.jpg');">
+                                <img src="/assets/images/strategy.png" alt="" class="govuk-!-margin-top-5 roadmap-icon" style="width: 70%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+{% endblock %}

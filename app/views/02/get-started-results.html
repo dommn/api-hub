@@ -1,0 +1,208 @@
+{% extends "./layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Your results</h1>
+
+      <p>Based on the information you've given us, this is the information you need to review.</p>
+
+      {% if "Defining an API Strategy" in data['whatDoYouWantToKnow'] or "Designing a scalable API" in data['whatDoYouWantToKnow'] %}
+
+      <h2 class="govuk-heading-m">Design your API</h2>
+
+      {{ govukTaskList({
+        idPrefix: "company-details",
+        items: [
+        {
+          title: {
+            text: "API discovery"
+          },
+          href: "design/api-discovery"
+        },
+          {
+            title: {
+              text: "Check for existing APIs"
+            },
+            href: "design/check-for-existing-apis"
+          },
+          {
+            title: {
+              text: "Design your API first"
+            },
+            href: "design/design-your-api-first"
+          },
+          {
+            title: {
+              text: "Follow the Technology Code of Practice and other standards"
+            },
+            href: "design/code-of-practice"
+          },
+          {
+            title: {
+              text: "Use the REST API style"
+            },
+            href: "design/restful-api"
+          },
+          {
+            title: {
+              text: "Develop a specification before you start to code"
+            },
+            href: "design/develop-specification"
+          },
+          {
+            title: {
+              text: "Be secure by design"
+            },
+            href: "design/be-secure-by-design"
+          },
+          {
+            title: {
+              text: "Test your assumptions with users"
+            },
+            href: "design/test-assumptions-with-users"
+          },
+          {
+            title: {
+              text: "Iterate the design based on feedback"
+            },
+            href: "design/iterate-based-on-feedback"
+          }
+        ]
+      }) }}
+
+      {% endif %}
+
+      {% if "Implementing OAuth security" in data['whatDoYouWantToKnow'] or "Building an API" in data['whatDoYouWantToKnow'] %}
+
+      <h2 class="govuk-heading-m">Build your API</h2>
+
+      {{ govukTaskList({
+        idPrefix: "company-details",
+        items: [
+        {
+          title: {
+            text: "Use the UTF-8 standard to encode your API"
+          },
+          href: "build/utf-8"
+        },
+          {
+            title: {
+              text: "Use JSON for response formats"
+            },
+            href: "build/json-response-formats"
+          },
+          {
+            title: {
+              text: "Use consistent names for resources"
+            },
+            href: "build/consistent-names"
+          },
+          {
+            title: {
+              text: "Make your resources persistent"
+            },
+            href: "build/resources-persistent"
+          },
+          {
+            title: {
+              text: "Use standard HTTP responses"
+            },
+            href: "build/standard-http-responses"
+          },
+          {
+            title: {
+              text: "Host your API"
+            },
+            href: "build/host-api"
+          },
+          {
+            title: {
+              text: "Control access to your API"
+            },
+            href: "build/control-access"
+          },
+          {
+            title: {
+              text: "Secure your API"
+            },
+            href: "build/secure-api"
+          },
+          {
+            title: {
+              text: "Consider performance and scalability"
+            },
+            href: "build/performance"
+          },
+          {
+            title: {
+              text: "Provide an API test service"
+            },
+            href: "build/test-service"
+          },
+          {
+            title: {
+              text: "Test your API’s compliance"
+            },
+            href: "build/compliance"
+          },
+          {
+            title: {
+              text: "Document your APIs"
+            },
+            href: "build/document"
+          }
+        ]
+      }) }}
+
+      {% endif %}
+
+      {% if "Monitoring API health" in data['whatDoYouWantToKnow'] or "Testing API performance" in data['whatDoYouWantToKnow'] or "Troubleshooting API issues" in data['whatDoYouWantToKnow'] %}
+
+      <h2 class="govuk-heading-m">Operate your API</h2>
+
+      {{ govukTaskList({
+        idPrefix: "company-details",
+        items: [
+        {
+          title: {
+            text: "Version your API and support older versions
+            "
+          },
+          href: "operate/version"
+        },
+          {
+            title: {
+              text: "Use an API management system or gateway
+              "
+            },
+            href: "operate/management-system"
+          },
+          {
+            title: {
+              text: "Log your API’s use
+              "
+            },
+            href: "operate/log-use"
+          },
+          {
+            title: {
+              text: "Monitor APIs for unusual activity
+              "
+            },
+            href: "operate/monitor"
+          }
+        ]
+      }) }}
+
+      {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

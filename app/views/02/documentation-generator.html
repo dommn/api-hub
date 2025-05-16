@@ -1,0 +1,102 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block beforeContent %}
+
+<a href="documentation" class="govuk-back-link">Back to Documentation</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">OpenAPI Documentation Generator</h1>
+
+    <h2 class="govuk-heading-m">Overview</h2>
+
+    <p>The OpenAPI Documentation Generator is a Java-based tool that processes
+      your OpenAPI YAML specification and generates enriched, accessible HTML
+      documentation. It adheres to Government Digital Service (GDS) standards and
+      includes the following features:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Customizable input and output file paths.</li>
+        <li>Null-safe printing that replaces missing values with “N/A”.</li>
+        <li>Detailed, step-by-step logging using SLF4J.</li>
+        <li>Built-in accessibility enhancements in the generated HTML.</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Prerequisites</h2>
+
+      <p>Before using this tool, ensure you have:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Java 17 (or later) installed.</li>
+        <li>Maven installed.</li>
+        <li>An OpenAPI YAML file containing your API specification.</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Usage</h2>
+
+      <h3 class="govuk-heading-s">Run the JAR file:</h3>
+       <p> Execute the JAR file from the command line with your desired options:</p>
+       <p> java -jar cddo-openapi-documentation-generator-0.0.1-SNAPSHOT.jar [options]</p>
+      
+       <h3 class="govuk-heading-s">Command-Line Options:</h3>
+
+       <ul class="govuk-list govuk-list--bullet">
+        <li>--help or -h</li>
+        <li>Displays a help message with usage instructions.</li>
+        <li>--openapi=</li>
+        <li>Specifies the path to the OpenAPI YAML file.</li>
+        <li>Examples: o --openapi=classpath:openapi.yaml, o --openapi=file:/path/to/openapi.yaml</li>
+        <li>--output=</li>
+        <li>Specifies the output file path for the generated HTML documentation.</li>
+        <li>Example: o --output=/path/to/generated-doc.html</li>
+        </ul>
+
+        <p>If no arguments are provided, the tool defaults to using classpath:openapi.yaml for
+          input and generates generated-doc.html in the current directory.</p>
+
+        
+          <h2 class="govuk-heading-m">Logging</h2>
+          <h3 class="govuk-heading-s">Monitor logging:</h3>
+          <p>The application uses SLF4J for logging and provides clear, step-by-step progress
+            updates during execution. Key logged steps include:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+            <li>Startup: The generator starts and initializes.</li>
+<li>File Loading: The OpenAPI YAML file is loaded from the specified path.</li>
+<li>Parsing: The YAML file is parsed into an OpenAPI object.</li>
+<li>HTML Generation: The HTML documentation is generated based on the
+OpenAPI specification.</li>
+<li>Output: The generated HTML is written to the specified output file.</li>
+</ul>
+
+<p>Monitor the console for detailed logging information during these processes.</p>
+
+<h2 class="govuk-heading-m">Accessibility Enhancements</h2>
+          <h3 class="govuk-heading-s">Review Accessibility Enhancements:</h3>
+
+          <p>The generated HTML documentation includes the following accessibility features:</p>
+          <ul class="govuk-list govuk-list--bullet">
+          <li>A “Skip to main content” link is provided at the top for keyboard users.</li>
+        <li>Proper use of &lt;header&gt;, &lt;main&gt;, and &lt;footer&gt; elements with appropriate
+ARIA roles ensures that assistive technologies can navigate the page easily.</li>
+<li>The SVG logos include descriptive &lt;title&gt; tags and ARIA labels to provide
+context for screen readers.</li>
+</ul>
+
+<a href="/public/documents/cddo-openapi-documentation-generator-0.0.1-SNAPSHOT.jar" download role="button" class="govuk-button">
+  Download file
+</a>
+
+  </div>
+</div>
+
+{% endblock %}

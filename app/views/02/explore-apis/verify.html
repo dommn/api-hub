@@ -1,0 +1,82 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "explore" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <strong>Overview</strong>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="landing-page">Best practice government APIs</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="../open-api/api-information">Exemplar API</a>
+      </li>
+    </ul>
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <strong>API user cases</strong>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="verify">Verify or prove something</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="status">Get the status of something</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="submit">Submit information to government</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="retrieve">Retrieve information</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="access">Manage access and permissions</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="payments">Handle payments and financial interactions</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+
+<h1 class="govuk-heading-l">Verify or prove something</h1>
+
+<p> APIs that let you:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+
+   <li> check if someone is eligible for a service or benefit</li>
+
+   <li> confirm an address, document or reference number</li>
+
+    <li>validate identity or account details</li>
+  </ul>
+
+<h3 class="govuk-heading-s">Check a UK VAT number</h3>
+<p>This API validates UK VAT numbers and provides company details.</p>
+<p><a href="">View this API</a></p>
+
+<h3 class="govuk-heading-s">Check an EORI number</h3>
+<p>This API verifies the validity of UK Economic Operator Registration Identification numbers.</p>
+<p><a href="">View this API</a></p>
+
+
+  </div>
+</div>
+
+{% endblock %}

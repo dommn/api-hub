@@ -1,0 +1,95 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "documentation" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+{% block beforeContent %}
+
+<a href="../documentation.html" class="govuk-back-link">Back to Documentation</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+  
+    {{ xGovukSubNavigation({
+      items: [{
+        text: "Defining an API management structure",
+        parent: true,
+        children: [
+        {
+          text: "Principles for your API strategy",
+          href: "principles"
+        },
+        {
+          text: "What API management strategy can help with",
+          href: "help"
+        },
+        {
+          text: "Designing APIs",
+          href: "designing"
+        },
+        {
+          text: "Putting APIs into production",
+          href: "production"
+        }, 
+        {
+          text: "Managing operations with an API gateway",
+          href: "operations"
+        }, 
+        {
+          text: "Making your APIs easy to find",
+          href: "easy-to-find"
+        }, 
+        {
+          text: "Taking your API out of service",
+          current: true,
+          href: "out-of-service"
+        }]
+      }]
+    }) }}
+    
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Defining an API management structure</span>
+      <h1 class="govuk-heading-l"> Taking your API out of service</h1>
+
+      <p>You must plan how to take your APIs out of service when they are no longer needed. This is often referred to as retirement, deprecation, sunsetting or decommissioning.</p>
+
+      {{ govukWarningText({
+        text: "Taking an API out of service suddenly or with poor support can significantly impact the services integrating that API. It can also damage your organisation’s credibility.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <p>Being prepared for how you’ll retire APIs helps:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>build trust with users - these are the external developers using your APIs</li>
+        <li>users plan for any changes they need to make to their services</li>
+        <li>protect your organisation’s credibility</li>
+      </ul>
+
+      <p>It might be useful to put together an API retirement workflow or checklist for your organisation to help teams follow a consistent process. Below is an example of what this might look like.</p>
+
+      <ul class="govuk-list govuk-list--number">
+        <li>Use analytics to support your case for deprecation.</li>
+        <li>Publish a blog post to explain the reasons and offer alternatives where possible.</li>
+        <li>Add a deprecation notice to documentation with the date it will happen.</li>
+        <li>Disable sign ups in self-service to stop new users accessing the service.</li>
+        <li>Email subscribed users with the date of deprecation - as the date approaches, emails should get more frequent.</li>
+        <li>Use <a href="https://tools.ietf.org/html/rfc8594">Sunset</a> or <a href="https://tools.ietf.org/id/draft-dalal-deprecation-header-02.html">Deprecated</a> HTTP headers, with a link to the documentation and blog post.</li>
+        <li>Wait and see how usage changes - make sure it’s dropping and contact any remaining active users.</li>
+        <li>Agree an acceptable number of active users at retirement.</li>
+        <li>Keep the API in retired status for a while - this could be months or years.</li>
+      </ul>
+     
+      <p>You should publish your retirement policy somewhere external developers can see it, for example on your developer hub or in API documentation. This will help reassure users that you provide a good level of support throughout the API life cycle.</p>
+
+  </div>
+</div>
+
+{% endblock %}
