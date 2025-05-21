@@ -6,6 +6,8 @@
 // Add extra styles here
 
 @import 'node_modules/dfe-frontend/packages/dfefrontend';
+@import "node_modules/@ministryofjustice/frontend/moj/components/filter/filter";
+@import "node_modules/@ministryofjustice/frontend/moj/objects/filter-layout";
 
 @import "components/hero";
 @import "components/inverted-button";
@@ -15,6 +17,10 @@
 @import "components/header-items";
 @import "components/action-list";
 @import "components/split-panel";
+@import "components/filter-override";
+@import "components/option-select";
+@import "components/results-header";
+
 
 .app-service-standard-point {
     border-top: 1px solid #b1b4b6;
@@ -38,3 +44,12 @@
   .app-service-standard-point:first-child {
     margin-top: 0;
   }
+
+
+  .results-header-count {
+    flex-grow: 1;
+}
+
+.results-header-count p{
+    margin: 0;
+}
