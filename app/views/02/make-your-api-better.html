@@ -1,0 +1,51 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="make-your-api-better">Make your API better</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="follow-ref-arc">Follow government reference architecture</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="improve-api-design">Improve your API design</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="use-api-mgmt-tools">Use API management tools</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="improve-documentation">Improve your documentation</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="plan-for-lifecycle">Plan for lifecycle and governance</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="make-api-discoverable">Make your API discoverable</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Make your API better</h1>
+
+    <p class="govuk-body">
+      If you already have an API in use, there are ways you can improve its design, performance and how it's supported. </p>
+     <p> Making your API easier to use helps others build services faster and improves consistency across government.
+    </p>
+
+   
+  </div>
+</div>
+
+{% endblock %}

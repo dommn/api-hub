@@ -1,0 +1,46 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-right-api">Find the right API</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-understand">Understand how the API works</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-get-access">Get access</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-test">Build and test your integration</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-ongoing">Prepare for ongoing use</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Find the right API</h1>
+    <p class="govuk-body">Start by checking the <a href="https://www.api.gov.uk/catalogue" class="govuk-link">GOV.UK API catalogue</a>. You can filter by department, topic or access level, and search by keyword.</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Read the API summaries to understand what each one does</li>
+      <li>Look for published documentation or OpenAPI specifications</li>
+      <li>Check if the API is open (public), partner-only, or internal</li>
+    </ul>
+    <p class="govuk-body">If nothing matches, speak to your digital team, ask the API Hub team, or post in the cross-government API Slack channel.</p>
+
+  </div>
+</div>
+
+{% endblock %}

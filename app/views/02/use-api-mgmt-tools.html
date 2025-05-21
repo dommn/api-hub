@@ -1,0 +1,70 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="make-your-api-better">Make your API better</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="follow-ref-arc">Follow government reference architecture</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="improve-api-design">Improve your API design</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="use-api-mgmt-tools">Use API management tools</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="improve-documentation">Improve your documentation</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="plan-for-lifecycle">Plan for lifecycle and governance</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="make-api-discoverable">Make your API discoverable</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Use API management tools</h1>
+    <p class="govuk-body">API management platforms like Azure API Management, Kong, or AWS API Gateway can help you:</p>
+
+    <h3 class="govuk-heading-m">Security and control</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Token validation, rate limiting, and throttling</li>
+      <li>Role-based access control</li>
+      <li>Secure onboarding and key rotation</li>
+    </ul>
+
+    <h3 class="govuk-heading-m">Monitoring and insights</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Real-time usage metrics</li>
+      <li>Request logs for debugging</li>
+      <li>Alerts for downtime or high error rates</li>
+    </ul>
+
+    <h3 class="govuk-heading-m">Developer experience</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Centralised documentation and test consoles</li>
+      <li>Self-service access and sandbox provisioning</li>
+      <li>Usage dashboards for consumers</li>
+    </ul>
+
+    <p class="govuk-body">Start with limited rate limits and scale as you monitor usage.</p>
+
+   
+  </div>
+</div>
+
+{% endblock %}

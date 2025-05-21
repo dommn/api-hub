@@ -1,0 +1,72 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-user-need">Understand the user need</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-check">Check if an API already exists</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-plan-design">Plan your API design</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-auth">Plan authentication and security</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-test-env">Build a test environment</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-documentation">Write clear, complete documentation</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-publish">Publish and support your API</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-lifecycle">Plan for lifecycle and change</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Check if an API already exists</h1>
+    
+    <p class="govuk-body">Before building something new, check if a similar API already exists. Reusing existing APIs saves time and improves consistency.</p>
+
+    <h2 class="govuk-heading-m">Why this matters</h2>
+    <p class="govuk-body">There may already be an API that solves your problem or could be extended to meet your needs.</p>
+
+    <h2 class="govuk-heading-m">What to do</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Search the <a class="govuk-link" href="https://www.api.gov.uk/catalogue">GOV.UK API catalogue</a>.</li>
+      <li>Check with internal architecture or data teams.</li>
+      <li>Speak to other government departments and API providers.</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Questions to ask</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Is there an API that already provides this data or functionality?</li>
+      <li>Could you extend or integrate with an existing API instead of building from scratch?</li>
+      <li>Is your organisation already publishing a similar service?</li>
+    </ul>
+
+    <div class="govuk-inset-text">
+      If in doubt, ask the <a href="">cross-government API community on Slack</a>.
+    </div>
+
+   
+  </div>
+</div>
+
+{% endblock %}

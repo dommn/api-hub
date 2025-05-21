@@ -1,0 +1,56 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="make-your-api-better">Make your API better</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="follow-ref-arc">Follow government reference architecture</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="improve-api-design">Improve your API design</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="use-api-mgmt-tools">Use API management tools</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="improve-documentation">Improve your documentation</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="plan-for-lifecycle">Plan for lifecycle and governance</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="make-api-discoverable">Make your API discoverable</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Make your API discoverable</h1>
+    <p class="govuk-body">
+      Once your API is stable and documented, publish it in the
+      <a href="https://www.api.gov.uk/catalogue" class="govuk-link">GOV.UK API Catalogue</a>.
+    </p>
+    <p class="govuk-body">Include:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>A short, clear description of what your API does</li>
+      <li>Access model (open, partner, internal)</li>
+      <li>Links to documentation and support</li>
+      <li>Steps for onboarding or requesting access</li>
+    </ul>
+   
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="about-apis">What is an API?</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="apis-in-gov">How APIs are used in government</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="apis-need-to-know">What you need to know</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="apis-get-starts">How to get started</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="api-checklist">API checklist</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="api-glossary">Glossary of terms</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">How to get started</h1>
+
+    <p class="govuk-body">If you’re new to APIs, or planning to build or use one in your service, this guide will help you take the right steps from the start.</p>
+
+    <h2 class="govuk-heading-m">1. Understand the problem you're solving</h2>
+    <p class="govuk-body">Start with the user need or business problem. Ask:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>What task needs to happen faster, more reliably, or automatically?</li>
+      <li>Who will use the API — internal teams, the public, partners?</li>
+      <li>Is it about sharing data, triggering actions, or retrieving information?</li>
+    </ul>
+    <p class="govuk-body">An API is only useful if it helps people complete a task or improves a process.</p>
+
+    <h2 class="govuk-heading-m">2. Check if something already exists</h2>
+    <p class="govuk-body">Before building anything, check what’s already available:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a class="govuk-link" href="https://www.api.gov.uk/catalogue">Search the GOV.UK API catalogue</a></li>
+      <li>Talk to other departments or your organisation’s tech leads</li>
+      <li>Look for APIs you can reuse or extend</li>
+    </ul>
+    <p class="govuk-body">Reusing existing APIs saves time and avoids duplication.</p>
+
+    <h2 class="govuk-heading-m">3. Read the guidance</h2>
+    <p class="govuk-body">Familiarise yourself with government standards:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a class="govuk-link" href="/guidance">API design and delivery guidance</a></li>
+      <li><a class="govuk-link" href="https://www.gov.uk/service-manual/technology/securing-your-software">Security and authentication</a></li>
+      <li><a class="govuk-link" href="https://www.gov.uk/data-protection">Data protection and privacy</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-m">4. Talk to the right people</h2>
+    <p class="govuk-body">Involve others early — including:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Policy and service owners</li>
+      <li>Security and data protection teams</li>
+      <li>Developers and technical architects</li>
+      <li>Other departments that might use or maintain the API</li>
+    </ul>
+    <p class="govuk-body">If unsure, <a class="govuk-link" href="/contact">contact the API Hub team</a> for support or to connect with others.</p>
+
+    <h2 class="govuk-heading-m">5. Start small, build iteratively</h2>
+    <p class="govuk-body">It’s better to build a simple, well-scoped API that solves a clear problem than to start with a large, complex one.</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Define a single endpoint and test it</li>
+      <li>Use real-world data and users in testing</li>
+      <li>Get feedback and improve before scaling</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">6. Document and share</h2>
+    <p class="govuk-body">Good APIs are discoverable and easy to use. Make sure to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Write clear, plain English documentation</li>
+      <li>Include example requests and responses</li>
+      <li>Explain how to authenticate and get access</li>
+      <li>Link to your service or support team</li>
+    </ul>
+    <p class="govuk-body">You can <a class="govuk-link" href="https://www.api.gov.uk/publish">publish your API in the GOV.UK API catalogue</a> to help others find and reuse it.</p>
+
+   
+
+  </div>
+</div>
+
+{% endblock %}

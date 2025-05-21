@@ -1,0 +1,73 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-user-need">Understand the user need</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-check">Check if an API already exists</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-plan-design">Plan your API design</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-auth">Plan authentication and security</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-test-env">Build a test environment</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-documentation">Write clear, complete documentation</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-publish">Publish and support your API</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-lifecycle">Plan for lifecycle and change</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Understand the user need</h1>
+    <p class="govuk-body">Every API should solve a real problem. Don’t start with the technology – start with the need.</p>
+
+    <h2 class="govuk-heading-m">Why this matters</h2>
+    <p class="govuk-body">APIs are useful only when they help users achieve a task. Understanding the need ensures your API has value and purpose.</p>
+
+    <h2 class="govuk-heading-m">What to do</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Identify the users of the API: internal developers, partners, suppliers, or the public.</li>
+      <li>Define the task they are trying to complete with the API.</li>
+      <li>Map the user journey or workflow the API will support.</li>
+      <li>Consider if the API handles sensitive or personal data.</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Questions to ask</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Who needs this API, and why?</li>
+      <li>What problem does it solve?</li>
+      <li>What would happen if the API didn’t exist?</li>
+      <li>Is an API the right tool, or is another solution better?</li>
+    </ul>
+
+    <div class="govuk-inset-text">
+      Talk to service teams, delivery managers, and potential API users before writing any code.
+    </div>
+
+   
+  </div>
+</div>
+
+{% endblock %}

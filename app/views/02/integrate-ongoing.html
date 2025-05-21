@@ -1,0 +1,48 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-right-api">Find the right API</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-understand">Understand how the API works</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-get-access">Get access</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-test">Build and test your integration</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-ongoing">Prepare for ongoing use</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Prepare for ongoing use</h1>
+    <p class="govuk-body">Once live, your integration becomes a dependency. Make sure you:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Subscribe to release notes or change notifications from the API provider</li>
+      <li>Document the API version and integration points in your system docs</li>
+      <li>Set up alerts for failed API calls or unexpected responses</li>
+      <li>Review usage and update your integration as the API evolves</li>
+    </ul>
+    <div class="govuk-inset-text">
+      Treat third-party APIs as part of your critical infrastructure — monitor them, review dependencies, and keep your contact information up to date with the provider.
+    </div>
+  </div>
+</div>
+
+{% endblock %}

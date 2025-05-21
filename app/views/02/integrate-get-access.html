@@ -1,0 +1,47 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-right-api">Find the right API</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-understand">Understand how the API works</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-get-access">Get access</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-test">Build and test your integration</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-ongoing">Prepare for ongoing use</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Get access</h1>
+    <p class="govuk-body">Most APIs are protected and require you to authenticate before use. Follow the provider’s onboarding process. This might include:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Requesting an API key or OAuth token</li>
+      <li>Signing a data-sharing agreement</li>
+      <li>Registering your system or service</li>
+      <li>Providing contact details and support arrangements</li>
+    </ul>
+    <p class="govuk-body">Use sandbox or test credentials where available, and confirm how you’ll access production when ready.</p>
+
+  </div>
+</div>
+
+{% endblock %}

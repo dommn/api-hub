@@ -1,0 +1,48 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-right-api">Find the right API</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-understand">Understand how the API works</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-get-access">Get access</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-test">Build and test your integration</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-ongoing">Prepare for ongoing use</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Build and test your integration<</h1>
+    <p class="govuk-body">When you're ready to integrate the API into your service:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Use tools like Postman, Curl or language-specific libraries to write test requests</li>
+      <li>Handle all response codes and error conditions in your code</li>
+      <li>Validate that you are sending and receiving data as expected</li>
+      <li>Log all activity securely and monitor API health during testing</li>
+    </ul>
+    <p class="govuk-body">Follow best practice for timeout handling, retries, and fallbacks if the API is temporarily unavailable.</p>
+
+
+  </div>
+</div>
+
+{% endblock %}

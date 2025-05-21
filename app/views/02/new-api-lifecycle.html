@@ -1,0 +1,72 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-user-need">Understand the user need</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-check">Check if an API already exists</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-plan-design">Plan your API design</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-auth">Plan authentication and security</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-test-env">Build a test environment</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-documentation">Write clear, complete documentation</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-publish">Publish and support your API</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-lifecycle">Plan for lifecycle and change</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Plan for lifecycle and change</h1>
+    <p class="govuk-body">APIs change over time. Planning for those changes ensures that users aren’t disrupted and helps maintain long-term trust in your service.</p>
+
+    <h2 class="govuk-heading-m">Why this matters</h2>
+    <p class="govuk-body">Without good change management, even small changes can break systems that rely on your API. You need a clear process for versioning, deprecation, and updates.</p>
+
+    <h2 class="govuk-heading-m">What to do</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Use semantic versioning (for example, v1, v2) in your endpoint URLs or headers</li>
+      <li>Avoid breaking changes if possible — add new fields, don’t rename or remove existing ones</li>
+      <li>Provide advance notice and migration support when you do need to make breaking changes</li>
+      <li>Maintain older versions of your API temporarily, where possible</li>
+      <li>Document changes clearly in a public changelog or version history</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Define ownership and support</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Assign a named owner or team responsible for the API</li>
+      <li>Ensure there’s a clear support route for issues and queries</li>
+      <li>Set up monitoring for ongoing performance and availability</li>
+      <li>Schedule regular reviews of usage and feedback</li>
+    </ul>
+
+    <div class="govuk-inset-text">
+      Communicate with your users — share changes early and offer help migrating to new versions.
+    </div>
+  </div>
+</div>
+
+{% endblock %}

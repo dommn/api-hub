@@ -1,0 +1,89 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="about-apis">What is an API?</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="apis-in-gov">How APIs are used in government</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="apis-need-to-know">What you need to know</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="apis-get-starts">How to get started</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="api-checklist">API checklist</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="api-glossary">Glossary of terms</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">API development checklist</h1>
+
+      <h2 class="govuk-heading-m">Understand the need</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>I know what the API is for and who will use it</li>
+        <li>The problem the API solves is clear</li>
+        <li>I’ve spoken to users, service teams or data owners</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Check what already exists</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>I searched the <a class="govuk-link" href="https://www.api.gov.uk/catalogue">GOV.UK API catalogue</a></li>
+        <li>I’ve checked for similar APIs in my organisation</li>
+        <li>I’ve avoided duplicating existing functionality</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Plan and design the API</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>I’ve defined clear endpoints, inputs and outputs</li>
+        <li>I’m following REST and JSON standards (or have a good reason not to)</li>
+        <li>I’ve considered security, authentication and error handling</li>
+        <li>I’ve used common design patterns where relevant</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Build and test</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>I’ve built the API using modern, secure tooling</li>
+        <li>I’ve created test environments (sandbox, staging)</li>
+        <li>I’ve written automated tests for key behaviour</li>
+        <li>I’ve included versioning and monitoring</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Document and share</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>I’ve written plain English documentation</li>
+        <li>I’ve included request/response examples and authentication steps</li>
+        <li>I’ve published or plan to publish in the <a class="govuk-link" href="https://www.api.gov.uk/catalogue">GOV.UK API catalogue</a></li>
+        <li>I’ve included support and contact details</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Maintain and improve</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>I’ve set up logging, metrics and error alerts</li>
+        <li>I know how I’ll manage updates and deprecations</li>
+        <li>I’ve collected feedback or usability testing results</li>
+        <li>The API has a clear owner and support process</li>
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+{% endblock %}

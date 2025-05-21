@@ -1,0 +1,71 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-user-need">Understand the user need</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-check">Check if an API already exists</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-plan-design">Plan your API design</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-auth">Plan authentication and security</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-test-env">Build a test environment</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-documentation">Write clear, complete documentation</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-publish">Publish and support your API</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="new-api-lifecycle">Plan for lifecycle and change</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Build a test environment</h1>
+    <p class="govuk-body">A test environment allows API consumers to develop and test their integrations safely. It reduces the risk of mistakes and helps users get started quickly.</p>
+
+    <h2 class="govuk-heading-m">Why this matters</h2>
+    <p class="govuk-body">A sandbox or staging environment gives users a way to try your API without affecting live services or data.</p>
+
+    <h2 class="govuk-heading-m">What to do</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Provide a sandbox version of your API that replicates production behaviour.</li>
+      <li>Use test or anonymised data that covers realistic scenarios.</li>
+      <li>Keep the authentication method consistent with the live version (for example, issue test API keys or tokens).</li>
+      <li>Document common test cases or user journeys developers can try.</li>
+      <li>Log and monitor usage in your test environment to identify problems early.</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Tips for better testing</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Make sure the sandbox is always available and reflects the current API version.</li>
+      <li>Provide meaningful error messages for test failures.</li>
+      <li>Offer example test credentials or endpoints in your documentation.</li>
+    </ul>
+
+    <div class="govuk-inset-text">
+      Include the sandbox URL and access instructions in your API documentation.
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "./layouts/_base.html" %}
+
+{% set questionPage = "false" %}
+{% set nestedPage = "false" %}
+{% set headerNavigationActiveItem = "documentation" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-right-api">Find the right API</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-understand">Understand how the API works</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-get-access">Get access</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-test">Build and test your integration</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="integrate-ongoing">Prepare for ongoing use</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Understand how the API works</h1>
+    <p class="govuk-body">Before integrating, take time to explore the API documentation. Make sure you understand:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>What the API provides: data, operations or events</li>
+      <li>What inputs are required: parameters, headers or payloads</li>
+      <li>What the responses look like: structure, codes and data types</li>
+      <li>Any rate limits, usage restrictions or terms of service</li>
+    </ul>
+    <p class="govuk-body">You can often test endpoints using Postman or similar tools before writing any code.</p>
+  </div>
+</div>
+
+{% endblock %}
