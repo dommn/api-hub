@@ -25,13 +25,13 @@
 
   {% if questionPage == "false" %}
 
-<div class="govuk-service-navigation"
+  <div class="govuk-service-navigation"
   data-module="govuk-service-navigation">
   <div class="govuk-width-container">
     <div class="govuk-service-navigation__container">
         <span class="govuk-service-navigation__service-name">
             <a href="index" class="govuk-service-navigation__link">
-              GOV.UK API Hub
+              GOV.UK API hub
             </a>
           </span>
       <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
@@ -40,19 +40,38 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item {% if headerNavigationActiveItem == "get started" %} govuk-service-navigation__item--active {% endif %} ">
-            <a class="govuk-service-navigation__link" href="not-built-yet">
+            <a class="govuk-service-navigation__link" href="about-the-hub">
               About
             </a>
           </li>
           <li class="govuk-service-navigation__item {% if headerNavigationActiveItem == "explore" %} govuk-service-navigation__item--active {% endif %} ">
             <a class="govuk-service-navigation__link" href="explore-apis/landing-page">
-              Explore APIs
+              Get started
             </a>
           </li>
+          <!--
+          <li class="govuk-service-navigation__item {% if headerNavigationActiveItem == "get started" %} govuk-service-navigation__item--active {% endif %} ">
+            <a class="govuk-service-navigation__link" href="get-started">
+              Get started
+            </a>
+          </li>
+          -->
+          <li class="govuk-service-navigation__item {% if headerNavigationActiveItem == "patterns" %} govuk-service-navigation__item--active {% endif %} ">
+            <a class="govuk-service-navigation__link" href="patterns" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Best practice</strong>
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item {% if headerNavigationActiveItem == "catalogue" %} govuk-service-navigation__item--active {% endif %} ">
+            <a class="govuk-service-navigation__link" href="api-catalogue">
+              Find an API
+            </a>
+          </li>
+          <!--
           <li class="govuk-service-navigation__item {% if headerNavigationActiveItem == "documentation" %} govuk-service-navigation__item--active {% endif %} ">
             <a class="govuk-service-navigation__link" href="documentation" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Documentation</strong>
             </a>
+            -->
           </li>
           <li class="govuk-service-navigation__item {% if headerNavigationActiveItem == "support" %} govuk-service-navigation__item--active {% endif %}">
             <a class="govuk-service-navigation__link" href="not-built-yet">

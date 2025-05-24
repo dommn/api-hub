@@ -12,7 +12,7 @@
     <div class="govuk-grid-column-two-thirds">
 <h1 class="govuk-heading-l">GOV.UK API patterns</h1>
 
-<h2 class="govuk-heading-s">1. Authentication and Authorisation</h2>
+<h2 class="govuk-heading-m">1. Authentication and Authorisation</h2>
 <p>Authentication and authorization are vital to ensuring that only legitimate users or systems can access the API and its data. APIs must protect sensitive data and ensure secure access control.</p>
 <ul class="govuk-list govuk-list--bullet">
     <li><strong>Authentication</strong>: Confirm the identity of a user or system trying to access the API.
@@ -43,7 +43,7 @@ Authorisation: Bearer &lt;access_token&gt;
 
 <p><strong>Best Practice:</strong> Tokens should expire after a certain period, and refresh tokens should be used for re-authentication to limit exposure.</p>
 
-<h2 class="govuk-heading-s">2. Rate Limiting</h2>
+<h2 class="govuk-heading-m">2. Rate Limiting</h2>
 <p>Rate limiting ensures that users do not overload the API with requests, and helps prevent abuse of the system. It also ensures that the system remains responsive for all users.</p>
 <ul class="govuk-list govuk-list--bullet">
     <li><strong>Limits</strong>: Define the number of requests a user or system can make within a specific time period (e.g., 100 requests per minute).</li>
@@ -63,7 +63,7 @@ If a user exceeds this limit, return a 429 Too Many Requests status code.
 }
 </pre>
 
-<h2 class="govuk-heading-s">3. Endpoints</h2>
+<h2 class="govuk-heading-m">3. Endpoints</h2>
 <p>Design RESTful endpoints that follow a clear, logical structure to make it easy for developers to interact with the API. Each endpoint should perform a specific action and use HTTP methods appropriately.</p>
 <ul class="govuk-list govuk-list--bullet">
     <li><strong>Use RESTful conventions:</strong> Use HTTP methods to represent actions:
@@ -86,7 +86,7 @@ PUT /api/v1/users/{id}        # Update a user by ID
 DELETE /api/v1/users/{id}     # Delete a user by ID
 </pre>
 
-<h2 class="govuk-heading-s">4. Request and Response Formats</h2>
+<h2 class="govuk-heading-m">4. Request and Response Formats</h2>
 <p>APIs should accept requests and return responses in JSON format. JSON is easy to parse and human-readable, making it the preferred format for most modern web services.</p>
 
 <h3 class="govuk-heading-s">Example of a Request:</h3>
@@ -158,6 +158,48 @@ DELETE /api/v1/users/{id}     # Delete a user by ID
     <li><strong>Endpoint Definitions:</strong> Provide detailed information about each API endpoint, including the request format, response format, and example requests/responses.</li>
     <li><strong>Error Codes:</strong> Document common error codes and what each means.</li>
     <li><strong>Interactive Documentation:</strong> Use tools like Swagger or Redoc to provide live, interactive documentation for developers.</li>
+</ul>
+
+<p>For help creating documentation, use the <a href="documentation-generator">documentation generator tool</a>.</p>
+
+<h2 class="govuk-heading-m">8. Security</h2>
+
+<p>Security is crucial when designing APIs, especially for government services that handle sensitive data. Implementing strong security practices ensures the safety of data and protects against unauthorized access.</p>
+
+<h2 class="govuk-heading-s">Key Security Principles</h2>
+
+<h3 class="govuk-heading-s">Confidentiality</h3>
+<ul class="govuk-list govuk-list--bullet">
+    <li>Use <strong>HTTPS (TLS/SSL)</strong> to encrypt data in transit and protect sensitive information.</li>
+    <li>Encrypt data at rest to safeguard stored information.</li>
+</ul>
+
+<h3 class="govuk-heading-s">Integrity</h3>
+<ul class="govuk-list govuk-list--bullet">
+    <li>Prevent data tampering by using cryptographic hashes (e.g., <strong>HMAC</strong>) to verify data integrity.</li>
+</ul>
+
+<h3 class="govuk-heading-s">Authentication</h3>
+<ul class="govuk-list govuk-list--bullet">
+    <li>Implement <strong>OAuth 2.0</strong> or <strong>JWT (JSON Web Tokens)</strong> for secure user authentication.</li>
+    <li>Use <strong>multi-factor authentication (MFA)</strong> for highly sensitive operations.</li>
+</ul>
+
+<h3 class="govuk-heading-s">Authorization</h3>
+<ul class="govuk-list govuk-list--bullet">
+    <li>Apply <strong>Role-Based Access Control (RBAC)</strong> to limit user access based on their role.</li>
+    <li>Follow the <strong>principle of least privilege</strong>, granting users only the permissions they need.</li>
+</ul>
+
+<h3 class="govuk-heading-s">Accountability</h3>
+<ul class="govuk-list govuk-list--bullet">
+    <li>Log API access to enable auditing and monitoring of security breaches.</li>
+    <li>Use detailed logs to track user activity and identify any suspicious actions.</li>
+</ul>
+
+<h3 class="govuk-heading-s">Non-Repudiation</h3>
+<ul class="govuk-list govuk-list--bullet">
+    <li>Ensure actions performed on the API can be traced back to the user or system, preventing denial of actions.</li>
 </ul>
 
 </div>
