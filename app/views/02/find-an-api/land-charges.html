@@ -1,0 +1,239 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "catalogue" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+{% block beforeContent %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+          
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+      <p class="govuk-caption-xl">
+        API
+      </p>
+      <h1 class="govuk-heading-xl">
+          Land Charges Full Search
+      </h1>
+    </div>
+  </div>
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+      <div style="word-wrap: break-word; overflow-wrap: break-word;">
+        <p class="govuk-body">A land charge is an interest in land that imposes an obligation on the landowner in favour of some other person. Use this service to request an official search of the Land Charges Register.</p>
+  <p class="govuk-body"> If you’re a software developer: </p>
+  <ul class="govuk-list govuk-list--bullet"><li>Use this document to integrate data into your system.</li>
+  </ul>
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+  <h2 class="govuk-heading-m">Access this API</h2>
+
+  <p>Use GOV.UK One Login to view and access this API.</p>
+
+  <p>You must have a government email address to sign up.</p>
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Create an account"
+  }) }}
+
+  <a class="govuk-link" href="#">Sign in</a>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  
+      </div>
+  
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  <dl class="govuk-summary-list govuk-summary-list--no-border">
+  
+    
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Organisation
+      </dt>
+      <dd class="govuk-summary-list__value">
+        HM Land Registry
+      </dd>
+      
+    </div>
+    
+  
+    
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        First published
+      </dt>
+      <dd class="govuk-summary-list__value">
+        2023-01-10
+      </dd>
+      
+    </div>
+    
+  
+    
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Update frequency
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Not known
+      </dd>
+      
+    </div>
+    
+  
+    
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Licence
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Not known
+      </dd>
+      
+    </div>
+    
+  
+  </dl>
+  
+  
+      
+  
+  
+      
+  <!-- 
+      <h2 class="govuk-heading-m">
+        Related
+      </h2>
+      
+      <p>
+        <a href="#">Rents: Average weekly LA rents (API)</a>
+      </p> -->
+  
+      
+
+      
+  
+      
+    
+        <h2 class="govuk-heading-m">
+          Contact
+        </h2>
+  
+        <p>
+          For questions about this data contact:
+        </p>
+  
+        <p>
+          <a href="#">
+            channelpartners@landregistry.gov.uk
+          </a>
+        </p>
+      
+  
+      <p class="govuk-!-margin-top-9 govuk-!-colour-secondary">
+        This page was last updated 29 December 2024.
+      </p>
+    
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        More from this organisation
+      </h2>
+  
+      <p class="govuk-!-font-size-16">
+        <a href="/WIP/search?organisation=HM Land Registry">
+          HM Land Registry
+        </a>
+      </p>
+      
+        <h2 class="govuk-heading-m">Related data</h2>
+      
+      
+        <p class="govuk-!-margin-bottom-1 govuk-!-font-size-16">
+          <a href="/WIP/listings/libraries-fees-and-charges">
+            Libraries Fees and Charges
+          </a>
+        </p>
+        <p class="govuk-!-colour-secondary govuk-!-font-size-16">
+          Calderdale Metropolitan Borough Council
+        </p>
+        <p class="govuk-visually-hidden">
+          Score: 0.43434343434343436
+        </p>
+      
+        <p class="govuk-!-margin-bottom-1 govuk-!-font-size-16">
+          <a href="/WIP/listings/esearch">
+            eSearch
+          </a>
+        </p>
+        <p class="govuk-!-colour-secondary govuk-!-font-size-16">
+          Department for Business, Energy and Industrial Strategy
+        </p>
+        <p class="govuk-visually-hidden">
+          Score: 0.42424242424242425
+        </p>
+      
+        <p class="govuk-!-margin-bottom-1 govuk-!-font-size-16">
+          <a href="/WIP/listings/marriage-allowance">
+            Marriage Allowance
+          </a>
+        </p>
+        <p class="govuk-!-colour-secondary govuk-!-font-size-16">
+          HM Revenue &amp; Customs
+        </p>
+        <p class="govuk-visually-hidden">
+          Score: 0.41025641025641024
+        </p>
+      
+        <p class="govuk-!-margin-bottom-1 govuk-!-font-size-16">
+          <a href="/WIP/listings/discharge-enquiry">
+            Discharge Enquiry
+          </a>
+        </p>
+        <p class="govuk-!-colour-secondary govuk-!-font-size-16">
+          HM Land Registry
+        </p>
+        <p class="govuk-visually-hidden">
+          Score: 0.40875912408759124
+        </p>
+      
+        <p class="govuk-!-margin-bottom-1 govuk-!-font-size-16">
+          <a href="/WIP/listings/transaction-data">
+            Transaction Data
+          </a>
+        </p>
+        <p class="govuk-!-colour-secondary govuk-!-font-size-16">
+          HM Land Registry
+        </p>
+        <p class="govuk-visually-hidden">
+          Score: 0.4
+        </p>
+      
+  
+    </div>
+  
+  
+          </div>
+{% endblock %}
