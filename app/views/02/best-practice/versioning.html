@@ -1,0 +1,57 @@
+{% extends "../layouts/_base.html" %}
+
+{% set nestedPage = "true" %}
+{% set headerNavigationActiveItem = "patterns" %}
+{% set documentationPage = "true" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <ul class="govuk-list">
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="consistency">Consistency in design</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="versioning">Versioning</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="auth">Authentication and authorisation</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="error">Error handling</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="rate">Rate limiting</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="data">Data validation</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="scale">Scalability</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="doc">Documentation</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="caching">Caching</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="security">Security</a>
+          </li>
+      </ul>
+  </div>
+
+<div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Versioning</h1>
+    <h3 class="govuk-heading-m">Why it's important</h3>
+    <p>Versioning is crucial to maintain backwards compatibility when updating an API. It ensures that changes, such as new features or fixes, don’t break existing users or clients who are dependent on previous versions. Versioning provides a clear and manageable way to evolve the API without causing disruption.</p>
+    <h3 class="govuk-heading-m">What it means</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Use a clear versioning scheme, such as <code>/api/v1/</code> and <code>/api/v2/</code> in the URL path.</li>
+        <li>Inform users well in advance before deprecating or removing old versions.</li>
+        <li>Maintain backward compatibility where possible to avoid forcing users to adopt new versions unnecessarily.</li>
+    </ul>
+</div>
+</div>
+{% endblock %}

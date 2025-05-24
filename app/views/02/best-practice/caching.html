@@ -1,0 +1,57 @@
+{% extends "../layouts/_base.html" %}
+
+{% set nestedPage = "true" %}
+{% set headerNavigationActiveItem = "patterns" %}
+{% set documentationPage = "true" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <ul class="govuk-list">
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="consistency">Consistency in design</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="versioning">Versioning</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="auth">Authentication and authorisation</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="error">Error handling</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="rate">Rate limiting</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="data">Data validation</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="scale">Scalability</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="doc">Documentation</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="caching">Caching</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="security">Security</a>
+          </li>
+      </ul>
+  </div>
+
+<div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Caching</h1>
+    <h3 class="govuk-heading-m">Why it's important</h3>
+    <p>Caching helps improve the performance of your API by reducing the load on the server and speeding up response times. It ensures that repeated requests for the same data are served quickly, improving user experience and reducing resource consumption.</p>
+    <h3 class="govuk-heading-m">What it means</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Use HTTP cache headers (e.g., <code>Cache-Control</code>, <code>ETag</code>) to specify caching rules.</li>
+        <li>Cache responses for static data or data that doesn't change often, and ensure proper cache invalidation when data is updated.</li>
+        <li>Use caching strategies to minimize database load, such as using an in-memory cache like Redis.</li>
+    </ul>
+</div>
+</div>
+{% endblock %}

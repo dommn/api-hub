@@ -1,31 +1,67 @@
-{% extends "./layouts/_base.html" %}
+{% extends "../layouts/_base.html" %}
 
-{% set questionPage = "false" %}
-{% set nestedPage = "false" %}
-{% set headerNavigationActiveItem = "about" %}
+{% set headerNavigationActiveItem = "explore" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-one-third">
-  
-    {{ xGovukSubNavigation({
-      items: [{
-        text: "Case studies",
-        parent: true,
-        children: [
-        {
-          text: "How Hackney Council built an API Platform",
-          current: true,
-          href: "case-studies-1"
-        },
-        {
-          text: "How NHS Digital used API Management to support APIs at scale",
-          href: "case-studies-2"
-        }]
-      }]
-    }) }}
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <strong>Overview</strong>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="landing-page">Best practice government APIs</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="../open-api/api-information">Exemplar API</a>
+      </li>
+    </ul>
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <strong>Find government APIs</strong>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="api-catalogue">API catalogue</a>
+      </li>
+    </ul>
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <strong>API user cases</strong>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="verify">Verify or prove something</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="status">Get the status of something</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="submit">Submit information to government</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="retrieve">Retrieve information</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="access">Manage access and permissions</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="payments">Handle payments and financial interactions</a>
+      </li>
+    </ul>
+    <ul class="govuk-list">
+      <li style="padding-bottom: 5px;">
+        <strong>Case studies</strong>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="case-studies-1">How Hackney Council built an API Platform</a>
+      </li>
+      <li style="padding-bottom: 5px;">
+        <a class="govuk-link" href="case-studies-2">How NHS Digital used API Management to support APIs at scale</a>
+      </li>
+    </ul>
     
     
   </div>

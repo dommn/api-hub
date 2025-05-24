@@ -1,0 +1,58 @@
+{% extends "../layouts/_base.html" %}
+
+{% set nestedPage = "true" %}
+{% set headerNavigationActiveItem = "patterns" %}
+{% set documentationPage = "true" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <ul class="govuk-list">
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="consistency">Consistency in design</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="versioning">Versioning</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="auth">Authentication and authorisation</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="error">Error handling</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="rate">Rate limiting</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="data">Data validation</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="scale">Scalability</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="doc">Documentation</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="caching">Caching</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="security">Security</a>
+          </li>
+      </ul>
+  </div>
+
+<div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Rate limiting</h1>
+    <h3 class="govuk-heading-m">Why it's important</h3>
+    <p>Rate limiting prevents abuse of your API by restricting the number of requests a client can make within a specific time frame. It helps maintain API performance, protects against denial-of-service attacks, and ensures fair usage among all users.</p>
+    <h3 class="govuk-heading-m">What it means</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Set clear limits on the number of requests a user can make in a given period (e.g., 100 requests per minute).</li>
+        <li>Provide a way to track the usage of rate limits with response headers (e.g., <code>X-Rate-Limit</code>).</li>
+        <li>Return an appropriate HTTP status code (<code>429 Too Many Requests</code>) when the rate limit is exceeded.</li>
+    </ul>
+
+</div>
+</div>
+{% endblock %}

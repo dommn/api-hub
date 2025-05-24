@@ -1,0 +1,57 @@
+{% extends "../layouts/_base.html" %}
+
+{% set nestedPage = "true" %}
+{% set headerNavigationActiveItem = "patterns" %}
+{% set documentationPage = "true" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <ul class="govuk-list">
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="consistency">Consistency in design</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="versioning">Versioning</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="auth">Authentication and authorisation</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="error">Error handling</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="rate">Rate limiting</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="data">Data validation</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="scale">Scalability</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="doc">Documentation</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="caching">Caching</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="security">Security</a>
+          </li>
+      </ul>
+  </div>
+
+<div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Consistency in design</h1>
+                    <h3 class="govuk-heading-m">Why it's important</h3>
+                    <p>Consistency in API design ensures that users and developers can easily understand and integrate with your service. Predictable APIs reduce the learning curve, improve usability, and minimize errors. When APIs behave in a consistent way, users are more likely to adopt them and maintain long-term use.</p>
+                    <h3 class="govuk-heading-m">What it means</h3>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Use standard HTTP methods (e.g., GET, POST, PUT, DELETE) for their intended purposes.</li>
+                        <li>Keep endpoint naming consistent and follow a clear, logical structure.</li>
+                        <li>Avoid introducing unnecessary complexity. For example, use clear, plural nouns for resources like `/users` instead of `/user-list`.</li>
+                    </ul>
+</div>
+</div>
+{% endblock %}

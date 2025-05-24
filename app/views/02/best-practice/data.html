@@ -1,0 +1,58 @@
+{% extends "../layouts/_base.html" %}
+
+{% set nestedPage = "true" %}
+{% set headerNavigationActiveItem = "patterns" %}
+{% set documentationPage = "true" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <ul class="govuk-list">
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="consistency">Consistency in design</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="versioning">Versioning</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="auth">Authentication and authorisation</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="error">Error handling</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="rate">Rate limiting</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="data">Data validation</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="scale">Scalability</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="doc">Documentation</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="caching">Caching</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="security">Security</a>
+          </li>
+      </ul>
+  </div>
+
+<div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Data validation</h1>
+    <h3 class="govuk-heading-m">Why it's important</h3>
+    <p>Data validation ensures that the data being sent to and from the API is correct, consistent, and secure. It prevents security vulnerabilities such as SQL injection or malicious data and ensures that the API can handle data properly.</p>
+    <h3 class="govuk-heading-m">What it means</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Validate incoming data to ensure it meets expected formats, types, and ranges before processing it.</li>
+        <li>Reject invalid data with appropriate error messages.</li>
+        <li>Ensure that the data returned by the API is in the correct format, and sanitize outputs to prevent security issues.</li>
+    </ul>
+
+</div>
+</div>
+{% endblock %}

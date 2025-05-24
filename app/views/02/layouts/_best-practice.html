@@ -83,7 +83,7 @@
           </li>
           -->
           <li class="govuk-service-navigation__item {% if headerNavigationActiveItem == "patterns" %} govuk-service-navigation__item--active {% endif %} ">
-            <a class="govuk-service-navigation__link" href="best-practice/consistency" aria-current="true">
+            <a class="govuk-service-navigation__link" href="patterns" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Best practice</strong>
             </a>
           </li>
@@ -145,7 +145,7 @@
           </li>
           -->
           <li class="govuk-service-navigation__item {% if headerNavigationActiveItem == "documentation" %} govuk-service-navigation__item--active {% endif %} ">
-            <a class="govuk-service-navigation__link" href="../best-practice/consistency" aria-current="true">
+            <a class="govuk-service-navigation__link" href="../patterns" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Best practice</strong>
             </a>
           </li>
@@ -185,48 +185,44 @@
 
 {% endblock %}
 
-{% block section %}
-
-{% if bestPractice == "true" %}
-
+{% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
-    <ul class="govuk-list">
-      <li style="padding-bottom: 5px;">
-        <a class="govuk-link" href="verify">Consistency in design</a>
-      </li>
-      <li style="padding-bottom: 5px;">
-        <a class="govuk-link" href="status">Versioning</a>
-      </li>
-      <li style="padding-bottom: 5px;">
-        <a class="govuk-link" href="submit">Authentication and authorization</a>
-      </li>
-      <li style="padding-bottom: 5px;">
-        <a class="govuk-link" href="retrieve">Error handling</a>
-      </li>
-      <li style="padding-bottom: 5px;">
-        <a class="govuk-link" href="access">Rate limiting</a>
-      </li>
-      <li style="padding-bottom: 5px;">
-        <a class="govuk-link" href="payments">Data validation</a>
-      </li>
-      <li style="padding-bottom: 5px;">
-          <a class="govuk-link" href="verify">Scalability</a>
-        </li>
-        <li style="padding-bottom: 5px;">
-          <a class="govuk-link" href="status">Documentation</a>
-        </li>
-        <li style="padding-bottom: 5px;">
-          <a class="govuk-link" href="submit">Caching</a>
-        </li>
-        <li style="padding-bottom: 5px;">
-          <a class="govuk-link" href="retrieve">Security</a>
-        </li>
-    </ul>
+<ul class="govuk-list">
+  <li style="padding-bottom: 5px;">
+    <a class="govuk-link" href="verify">Consistency in design</a>
+  </li>
+  <li style="padding-bottom: 5px;">
+    <a class="govuk-link" href="status">Versioning</a>
+  </li>
+  <li style="padding-bottom: 5px;">
+    <a class="govuk-link" href="submit">Authentication and authorization</a>
+  </li>
+  <li style="padding-bottom: 5px;">
+    <a class="govuk-link" href="retrieve">Error handling</a>
+  </li>
+  <li style="padding-bottom: 5px;">
+    <a class="govuk-link" href="access">Rate limiting</a>
+  </li>
+  <li style="padding-bottom: 5px;">
+    <a class="govuk-link" href="payments">Data validation</a>
+  </li>
+  <li style="padding-bottom: 5px;">
+      <a class="govuk-link" href="verify">Scalability</a>
+    </li>
+    <li style="padding-bottom: 5px;">
+      <a class="govuk-link" href="status">Documentation</a>
+    </li>
+    <li style="padding-bottom: 5px;">
+      <a class="govuk-link" href="submit">Caching</a>
+    </li>
+    <li style="padding-bottom: 5px;">
+      <a class="govuk-link" href="retrieve">Security</a>
+    </li>
+</ul>
+
+
 </div>
-
-{% endif %}
-
 {% endblock %}
 
 {% block footer %}
