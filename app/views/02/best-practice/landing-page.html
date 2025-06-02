@@ -1,0 +1,98 @@
+
+{% extends "../layouts/_base.html" %}
+
+{% set nestedPage = "true" %}
+{% set headerNavigationActiveItem = "patterns" %}
+{% set documentationPage = "true" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <ul class="govuk-list">
+      
+            <strong>Overview</strong>
+            <ul class="govuk-list">
+        <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="landing-page">Why we have this standard</a>
+          </li>
+        </ul>
+        </ul>
+        <ul class="govuk-list">
+
+        <strong> The standards</strong>
+
+        
+        <ul class="govuk-list govuk-list--number">
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="consistency">Understand users and their needs</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="versioning">Use open standards and common formats</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="auth">Make data discoverable and accessible</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="error">Design for interoperability</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="rate">Prioritise privacy, security, and ethics</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+          <a class="govuk-link" href="data">Provide RESTful APIs for access</a>
+        </li>
+        <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="scale">Publish clear, human- and machine-readable documentation</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="doc">Use consistent authentication and authorisation mechanismscumentation</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="caching">Handle errors and downtime gracefully</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="security">Support monitoring and usage tracking</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="security">Reuse before you build</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="security">Provide up-to-date metadata and versioning</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="security">Build collaboratively and iterate</a>
+          </li>
+          <li style="padding-bottom: 5px;">
+            <a class="govuk-link" href="security">Plan for long-term sustainability</a>
+          </li>
+      </ul>
+  </div>
+
+<div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Why we have this standard</h1>
+    
+    <p class="govuk-body">
+        Government departments and public sector organisations increasingly need to share and use data across boundaries to deliver joined-up services and improve outcomes for users. To do this efficiently, data services must be designed with openness, interoperability, and reuse in mind.
+      </p>
+  
+      <p class="govuk-body">
+        The Data Service Standard helps digital teams design and build data services—including APIs and shared datasets—that are secure, well-documented, standards-based, and easy to integrate. It encourages collaboration and consistency, reduces duplication, and ensures public data is managed as a strategic asset.
+      </p>
+  
+      <h2 class="govuk-heading-m">When to use this standard</h2>
+  
+      <p class="govuk-body">You should use this standard if you're:</p>
+  
+      <ul class="govuk-list govuk-list--bullet">
+        <li>building or improving a RESTful API to expose or consume government data</li>
+        <li>designing services that depend on data from other departments</li>
+        <li>working on data integration, publishing, or interoperability</li>
+        <li>providing reference data or master data for wider reuse</li>
+        <li>managing event-driven or real-time data exchange between systems</li>
+      </ul>
+  
+
+</div>
+</div>
+{% endblock %}
