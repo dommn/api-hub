@@ -1,0 +1,330 @@
+{% extends "../layouts/_base.html" %}
+
+{% set headerNavigationActiveItem = "catalogue" %}
+{% set documentationPage = "true" %}
+{% set notNested = "true" %}
+
+{% block beforeContent %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+          
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+      <p class="govuk-caption-xl">
+        API
+      </p>
+      <h1 class="govuk-heading-xl">
+          Land Charges Full Search
+      </h1>
+    </div>
+  </div>
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+  <p class="govuk-body">The Land Charges Full Search API allows users to submit official search requests against the Land Charges Register to check for restrictions or obligations affecting land or individuals.</p>
+
+  <h2 class="govuk-heading-l">How it works</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Submit a search request with names and counties</li>
+    <li>HM Land Registry processes the request</li>
+    <li>Results are returned in PDF format</li>
+    <li>Status updates are provided through polling or callbacks</li>
+  </ul>
+
+  <h2 class="govuk-heading-l">Endpoints</h2>
+  <p class="govuk-body">Production: <a href="">https://businessgateway.landregistry.gov.uk/b2b/<br>BGSoapEngine/FullSearchV2_1WebService?wsdl</a></p>
+    <p class="govuk-body">Test: <a href=""> https://bgtest.landregistry.gov.uk/b2b/<br>BGStubService/FullSearchV2_1WebService?wsdl</a></p>
+
+  <h2 class="govuk-heading-l">Operations</h2>
+  <h3 class="govuk-heading-m">fullSearchV2_1</h3>
+  <p class="govuk-body">Submits a full land charges search request.</p>
+
+  <h2 class="govuk-heading-l">Request Parameters</h2>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header">Parameter</th>
+        <th class="govuk-table__header">Description</th>
+        <th class="govuk-table__header">Required</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">externalReference</td>
+        <td class="govuk-table__cell">Unique tracking ID</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">searchType</td>
+        <td class="govuk-table__cell">Type of search (e.g. OFFICIAL)</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">contact</td>
+        <td class="govuk-table__cell">Name, address, phone</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">searches</td>
+        <td class="govuk-table__cell">List of names and counties</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">feeExpectation</td>
+        <td class="govuk-table__cell">Expected fee</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">continueIfFeeExceeds</td>
+        <td class="govuk-table__cell">Boolean to continue if actual fee exceeds</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="govuk-heading-l">Example Request</h2>
+  <code>
+    &lt;fullSearchV2_1Request&gt;
+    &lt;externalReference&gt;ABC123456&lt;/externalReference&gt;
+    &lt;searchType&gt;OFFICIAL&lt;/searchType&gt;
+    &lt;contact&gt;
+      &lt;name&gt;Jane Smith&lt;/name&gt;
+      &lt;address&gt;&lt;addressLine1&gt;123 Legal Lane&lt;/addressLine1&gt;&lt;postcode&gt;AB1 2CD&lt;/postcode&gt;&lt;/address&gt;
+      &lt;telephone&gt;01234 567890&lt;/telephone&gt;
+    &lt;/contact&gt;
+    &lt;searches&gt;
+      &lt;search&gt;&lt;county&gt;Devon&lt;/county&gt;&lt;name&gt;&lt;forename&gt;Thomas&lt;/forename&gt;&lt;surname&gt;Brown&lt;/surname&gt;&lt;/name&gt;&lt;/search&gt;
+      &lt;search&gt;&lt;county&gt;Kent&lt;/county&gt;&lt;name&gt;&lt;companyName&gt;Acme Properties Ltd&lt;/companyName&gt;&lt;/name&gt;&lt;/search&gt;
+    &lt;/searches&gt;
+    &lt;feeExpectation&gt;6.00&lt;/feeExpectation&gt;
+    &lt;continueIfFeeExceeds&gt;true&lt;/continueIfFeeExceeds&gt;
+  &lt;/fullSearchV2_1Request&gt;
+  </code>
+
+  <p></p>
+
+  <h2 class="govuk-heading-l">Result Format</h2>
+  <p class="govuk-body">The API returns:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>PDF documents with match results</li>
+    <li>Certificates if applicable</li>
+    <li>Status notifications for request progress</li>
+  </ul>
+
+  <h2 class="govuk-heading-l">Fees</h2>
+  <p class="govuk-body">Typical fees:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>£1.50 per name per county</li>
+    <li>Minimum charge: £1.50</li>
+    <li>Certificate: additional £1.00</li>
+  </ul>
+
+  <h2 class="govuk-heading-l">Error Codes</h2>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header">Code</th>
+        <th class="govuk-table__header">Description</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">400</td>
+        <td class="govuk-table__cell">Bad Request</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">401</td>
+        <td class="govuk-table__cell">Unauthorized</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">500</td>
+        <td class="govuk-table__cell">Internal Server Error</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="govuk-heading-l">Contact</h2>
+  <p class="govuk-body">For support, email <a href="mailto:channelpartners@landregistry.gov.uk">channelpartners@landregistry.gov.uk</a></p>
+
+
+    
+  <dl class="govuk-summary-list govuk-summary-list--no-border">
+  
+    
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Organisation
+      </dt>
+      <dd class="govuk-summary-list__value">
+        HM Land Registry
+      </dd>
+      
+    </div>
+    
+  
+    
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        First published
+      </dt>
+      <dd class="govuk-summary-list__value">
+        2023-01-10
+      </dd>
+      
+    </div>
+    
+  
+    
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Update frequency
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Not known
+      </dd>
+      
+    </div>
+    
+  
+    
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Licence
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Not known
+      </dd>
+      
+    </div>
+    
+  
+  </dl>
+  
+  
+      
+  
+  
+      
+  <!-- 
+      <h2 class="govuk-heading-m">
+        Related
+      </h2>
+      
+      <p>
+        <a href="#">Rents: Average weekly LA rents (API)</a>
+      </p> -->
+  
+      
+
+      
+  
+      
+    
+        <h2 class="govuk-heading-m">
+          Contact
+        </h2>
+  
+        <p>
+          For questions about this data contact:
+        </p>
+  
+        <p>
+          <a href="#">
+            channelpartners@landregistry.gov.uk
+          </a>
+        </p>
+      
+  
+      <p class="govuk-!-margin-top-9 govuk-!-colour-secondary">
+        This page was last updated 29 December 2024.
+      </p>
+    
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        More from this organisation
+      </h2>
+  
+      <p class="govuk-!-font-size-16">
+        <a href="/WIP/search?organisation=HM Land Registry">
+          HM Land Registry
+        </a>
+      </p>
+      
+        <h2 class="govuk-heading-m">Related APIs</h2>
+      
+      
+        <p class="govuk-!-margin-bottom-1 govuk-!-font-size-16">
+          <a href="/WIP/listings/libraries-fees-and-charges">
+            Libraries Fees and Charges
+          </a>
+        </p>
+        <p class="govuk-!-colour-secondary govuk-!-font-size-16">
+          Calderdale Metropolitan Borough Council
+        </p>
+        <p class="govuk-visually-hidden">
+          Score: 0.43434343434343436
+        </p>
+      
+        <p class="govuk-!-margin-bottom-1 govuk-!-font-size-16">
+          <a href="/WIP/listings/esearch">
+            eSearch
+          </a>
+        </p>
+        <p class="govuk-!-colour-secondary govuk-!-font-size-16">
+          Department for Business, Energy and Industrial Strategy
+        </p>
+        <p class="govuk-visually-hidden">
+          Score: 0.42424242424242425
+        </p>
+      
+        <p class="govuk-!-margin-bottom-1 govuk-!-font-size-16">
+          <a href="/WIP/listings/marriage-allowance">
+            Marriage Allowance
+          </a>
+        </p>
+        <p class="govuk-!-colour-secondary govuk-!-font-size-16">
+          HM Revenue &amp; Customs
+        </p>
+        <p class="govuk-visually-hidden">
+          Score: 0.41025641025641024
+        </p>
+      
+        <p class="govuk-!-margin-bottom-1 govuk-!-font-size-16">
+          <a href="/WIP/listings/discharge-enquiry">
+            Discharge Enquiry
+          </a>
+        </p>
+        <p class="govuk-!-colour-secondary govuk-!-font-size-16">
+          HM Land Registry
+        </p>
+        <p class="govuk-visually-hidden">
+          Score: 0.40875912408759124
+        </p>
+      
+        <p class="govuk-!-margin-bottom-1 govuk-!-font-size-16">
+          <a href="/WIP/listings/transaction-data">
+            Transaction Data
+          </a>
+        </p>
+        <p class="govuk-!-colour-secondary govuk-!-font-size-16">
+          HM Land Registry
+        </p>
+        <p class="govuk-visually-hidden">
+          Score: 0.4
+        </p>
+      
+  
+    </div>
+  
+  
+          </div>
+{% endblock %}
